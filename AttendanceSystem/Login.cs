@@ -44,7 +44,7 @@ namespace AttendanceSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            homeForm home = new homeForm();
+            HomeForm home = new HomeForm();
             home.Show();
             this.Hide();
         }
