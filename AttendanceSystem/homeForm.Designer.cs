@@ -47,10 +47,11 @@
             this.btnSchool.ForeColor = System.Drawing.Color.DarkRed;
             this.btnSchool.Image = ((System.Drawing.Image)(resources.GetObject("btnSchool.Image")));
             this.btnSchool.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSchool.Location = new System.Drawing.Point(-8, 191);
+            this.btnSchool.Location = new System.Drawing.Point(-11, 235);
+            this.btnSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSchool.Name = "btnSchool";
-            this.btnSchool.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSchool.Size = new System.Drawing.Size(174, 45);
+            this.btnSchool.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnSchool.Size = new System.Drawing.Size(232, 55);
             this.btnSchool.TabIndex = 0;
             this.btnSchool.Text = "Trường";
             this.btnSchool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -66,8 +67,9 @@
             this.panel1.Controls.Add(this.btnSchool);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 552);
+            this.panel1.Size = new System.Drawing.Size(215, 679);
             this.panel1.TabIndex = 1;
             // 
             // btnSchedule
@@ -79,10 +81,11 @@
             this.btnSchedule.ForeColor = System.Drawing.Color.DarkRed;
             this.btnSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnSchedule.Image")));
             this.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSchedule.Location = new System.Drawing.Point(-8, 277);
+            this.btnSchedule.Location = new System.Drawing.Point(-11, 341);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSchedule.Size = new System.Drawing.Size(174, 45);
+            this.btnSchedule.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnSchedule.Size = new System.Drawing.Size(232, 55);
             this.btnSchedule.TabIndex = 2;
             this.btnSchedule.Text = "Thời khóa biểu";
             this.btnSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,10 +102,11 @@
             this.btnGroup.ForeColor = System.Drawing.Color.DarkRed;
             this.btnGroup.Image = ((System.Drawing.Image)(resources.GetObject("btnGroup.Image")));
             this.btnGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGroup.Location = new System.Drawing.Point(-8, 234);
+            this.btnGroup.Location = new System.Drawing.Point(-11, 288);
+            this.btnGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGroup.Name = "btnGroup";
-            this.btnGroup.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnGroup.Size = new System.Drawing.Size(174, 45);
+            this.btnGroup.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnGroup.Size = new System.Drawing.Size(232, 55);
             this.btnGroup.TabIndex = 1;
             this.btnGroup.Text = "Nhóm";
             this.btnGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,19 +116,21 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(161, 0);
+            this.mainPanel.Location = new System.Drawing.Point(223, 0);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(838, 552);
+            this.mainPanel.Size = new System.Drawing.Size(1117, 679);
             this.mainPanel.TabIndex = 2;
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 552);
+            this.ClientSize = new System.Drawing.Size(1332, 679);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
