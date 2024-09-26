@@ -89,7 +89,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(232, 55);
+            this.button1.Size = new System.Drawing.Size(264, 55);
             this.button1.TabIndex = 3;
             this.button1.Text = "Log out";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

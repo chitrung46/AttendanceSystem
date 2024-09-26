@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AttendanceSystem
+namespace GUI
 {
-    public partial class Form1 : Form
+    public partial class Element : Form
     {
-        public Form1()
+        public Element()
         {
             InitializeComponent();
+        }
+
+        private void Element_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
