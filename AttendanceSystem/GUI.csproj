@@ -194,5 +194,20 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hide-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-email-96.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
