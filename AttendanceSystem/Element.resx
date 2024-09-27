@@ -164,13 +164,11 @@
         xUhQsOUmrxqDwa//9Kb8Oawk0weLFJbwECjfOxz7UYx5Ac6or2DAsDA3AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="customButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="customButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAKhJREFUOE/tkTEOwjAQBM0HkPIeRMcDkv9QINHwJjoaaPKapKMxs9ZZCoGCuzQp
-        GGkU2fKuzk5aDTnnrbTlMqzsgT02th2HkitW7hiblODGvnscseIvVQBv2Nl6hwMKX6EOW0g8sbV9Tarr
-        u8v0A6aotEzqgtB0sjm6fnnTn+Dwt8kqoTf7lznKBIFjiX7iLxOETiX+TqxMEJwXxssE4QNezPOishWT
-        0gtBxrn3H+6izAAAAABJRU5ErkJggg==
+        DAAACwwBP0AiyAAAAFJJREFUOE9jGBDw//9/NxCGcikHQMOugjCUSzkYNZByMPAGAhWD0hlYEw78A4qx
+        ycEwIp2COGiS6Jg0AwkBmCYol3IwaiDlYEgYSN0ClnjAwAAA2nH/3Q4lMT4AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="customButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -182,11 +180,13 @@
         OUuD8NlO0jyY50F8lE2SA/M8iIdwDuPnKnYGB8z/Cucam0KkkiZuWeoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="customButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="customButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAFJJREFUOE9jGBDw//9/NxCGcikHQMOugjCUSzkYNZByMPAGAhWD0hlYEw78A4qx
-        ycEwIp2COGiS6Jg0AwkBmCYol3IwaiDlYEgYSN0ClnjAwAAA2nH/3Q4lMT4AAAAASUVORK5CYII=
+        DAAACwwBP0AiyAAAAKhJREFUOE/tkTEOwjAQBM0HkPIeRMcDkv9QINHwJjoaaPKapKMxs9ZZCoGCuzQp
+        GGkU2fKuzk5aDTnnrbTlMqzsgT02th2HkitW7hiblODGvnscseIvVQBv2Nl6hwMKX6EOW0g8sbV9Tarr
+        u8v0A6aotEzqgtB0sjm6fnnTn+Dwt8kqoTf7lznKBIFjiX7iLxOETiX+TqxMEJwXxssE4QNezPOishWT
+        0gtBxrn3H+6izAAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
