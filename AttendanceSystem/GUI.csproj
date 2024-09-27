@@ -127,6 +127,12 @@
     <Compile Include="SchoolForm.Designer.cs">
       <DependentUpon>SchoolForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TruniControls\CustomComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruniControls\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TruniControls\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
