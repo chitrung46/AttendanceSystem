@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AttendanceSystem
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -47,6 +47,16 @@ namespace AttendanceSystem
             HomeForm home = new HomeForm();
             home.Show();
             this.Hide();
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
