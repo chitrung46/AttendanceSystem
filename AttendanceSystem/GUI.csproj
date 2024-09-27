@@ -92,6 +92,12 @@
     <Compile Include="Element.Designer.cs">
       <DependentUpon>Element.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SchoolForm.resx">
       <DependentUpon>SchoolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TruniControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
