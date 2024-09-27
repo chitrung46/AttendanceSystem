@@ -57,7 +57,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CustomTextBox";
             this.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.Size = new System.Drawing.Size(200, 33);
+            this.Size = new System.Drawing.Size(200, 40);
             this.ResumeLayout(false);
             this.PerformLayout();
 
