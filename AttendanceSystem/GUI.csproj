@@ -39,6 +39,8 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RestSharp, Version=112.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.112.0.0\lib\net471\RestSharp.dll</HintPath>
     </Reference>
@@ -75,6 +77,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,13 +87,34 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditQRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditQRCode.Designer.cs">
+      <DependentUpon>EditQRCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Element.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Element.Designer.cs">
       <DependentUpon>Element.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QRCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRCodeForm.Designer.cs">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
@@ -139,6 +163,9 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditQRCode.resx">
+      <DependentUpon>EditQRCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Element.resx">
       <DependentUpon>Element.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,11 +188,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QRCodeForm.resx">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SchoolForm.resx">
       <DependentUpon>SchoolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TruniControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
@@ -208,6 +241,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-email-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-download-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-file-500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-qr-code-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hand-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qr-code-242614120852044.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-copy-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6ef13ee5a0d6e46cfab0da7ef6abd859.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6ef13ee5a0d6e46cfab0da7ef6abd8591.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
