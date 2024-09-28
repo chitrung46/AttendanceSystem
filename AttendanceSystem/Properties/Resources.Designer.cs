@@ -63,6 +63,36 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6ef13ee5a0d6e46cfab0da7ef6abd859 {
+            get {
+                object obj = ResourceManager.GetObject("6ef13ee5a0d6e46cfab0da7ef6abd859", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6ef13ee5a0d6e46cfab0da7ef6abd8591 {
+            get {
+                object obj = ResourceManager.GetObject("6ef13ee5a0d6e46cfab0da7ef6abd8591", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_copy_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-copy-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_download_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-download-96", resourceCulture);
@@ -176,6 +206,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap login_gif {
             get {
                 object obj = ResourceManager.GetObject("login_gif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap qr_code_242614120852044 {
+            get {
+                object obj = ResourceManager.GetObject("qr-code-242614120852044", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
