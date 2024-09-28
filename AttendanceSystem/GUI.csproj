@@ -92,11 +92,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditQRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditQRCode.Designer.cs">
+      <DependentUpon>EditQRCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Element.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Element.Designer.cs">
       <DependentUpon>Element.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QRCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRCodeForm.Designer.cs">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>
@@ -151,6 +163,9 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditQRCode.resx">
+      <DependentUpon>EditQRCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Element.resx">
       <DependentUpon>Element.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QRCodeForm.resx">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +259,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-hand-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qr-code-242614120852044.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-copy-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6ef13ee5a0d6e46cfab0da7ef6abd859.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6ef13ee5a0d6e46cfab0da7ef6abd8591.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

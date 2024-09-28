@@ -10,26 +10,22 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class StudentForm : Form
+    public partial class EditQRCode : Form
     {
-        public StudentForm()
+        public EditQRCode()
         {
             InitializeComponent();
         }
 
-        private void dataGridViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void customButton1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+            QRCodeForm qrCode = new QRCodeForm();
+            qrCode.Show();
             EditQRCode editQRCode = new EditQRCode();
-            editQRCode.Show();
-
+            editQRCode.Hide();
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
+        private void EditQRCode_Load(object sender, EventArgs e)
         {
 
         }
