@@ -157,7 +157,7 @@
             this.customTextBox2.PlaceholderText = "https://form.jotform.com/242614120852044";
             this.customTextBox2.Size = new System.Drawing.Size(361, 32);
             this.customTextBox2.TabIndex = 2;
-            this.customTextBox2.Texts = "";
+            this.customTextBox2.Text = "";
             this.customTextBox2.UnderlinedStyle = false;
             // 
             // label4

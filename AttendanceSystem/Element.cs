@@ -36,6 +36,18 @@ namespace GUI
         {
             textBox1.DataBindings.Add(new Binding("Text", customComboBox1.DataSource, "Price"));
         }
+
+        private void customButton9_MouseHover(object sender, EventArgs e)
+        {
+            customButton9.BackColor = Color.Black;
+            customButton9.ForeColor = Color.White;
+        }
+
+        private void customButton9_MouseLeave(object sender, EventArgs e)
+        {
+            customButton9.BackColor = Color.White;
+            customButton9.ForeColor = Color.Black;
+        }
     }
 
     public class Food

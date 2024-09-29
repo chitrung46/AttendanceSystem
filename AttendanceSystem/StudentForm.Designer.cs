@@ -252,7 +252,7 @@
             this.customTextBox2.PlaceholderText = "";
             this.customTextBox2.Size = new System.Drawing.Size(158, 35);
             this.customTextBox2.TabIndex = 4;
-            this.customTextBox2.Texts = "52200141";
+            this.customTextBox2.Text = "52200141";
             this.customTextBox2.UnderlinedStyle = false;
             // 
             // customTextBox1
@@ -274,7 +274,7 @@
             this.customTextBox1.PlaceholderText = "";
             this.customTextBox1.Size = new System.Drawing.Size(159, 35);
             this.customTextBox1.TabIndex = 4;
-            this.customTextBox1.Texts = "Nhật Toàn";
+            this.customTextBox1.Text = "Nhật Toàn";
             this.customTextBox1.UnderlinedStyle = false;
             // 
             // label5
@@ -341,7 +341,7 @@
             this.customTextBox3.PlaceholderText = "Tìm kiếm";
             this.customTextBox3.Size = new System.Drawing.Size(259, 35);
             this.customTextBox3.TabIndex = 4;
-            this.customTextBox3.Texts = "";
+            this.customTextBox3.Text = "";
             this.customTextBox3.UnderlinedStyle = false;
             // 
             // panel9
