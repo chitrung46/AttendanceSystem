@@ -125,7 +125,7 @@ namespace GUI.TruniControls
         }
 
         [Category("Advance")]
-        public string Texts
+        public override string Text
         {
             get
             {

@@ -194,7 +194,7 @@
             this.customTextBox2.PlaceholderText = "Nhập mật khẩu";
             this.customTextBox2.Size = new System.Drawing.Size(287, 40);
             this.customTextBox2.TabIndex = 2;
-            this.customTextBox2.Texts = "";
+            this.customTextBox2.Text = "";
             this.customTextBox2.UnderlinedStyle = false;
             // 
             // customTextBox1
@@ -216,7 +216,7 @@
             this.customTextBox1.PlaceholderText = "example@gmail.com";
             this.customTextBox1.Size = new System.Drawing.Size(287, 40);
             this.customTextBox1.TabIndex = 2;
-            this.customTextBox1.Texts = "";
+            this.customTextBox1.Text = "";
             this.customTextBox1.UnderlinedStyle = false;
             // 
             // customTextBox3
@@ -238,7 +238,7 @@
             this.customTextBox3.PlaceholderText = "";
             this.customTextBox3.Size = new System.Drawing.Size(200, 35);
             this.customTextBox3.TabIndex = 1;
-            this.customTextBox3.Texts = "";
+            this.customTextBox3.Text = "";
             this.customTextBox3.UnderlinedStyle = false;
             // 
             // LoginForm

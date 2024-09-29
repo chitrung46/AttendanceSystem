@@ -44,6 +44,7 @@
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
+            this.customButton9 = new GUI.CustomButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -263,7 +264,6 @@
             this.customTextBox1.PlaceholderText = "Email";
             this.customTextBox1.Size = new System.Drawing.Size(196, 35);
             this.customTextBox1.TabIndex = 13;
-            this.customTextBox1.Texts = "";
             this.customTextBox1.UnderlinedStyle = false;
             // 
             // customPanel1
@@ -305,11 +305,35 @@
             this.customComboBox1.TabIndex = 16;
             this.customComboBox1.Texts = "";
             // 
+            // customButton9
+            // 
+            this.customButton9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.customButton9.BackColor = System.Drawing.Color.White;
+            this.customButton9.BorderColor = System.Drawing.Color.Black;
+            this.customButton9.BorderRadius = 20;
+            this.customButton9.BorderSize = 1;
+            this.customButton9.FlatAppearance.BorderSize = 0;
+            this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton9.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton9.ForeColor = System.Drawing.Color.Black;
+            this.customButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton9.Location = new System.Drawing.Point(24, 202);
+            this.customButton9.Name = "customButton9";
+            this.customButton9.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.customButton9.Size = new System.Drawing.Size(105, 45);
+            this.customButton9.TabIndex = 10;
+            this.customButton9.Text = "Xác nhận";
+            this.customButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton9.UseVisualStyleBackColor = false;
+            this.customButton9.MouseLeave += new System.EventHandler(this.customButton9_MouseLeave);
+            this.customButton9.MouseHover += new System.EventHandler(this.customButton9_MouseHover);
+            // 
             // Element
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 594);
+            this.Controls.Add(this.customButton9);
             this.Controls.Add(this.customComboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.customTextBox1);
@@ -341,5 +365,6 @@
         private TruniControls.CustomTextBox customTextBox1;
         private System.Windows.Forms.TextBox textBox1;
         private TruniControls.CustomComboBox customComboBox1;
+        private CustomButton customButton9;
     }
 }
