@@ -58,6 +58,7 @@
             this.Name = "CustomTextBox";
             this.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.Size = new System.Drawing.Size(200, 40);
+            this.Load += new System.EventHandler(this.CustomTextBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

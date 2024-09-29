@@ -33,5 +33,16 @@ namespace GUI
         {
 
         }
+
+        private void StudentForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton4_Click(object sender, EventArgs e)
+        {
+            AttendanceListForm attendanceListForm = new AttendanceListForm();
+            attendanceListForm.Show();
+        }
     }
 }

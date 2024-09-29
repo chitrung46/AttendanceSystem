@@ -263,7 +263,7 @@
             this.customTextBox1.PlaceholderText = "Email";
             this.customTextBox1.Size = new System.Drawing.Size(196, 35);
             this.customTextBox1.TabIndex = 13;
-            this.customTextBox1.Texts = "";
+            this.customTextBox1.Text = "";
             this.customTextBox1.UnderlinedStyle = false;
             // 
             // customPanel1

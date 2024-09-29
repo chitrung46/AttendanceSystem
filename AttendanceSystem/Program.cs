@@ -18,7 +18,7 @@ namespace AttendanceSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
-            //Application.Run(new EditQRCode());
+            //Application.Run(new AttendanceListForm());
             Application.Run(new StudentForm());
         }
     }
