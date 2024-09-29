@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI;
 
 namespace AttendanceSystem
 {
@@ -16,7 +17,9 @@ namespace AttendanceSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm());
+            //Application.Run(new LoginForm());
+            //Application.Run(new EditQRCode());
+            Application.Run(new StudentForm());
         }
     }
 }
