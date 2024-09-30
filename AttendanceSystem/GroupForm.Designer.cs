@@ -1,4 +1,4 @@
-﻿namespace AttendanceSystem
+﻿namespace GUI
 {
     partial class GroupForm
     {
@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
+            this.customButton1 = new GUI.CustomButton();
             this.SuspendLayout();
             // 
-            // label2
+            // customButton1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(285, 244);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 47);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Group Page";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.customButton1.BackColor = System.Drawing.Color.Black;
+            this.customButton1.BorderColor = System.Drawing.Color.White;
+            this.customButton1.BorderRadius = 40;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(105, 109);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(188, 93);
+            this.customButton1.TabIndex = 0;
+            this.customButton1.Text = "customButton1";
+            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // GroupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1116, 679);
-            this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.customButton1);
             this.Name = "GroupForm";
             this.Text = "GroupForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
+        private CustomButton customButton1;
     }
 }
