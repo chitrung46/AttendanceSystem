@@ -19,7 +19,7 @@ namespace AttendanceSystem
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
             //Application.Run(new EditQRCode());
-            Application.Run(new HomeForm());
+            Application.Run(new GroupForm());
         }
     }
 }

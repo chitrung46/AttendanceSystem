@@ -16,5 +16,11 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void customTextBox3_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
