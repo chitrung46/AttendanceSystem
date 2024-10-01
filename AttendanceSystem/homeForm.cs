@@ -46,7 +46,7 @@ namespace AttendanceSystem
 
         private void btnGroup_Click(object sender, EventArgs e)
         {
-            loadForm(new GroupForm());
+            loadForm(new CreateGroupForm());
             btnGroup.BackColor = Color.DarkRed;
             btnGroup.ForeColor = Color.White;
             btnSchool.BackColor = Color.Beige;
