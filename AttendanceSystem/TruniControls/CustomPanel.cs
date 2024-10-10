@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,6 +13,8 @@ namespace GUI.TruniControls
 {
     public class CustomPanel: Panel
     {
+        private int borderSize = 0;
+        private Color borderColor = Color.Black;
         private int borderRadius = 30;
         private float gradientAngle = 90F;
         private Color gradientTopColor = Color.DodgerBlue;
@@ -60,6 +64,34 @@ namespace GUI.TruniControls
             }
         }
 
+        [Category("Advance")]
+        public Color BorderColor
+        {
+            get
+            {
+                return borderColor;
+            }
+            set
+            {
+                borderColor = value;
+                this.Invalidate();
+            }
+        }
+
+        [Category("Advance")]
+        public int BorderSize
+        {
+            get
+            {
+                return borderSize;
+            }
+            set
+            {
+                borderSize = value;
+                this.Invalidate();
+            }
+        }
+
         private GraphicsPath GetArtanPath(RectangleF rectangle, float radius)
         {
             GraphicsPath graphicsPath = new GraphicsPath();
@@ -76,21 +108,42 @@ namespace GUI.TruniControls
         {
             base.OnPaint(e);
             e.Graphics.SmoothingMode= SmoothingMode.AntiAlias;
+
             LinearGradientBrush brushArtan = new LinearGradientBrush(this.ClientRectangle, this.GradientTopColor, this.gradientBottomColor, this.gradientAngle);
             Graphics graphicsArtan = e.Graphics;
             graphicsArtan.FillRectangle(brushArtan, ClientRectangle);
 
             RectangleF rectangleF = new RectangleF(0, 0, this.Width, this.Height);
+            RectangleF rectBorder = new RectangleF(1, 1, this.Width - 0.8F, this.Height - 1);
             if (borderRadius > 2)
             {
                 using (GraphicsPath graphicsPath = GetArtanPath(rectangleF, borderRadius))
+                using (GraphicsPath pathBorder = GetArtanPath(rectBorder, borderRadius - 1F))
                 using (Pen pen = new Pen(this.Parent.BackColor, 2))
+                using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
+                    penBorder.Alignment = PenAlignment.Inset;
                     this.Region = new Region(graphicsPath);
                     e.Graphics.DrawPath(pen, graphicsPath);
+                    if (borderSize >= 1)
+                    {
+                        //Draw control border
+                        e.Graphics.DrawPath(penBorder, pathBorder);
+                    }
                 }
             }
-            else this.Region = new Region(rectangleF);
+            else
+            {
+                this.Region = new Region(rectangleF);
+                if (borderSize >= 1)
+                {
+                    using (Pen penBorder = new Pen(borderColor, borderSize))
+                    {
+                        penBorder.Alignment = PenAlignment.Inset;
+                        e.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 1, this.Height - 1);
+                    }
+                }
+            }
         }
     }
 
