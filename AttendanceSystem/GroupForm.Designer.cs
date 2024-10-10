@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupForm));
             this.ccpnlTotal = new GUI.TruniControls.CustomPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ccpnlSchoolInformation = new GUI.TruniControls.CustomPanel();
-            this.dgvGroupInformation = new System.Windows.Forms.DataGridView();
-            this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.customButton6 = new GUI.CustomButton();
             this.customButton7 = new GUI.CustomButton();
             this.customButton8 = new GUI.CustomButton();
             this.customButton5 = new GUI.CustomButton();
+            this.ccpnlSchoolInformation = new GUI.TruniControls.CustomPanel();
+            this.dgvGroupInformation = new System.Windows.Forms.DataGridView();
+            this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.ccbxMaximumAbsences = new GUI.TruniControls.CustomTextBox();
             this.lblMaximumAbsences = new System.Windows.Forms.Label();
             this.lblStudentCount = new System.Windows.Forms.Label();
-            this.ccbxMaximumAbsences = new GUI.TruniControls.CustomTextBox();
             this.ccbxStudentCount = new GUI.TruniControls.CustomTextBox();
             this.ctxtGroupName = new GUI.TruniControls.CustomTextBox();
             this.lblGroupName = new System.Windows.Forms.Label();
@@ -51,10 +51,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
             this.ccpnlTotal.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.ccpnlSchoolInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupInformation)).BeginInit();
             this.customPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.cpnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -62,11 +62,13 @@
             // ccpnlTotal
             // 
             this.ccpnlTotal.BackColor = System.Drawing.Color.White;
+            this.ccpnlTotal.BorderColor = System.Drawing.Color.Black;
             this.ccpnlTotal.BorderRadius = 30;
-            this.ccpnlTotal.Controls.Add(this.panel1);
+            this.ccpnlTotal.BorderSize = 0;
             this.ccpnlTotal.Controls.Add(this.panel2);
             this.ccpnlTotal.Controls.Add(this.ccpnlSchoolInformation);
             this.ccpnlTotal.Controls.Add(this.cpnlSearch);
+            this.ccpnlTotal.Controls.Add(this.panel1);
             this.ccpnlTotal.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ccpnlTotal.ForeColor = System.Drawing.Color.Black;
             this.ccpnlTotal.GradientAngle = 90F;
@@ -80,55 +82,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(21, 79);
+            this.panel1.Location = new System.Drawing.Point(25, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(980, 3);
+            this.panel1.Size = new System.Drawing.Size(976, 10);
             this.panel1.TabIndex = 9;
-            // 
-            // ccpnlSchoolInformation
-            // 
-            this.ccpnlSchoolInformation.BackColor = System.Drawing.Color.White;
-            this.ccpnlSchoolInformation.BorderRadius = 30;
-            this.ccpnlSchoolInformation.Controls.Add(this.dgvGroupInformation);
-            this.ccpnlSchoolInformation.Controls.Add(this.customPanel1);
-            this.ccpnlSchoolInformation.ForeColor = System.Drawing.Color.Black;
-            this.ccpnlSchoolInformation.GradientAngle = 90F;
-            this.ccpnlSchoolInformation.GradientBottomColor = System.Drawing.Color.White;
-            this.ccpnlSchoolInformation.GradientTopColor = System.Drawing.Color.White;
-            this.ccpnlSchoolInformation.Location = new System.Drawing.Point(19, 88);
-            this.ccpnlSchoolInformation.Name = "ccpnlSchoolInformation";
-            this.ccpnlSchoolInformation.Size = new System.Drawing.Size(984, 546);
-            this.ccpnlSchoolInformation.TabIndex = 1;
-            // 
-            // dgvGroupInformation
-            // 
-            this.dgvGroupInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroupInformation.Location = new System.Drawing.Point(12, 214);
-            this.dgvGroupInformation.Name = "dgvGroupInformation";
-            this.dgvGroupInformation.RowHeadersWidth = 51;
-            this.dgvGroupInformation.RowTemplate.Height = 24;
-            this.dgvGroupInformation.Size = new System.Drawing.Size(965, 326);
-            this.dgvGroupInformation.TabIndex = 1;
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.White;
-            this.customPanel1.BorderRadius = 30;
-            this.customPanel1.Controls.Add(this.ccbxMaximumAbsences);
-            this.customPanel1.Controls.Add(this.lblMaximumAbsences);
-            this.customPanel1.Controls.Add(this.lblStudentCount);
-            this.customPanel1.Controls.Add(this.ccbxStudentCount);
-            this.customPanel1.Controls.Add(this.ctxtGroupName);
-            this.customPanel1.Controls.Add(this.lblGroupName);
-            this.customPanel1.Controls.Add(this.lblGroupInformation);
-            this.customPanel1.ForeColor = System.Drawing.Color.Black;
-            this.customPanel1.GradientAngle = 90F;
-            this.customPanel1.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel1.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(10, 0);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(966, 146);
-            this.customPanel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -233,23 +190,54 @@
             this.customButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.customButton5.UseVisualStyleBackColor = false;
             // 
-            // lblMaximumAbsences
+            // ccpnlSchoolInformation
             // 
-            this.lblMaximumAbsences.AutoSize = true;
-            this.lblMaximumAbsences.Location = new System.Drawing.Point(335, 106);
-            this.lblMaximumAbsences.Name = "lblMaximumAbsences";
-            this.lblMaximumAbsences.Size = new System.Drawing.Size(178, 21);
-            this.lblMaximumAbsences.TabIndex = 1;
-            this.lblMaximumAbsences.Text = "Số buổi vắng tối đa:";
+            this.ccpnlSchoolInformation.BackColor = System.Drawing.Color.White;
+            this.ccpnlSchoolInformation.BorderColor = System.Drawing.Color.Black;
+            this.ccpnlSchoolInformation.BorderRadius = 30;
+            this.ccpnlSchoolInformation.BorderSize = 0;
+            this.ccpnlSchoolInformation.Controls.Add(this.dgvGroupInformation);
+            this.ccpnlSchoolInformation.Controls.Add(this.customPanel1);
+            this.ccpnlSchoolInformation.ForeColor = System.Drawing.Color.Black;
+            this.ccpnlSchoolInformation.GradientAngle = 90F;
+            this.ccpnlSchoolInformation.GradientBottomColor = System.Drawing.Color.White;
+            this.ccpnlSchoolInformation.GradientTopColor = System.Drawing.Color.White;
+            this.ccpnlSchoolInformation.Location = new System.Drawing.Point(19, 88);
+            this.ccpnlSchoolInformation.Name = "ccpnlSchoolInformation";
+            this.ccpnlSchoolInformation.Size = new System.Drawing.Size(984, 546);
+            this.ccpnlSchoolInformation.TabIndex = 1;
             // 
-            // lblStudentCount
+            // dgvGroupInformation
             // 
-            this.lblStudentCount.AutoSize = true;
-            this.lblStudentCount.Location = new System.Drawing.Point(2, 106);
-            this.lblStudentCount.Name = "lblStudentCount";
-            this.lblStudentCount.Size = new System.Drawing.Size(175, 21);
-            this.lblStudentCount.TabIndex = 6;
-            this.lblStudentCount.Text = "Số lượng sinh viên: ";
+            this.dgvGroupInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupInformation.Location = new System.Drawing.Point(12, 214);
+            this.dgvGroupInformation.Name = "dgvGroupInformation";
+            this.dgvGroupInformation.RowHeadersWidth = 51;
+            this.dgvGroupInformation.RowTemplate.Height = 24;
+            this.dgvGroupInformation.Size = new System.Drawing.Size(972, 326);
+            this.dgvGroupInformation.TabIndex = 1;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.Black;
+            this.customPanel1.BorderRadius = 30;
+            this.customPanel1.BorderSize = 0;
+            this.customPanel1.Controls.Add(this.ccbxMaximumAbsences);
+            this.customPanel1.Controls.Add(this.lblMaximumAbsences);
+            this.customPanel1.Controls.Add(this.lblStudentCount);
+            this.customPanel1.Controls.Add(this.ccbxStudentCount);
+            this.customPanel1.Controls.Add(this.ctxtGroupName);
+            this.customPanel1.Controls.Add(this.lblGroupName);
+            this.customPanel1.Controls.Add(this.lblGroupInformation);
+            this.customPanel1.ForeColor = System.Drawing.Color.Black;
+            this.customPanel1.GradientAngle = 90F;
+            this.customPanel1.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel1.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel1.Location = new System.Drawing.Point(10, 0);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(966, 146);
+            this.customPanel1.TabIndex = 0;
             // 
             // ccbxMaximumAbsences
             // 
@@ -270,8 +258,25 @@
             this.ccbxMaximumAbsences.PlaceholderText = "";
             this.ccbxMaximumAbsences.Size = new System.Drawing.Size(65, 36);
             this.ccbxMaximumAbsences.TabIndex = 5;
-            this.ccbxMaximumAbsences.Texts = "";
             this.ccbxMaximumAbsences.UnderlinedStyle = false;
+            // 
+            // lblMaximumAbsences
+            // 
+            this.lblMaximumAbsences.AutoSize = true;
+            this.lblMaximumAbsences.Location = new System.Drawing.Point(335, 106);
+            this.lblMaximumAbsences.Name = "lblMaximumAbsences";
+            this.lblMaximumAbsences.Size = new System.Drawing.Size(158, 21);
+            this.lblMaximumAbsences.TabIndex = 1;
+            this.lblMaximumAbsences.Text = "Số buổi vắng tối đa:";
+            // 
+            // lblStudentCount
+            // 
+            this.lblStudentCount.AutoSize = true;
+            this.lblStudentCount.Location = new System.Drawing.Point(2, 106);
+            this.lblStudentCount.Name = "lblStudentCount";
+            this.lblStudentCount.Size = new System.Drawing.Size(155, 21);
+            this.lblStudentCount.TabIndex = 6;
+            this.lblStudentCount.Text = "Số lượng sinh viên: ";
             // 
             // ccbxStudentCount
             // 
@@ -292,7 +297,6 @@
             this.ccbxStudentCount.PlaceholderText = "";
             this.ccbxStudentCount.Size = new System.Drawing.Size(77, 36);
             this.ccbxStudentCount.TabIndex = 4;
-            this.ccbxStudentCount.Texts = "";
             this.ccbxStudentCount.UnderlinedStyle = false;
             // 
             // ctxtGroupName
@@ -314,7 +318,6 @@
             this.ctxtGroupName.PlaceholderText = "";
             this.ctxtGroupName.Size = new System.Drawing.Size(484, 36);
             this.ctxtGroupName.TabIndex = 3;
-            this.ctxtGroupName.Texts = "";
             this.ctxtGroupName.UnderlinedStyle = false;
             // 
             // lblGroupName
@@ -322,24 +325,26 @@
             this.lblGroupName.AutoSize = true;
             this.lblGroupName.Location = new System.Drawing.Point(2, 53);
             this.lblGroupName.Name = "lblGroupName";
-            this.lblGroupName.Size = new System.Drawing.Size(99, 21);
+            this.lblGroupName.Size = new System.Drawing.Size(90, 21);
             this.lblGroupName.TabIndex = 2;
             this.lblGroupName.Text = "Tên nhóm:";
             // 
             // lblGroupInformation
             // 
             this.lblGroupInformation.AutoSize = true;
-            this.lblGroupInformation.Font = new System.Drawing.Font("Montserrat Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroupInformation.Location = new System.Drawing.Point(-5, 0);
+            this.lblGroupInformation.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGroupInformation.Location = new System.Drawing.Point(2, 2);
             this.lblGroupInformation.Name = "lblGroupInformation";
-            this.lblGroupInformation.Size = new System.Drawing.Size(219, 32);
+            this.lblGroupInformation.Size = new System.Drawing.Size(181, 27);
             this.lblGroupInformation.TabIndex = 1;
             this.lblGroupInformation.Text = "Thông tin nhóm";
             // 
             // cpnlSearch
             // 
             this.cpnlSearch.BackColor = System.Drawing.Color.White;
-            this.cpnlSearch.BorderRadius = 30;
+            this.cpnlSearch.BorderColor = System.Drawing.Color.Black;
+            this.cpnlSearch.BorderRadius = 0;
+            this.cpnlSearch.BorderSize = 0;
             this.cpnlSearch.Controls.Add(this.lblSchoolName);
             this.cpnlSearch.Controls.Add(this.pictureBox3);
             this.cpnlSearch.Controls.Add(this.customTextBox3);
@@ -355,10 +360,10 @@
             // lblSchoolName
             // 
             this.lblSchoolName.AutoSize = true;
-            this.lblSchoolName.Font = new System.Drawing.Font("Montserrat Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchoolName.Location = new System.Drawing.Point(3, 6);
+            this.lblSchoolName.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSchoolName.Location = new System.Drawing.Point(12, 6);
             this.lblSchoolName.Name = "lblSchoolName";
-            this.lblSchoolName.Size = new System.Drawing.Size(232, 41);
+            this.lblSchoolName.Size = new System.Drawing.Size(209, 39);
             this.lblSchoolName.TabIndex = 7;
             this.lblSchoolName.Text = "Trường TDTU";
             // 
@@ -366,7 +371,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_search_500;
-            this.pictureBox3.Location = new System.Drawing.Point(724, 15);
+            this.pictureBox3.Location = new System.Drawing.Point(724, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(23, 23);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -382,7 +387,7 @@
             this.customTextBox3.BorderSize = 1;
             this.customTextBox3.Font = new System.Drawing.Font("Arial Narrow", 9F);
             this.customTextBox3.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox3.Location = new System.Drawing.Point(713, 7);
+            this.customTextBox3.Location = new System.Drawing.Point(713, 4);
             this.customTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.customTextBox3.Multiline = false;
             this.customTextBox3.Name = "customTextBox3";
@@ -392,14 +397,13 @@
             this.customTextBox3.PlaceholderText = "Tìm kiếm";
             this.customTextBox3.Size = new System.Drawing.Size(263, 35);
             this.customTextBox3.TabIndex = 6;
-            this.customTextBox3.Texts = "";
             this.customTextBox3.UnderlinedStyle = false;
             this.customTextBox3.Load += new System.EventHandler(this.customTextBox3_Load);
             // 
             // GroupForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1075, 679);
             this.Controls.Add(this.ccpnlTotal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -407,11 +411,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GroupForm";
             this.ccpnlTotal.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ccpnlSchoolInformation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupInformation)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.cpnlSearch.ResumeLayout(false);
             this.cpnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
