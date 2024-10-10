@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AttendanceSystem
+namespace GUI
 {
     public partial class GroupForm : Form
     {
@@ -17,9 +17,10 @@ namespace AttendanceSystem
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void customTextBox3_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }
