@@ -14,8 +14,8 @@ namespace GUI.TruniControls
     public partial class CustomTextBox : UserControl
     {
         //Fields
-        private Color borderColor = Color.Black;
-        private Color borderFocusColor = Color.DarkGreen;
+        private Color borderColor = Color.DarkGray;
+        private Color borderFocusColor = Color.Black;
         private int borderSize = 2;
         private bool underlinedStyle = false;
         private bool isFocused = false;
@@ -125,7 +125,7 @@ namespace GUI.TruniControls
         }
 
         [Category("Advance")]
-        public string Texts
+        public override string Text
         {
             get
             {
