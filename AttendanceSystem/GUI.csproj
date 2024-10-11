@@ -92,6 +92,24 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUDFacultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDFacultyForm.Designer.cs">
+      <DependentUpon>CRUDFacultyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDSchoolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDSchoolForm.Designer.cs">
+      <DependentUpon>CRUDSchoolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDSubjectForm.Designer.cs">
+      <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditQRCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +187,15 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CRUDFacultyForm.resx">
+      <DependentUpon>CRUDFacultyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDSchoolForm.resx">
+      <DependentUpon>CRUDSchoolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDSubjectForm.resx">
+      <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditQRCode.resx">
       <DependentUpon>EditQRCode.cs</DependentUpon>
     </EmbeddedResource>
