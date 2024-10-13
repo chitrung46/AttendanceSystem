@@ -9,17 +9,26 @@ namespace DTO
     public class Account
     {
         public string id { get; set; } 
-        public string name { get; set; }
+        public string accountName { get; set; }
+        public string gender { get; set; }
+        public DateTime birthday { get; set; }
         public string email { get; set; }
-        public string password { get; set; }
+        public string sPassword { get; set; }
         public string phoneNumber { get; set; }
+        
+        public Account()
+        {
 
-        public Account(string id, string name, string email, string password, string phoneNumber)
+        }
+
+        public Account(string id, string accountName, string gender, DateTime birthday, string email, string sPassword, string phoneNumber)
         {
             this.id = id;
-            this.name = name;
+            this.accountName = accountName;
+            this.gender = gender;
+            this.birthday = birthday;
             this.email = email;
-            this.password = password;
+            this.sPassword = sPassword;
             this.phoneNumber = phoneNumber;
         }
     }
