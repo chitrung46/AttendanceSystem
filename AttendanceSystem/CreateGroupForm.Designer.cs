@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateGroupForm));
             this.cpnlTotal = new GUI.TruniControls.CustomPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.customButton1 = new GUI.CustomButton();
@@ -49,6 +47,8 @@
             this.lblTimeStart = new System.Windows.Forms.Label();
             this.lblTimeEnd = new System.Windows.Forms.Label();
             this.lblStudyPeriod = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.cpnl = new GUI.TruniControls.CustomPanel();
             this.cbtnImportFile = new GUI.CustomButton();
             this.dgvStudentList = new System.Windows.Forms.DataGridView();
@@ -65,10 +65,10 @@
             this.lblSubject = new System.Windows.Forms.Label();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.cpnlTotal.SuspendLayout();
-            this.customPanel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sgvStudyPeriod)).BeginInit();
+            this.customPanel1.SuspendLayout();
             this.cpnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.cpnlGroupInfor.SuspendLayout();
@@ -77,7 +77,9 @@
             // cpnlTotal
             // 
             this.cpnlTotal.BackColor = System.Drawing.Color.White;
+            this.cpnlTotal.BorderColor = System.Drawing.Color.Black;
             this.cpnlTotal.BorderRadius = 30;
+            this.cpnlTotal.BorderSize = 0;
             this.cpnlTotal.Controls.Add(this.customPanel2);
             this.cpnlTotal.Controls.Add(this.panel1);
             this.cpnlTotal.Controls.Add(this.customPanel1);
@@ -93,32 +95,12 @@
             this.cpnlTotal.TabIndex = 0;
             this.cpnlTotal.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(28, 136);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(965, 3);
-            this.panel1.TabIndex = 8;
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.White;
-            this.customPanel1.BorderRadius = 30;
-            this.customPanel1.Controls.Add(this.cpnl);
-            this.customPanel1.ForeColor = System.Drawing.Color.Black;
-            this.customPanel1.GradientAngle = 90F;
-            this.customPanel1.GradientBottomColor = System.Drawing.Color.White;
-            this.customPanel1.GradientTopColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(28, 158);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(966, 472);
-            this.customPanel1.TabIndex = 7;
-            // 
             // customPanel2
             // 
             this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 30;
+            this.customPanel2.BorderSize = 0;
             this.customPanel2.Controls.Add(this.panel2);
             this.customPanel2.Controls.Add(this.sgvStudyPeriod);
             this.customPanel2.Controls.Add(this.dttTimeEnd);
@@ -311,7 +293,7 @@
             this.lblDay.AutoSize = true;
             this.lblDay.Location = new System.Drawing.Point(3, 47);
             this.lblDay.Name = "lblDay";
-            this.lblDay.Size = new System.Drawing.Size(51, 21);
+            this.lblDay.Size = new System.Drawing.Size(46, 21);
             this.lblDay.TabIndex = 14;
             this.lblDay.Text = "Thứ: ";
             // 
@@ -320,7 +302,7 @@
             this.lblTimeStart.AutoSize = true;
             this.lblTimeStart.Location = new System.Drawing.Point(4, 93);
             this.lblTimeStart.Name = "lblTimeStart";
-            this.lblTimeStart.Size = new System.Drawing.Size(113, 21);
+            this.lblTimeStart.Size = new System.Drawing.Size(101, 21);
             this.lblTimeStart.TabIndex = 13;
             this.lblTimeStart.Text = "Giờ bắt đầu:";
             // 
@@ -329,7 +311,7 @@
             this.lblTimeEnd.AutoSize = true;
             this.lblTimeEnd.Location = new System.Drawing.Point(4, 142);
             this.lblTimeEnd.Name = "lblTimeEnd";
-            this.lblTimeEnd.Size = new System.Drawing.Size(124, 21);
+            this.lblTimeEnd.Size = new System.Drawing.Size(110, 21);
             this.lblTimeEnd.TabIndex = 12;
             this.lblTimeEnd.Text = "Giờ kết thúc: ";
             // 
@@ -339,14 +321,40 @@
             this.lblStudyPeriod.Font = new System.Drawing.Font("Montserrat Medium", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudyPeriod.Location = new System.Drawing.Point(3, 9);
             this.lblStudyPeriod.Name = "lblStudyPeriod";
-            this.lblStudyPeriod.Size = new System.Drawing.Size(90, 21);
+            this.lblStudyPeriod.Size = new System.Drawing.Size(82, 21);
             this.lblStudyPeriod.TabIndex = 11;
             this.lblStudyPeriod.Text = "~Ca học~";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Location = new System.Drawing.Point(28, 136);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(965, 3);
+            this.panel1.TabIndex = 8;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.Black;
+            this.customPanel1.BorderRadius = 30;
+            this.customPanel1.BorderSize = 0;
+            this.customPanel1.Controls.Add(this.cpnl);
+            this.customPanel1.ForeColor = System.Drawing.Color.Black;
+            this.customPanel1.GradientAngle = 90F;
+            this.customPanel1.GradientBottomColor = System.Drawing.Color.White;
+            this.customPanel1.GradientTopColor = System.Drawing.Color.White;
+            this.customPanel1.Location = new System.Drawing.Point(28, 158);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(966, 472);
+            this.customPanel1.TabIndex = 7;
             // 
             // cpnl
             // 
             this.cpnl.BackColor = System.Drawing.Color.White;
+            this.cpnl.BorderColor = System.Drawing.Color.Black;
             this.cpnl.BorderRadius = 30;
+            this.cpnl.BorderSize = 0;
             this.cpnl.Controls.Add(this.cbtnImportFile);
             this.cpnl.Controls.Add(this.dgvStudentList);
             this.cpnl.Controls.Add(this.lblStudentList);
@@ -409,14 +417,16 @@
             this.lblStudentList.AutoSize = true;
             this.lblStudentList.Location = new System.Drawing.Point(-1, 9);
             this.lblStudentList.Name = "lblStudentList";
-            this.lblStudentList.Size = new System.Drawing.Size(185, 21);
+            this.lblStudentList.Size = new System.Drawing.Size(165, 21);
             this.lblStudentList.TabIndex = 0;
             this.lblStudentList.Text = "Danh sách sinh viên:";
             // 
             // cpnlGroupInfor
             // 
             this.cpnlGroupInfor.BackColor = System.Drawing.Color.White;
+            this.cpnlGroupInfor.BorderColor = System.Drawing.Color.Black;
             this.cpnlGroupInfor.BorderRadius = 30;
+            this.cpnlGroupInfor.BorderSize = 0;
             this.cpnlGroupInfor.Controls.Add(this.ccbxSubject);
             this.cpnlGroupInfor.Controls.Add(this.ccbxDepartment);
             this.cpnlGroupInfor.Controls.Add(this.ccbxSchool);
@@ -510,7 +520,6 @@
             this.ctxbGroupName.PlaceholderText = "";
             this.ctxbGroupName.Size = new System.Drawing.Size(857, 35);
             this.ctxbGroupName.TabIndex = 5;
-            this.ctxbGroupName.Texts = "";
             this.ctxbGroupName.UnderlinedStyle = false;
             this.ctxbGroupName.Load += new System.EventHandler(this.customTextBox1_Load);
             // 
@@ -520,7 +529,7 @@
             this.lblGroupName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGroupName.Location = new System.Drawing.Point(3, 27);
             this.lblGroupName.Name = "lblGroupName";
-            this.lblGroupName.Size = new System.Drawing.Size(99, 21);
+            this.lblGroupName.Size = new System.Drawing.Size(90, 21);
             this.lblGroupName.TabIndex = 1;
             this.lblGroupName.Text = "Tên nhóm:";
             this.lblGroupName.Click += new System.EventHandler(this.lblGroupName_Click);
@@ -530,7 +539,7 @@
             this.lblSchool.AutoSize = true;
             this.lblSchool.Location = new System.Drawing.Point(3, 77);
             this.lblSchool.Name = "lblSchool";
-            this.lblSchool.Size = new System.Drawing.Size(80, 21);
+            this.lblSchool.Size = new System.Drawing.Size(72, 21);
             this.lblSchool.TabIndex = 2;
             this.lblSchool.Text = "Trường: ";
             this.lblSchool.Click += new System.EventHandler(this.lblSchool_Click);
@@ -540,7 +549,7 @@
             this.lblSubject.AutoSize = true;
             this.lblSubject.Location = new System.Drawing.Point(671, 77);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(56, 21);
+            this.lblSubject.Size = new System.Drawing.Size(51, 21);
             this.lblSubject.TabIndex = 4;
             this.lblSubject.Text = "Môn: ";
             this.lblSubject.Click += new System.EventHandler(this.lblSubject_Click);
@@ -550,7 +559,7 @@
             this.lblDepartment.AutoSize = true;
             this.lblDepartment.Location = new System.Drawing.Point(353, 77);
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(58, 21);
+            this.lblDepartment.Size = new System.Drawing.Size(53, 21);
             this.lblDepartment.TabIndex = 3;
             this.lblDepartment.Text = "Khoa:";
             this.lblDepartment.Click += new System.EventHandler(this.lblDepartment_Click);
@@ -562,17 +571,17 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1075, 679);
             this.Controls.Add(this.cpnlTotal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateGroupForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo nhóm mới";
             this.cpnlTotal.ResumeLayout(false);
-            this.customPanel1.ResumeLayout(false);
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sgvStudyPeriod)).EndInit();
+            this.customPanel1.ResumeLayout(false);
             this.cpnl.ResumeLayout(false);
             this.cpnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
