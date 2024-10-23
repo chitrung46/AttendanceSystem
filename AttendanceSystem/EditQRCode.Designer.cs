@@ -28,22 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customButton1 = new GUI.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtTime = new System.Windows.Forms.MaskedTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.customTextBox2 = new GUI.TruniControls.CustomTextBox();
+            this.txtUrl = new GUI.TruniControls.CustomTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources._6ef13ee5a0d6e46cfab0da7ef6abd8591;
+            this.pictureBox1.Location = new System.Drawing.Point(383, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(896, 632);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // customPanel1
             // 
@@ -61,6 +71,7 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(514, 534);
             this.customPanel1.TabIndex = 1;
+            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // customButton1
             // 
@@ -85,11 +96,11 @@
             // 
             this.customPanel2.BackColor = System.Drawing.Color.White;
             this.customPanel2.BorderRadius = 40;
-            this.customPanel2.Controls.Add(this.maskedTextBox1);
+            this.customPanel2.Controls.Add(this.mtxtTime);
             this.customPanel2.Controls.Add(this.panel4);
             this.customPanel2.Controls.Add(this.panel3);
             this.customPanel2.Controls.Add(this.label5);
-            this.customPanel2.Controls.Add(this.customTextBox2);
+            this.customPanel2.Controls.Add(this.txtUrl);
             this.customPanel2.Controls.Add(this.label4);
             this.customPanel2.ForeColor = System.Drawing.Color.Black;
             this.customPanel2.GradientAngle = 90F;
@@ -100,16 +111,16 @@
             this.customPanel2.Size = new System.Drawing.Size(443, 176);
             this.customPanel2.TabIndex = 0;
             // 
-            // maskedTextBox1
+            // mtxtTime
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(45, 116);
-            this.maskedTextBox1.Mask = "00 : 00 : 00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(361, 18);
-            this.maskedTextBox1.TabIndex = 2;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mtxtTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtxtTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtTime.Location = new System.Drawing.Point(45, 116);
+            this.mtxtTime.Mask = "00:00:00";
+            this.mtxtTime.Name = "mtxtTime";
+            this.mtxtTime.Size = new System.Drawing.Size(361, 18);
+            this.mtxtTime.TabIndex = 2;
+            this.mtxtTime.ValidatingType = typeof(System.DateTime);
             // 
             // panel4
             // 
@@ -138,27 +149,27 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Thời gian";
             // 
-            // customTextBox2
+
+            // txtUrl
             // 
-            this.customTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.customTextBox2.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.customTextBox2.BorderRadius = 5;
-            this.customTextBox2.BorderSize = 1;
-            this.customTextBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox2.Location = new System.Drawing.Point(34, 45);
-            this.customTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox2.Multiline = false;
-            this.customTextBox2.Name = "customTextBox2";
-            this.customTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox2.PasswordChar = false;
-            this.customTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox2.PlaceholderText = "https://form.jotform.com/242614120852044";
-            this.customTextBox2.Size = new System.Drawing.Size(361, 32);
-            this.customTextBox2.TabIndex = 2;
-            this.customTextBox2.Text = "";
-            this.customTextBox2.UnderlinedStyle = false;
+            this.txtUrl.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUrl.BorderColor = System.Drawing.Color.Transparent;
+            this.txtUrl.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtUrl.BorderRadius = 5;
+            this.txtUrl.BorderSize = 1;
+            this.txtUrl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUrl.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUrl.Location = new System.Drawing.Point(34, 45);
+            this.txtUrl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUrl.Multiline = false;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtUrl.PasswordChar = false;
+            this.txtUrl.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtUrl.PlaceholderText = "https://form.jotform.com/242614120852044";
+            this.txtUrl.Size = new System.Drawing.Size(361, 32);
+            this.txtUrl.TabIndex = 1;
+            this.txtUrl.UnderlinedStyle = false;
             // 
             // label4
             // 
@@ -194,16 +205,6 @@
             this.label1.Text = "Tạo QR Code";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources._6ef13ee5a0d6e46cfab0da7ef6abd8591;
-            this.pictureBox1.Location = new System.Drawing.Point(383, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(896, 632);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // EditQRCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,11 +217,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditQRCode";
             this.Load += new System.EventHandler(this.EditQRCode_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,14 +230,14 @@
 
         private TruniControls.CustomPanel customPanel1;
         private TruniControls.CustomPanel customPanel2;
-        private TruniControls.CustomTextBox customTextBox2;
+        private TruniControls.CustomTextBox txtUrl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtTime;
         private CustomButton customButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

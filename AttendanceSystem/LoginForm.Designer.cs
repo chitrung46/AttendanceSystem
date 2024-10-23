@@ -35,12 +35,14 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new GUI.CustomButton();
             this.tbxPassword = new GUI.TruniControls.CustomTextBox();
             this.tbxUsername = new GUI.TruniControls.CustomTextBox();
+
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -124,15 +126,78 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
+
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.customButton1.BorderColor = System.Drawing.Color.White;
+            this.customButton1.BorderRadius = 40;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(47, 329);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(287, 40);
+            this.customButton1.TabIndex = 3;
+            this.customButton1.Text = "Đăng nhập";
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // customTextBox2
+            // 
+            this.customTextBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox2.BorderColor = System.Drawing.Color.Black;
+            this.customTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.customTextBox2.BorderRadius = 10;
+            this.customTextBox2.BorderSize = 1;
+            this.customTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.customTextBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox2.Location = new System.Drawing.Point(47, 257);
+            this.customTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox2.Multiline = false;
+            this.customTextBox2.Name = "customTextBox2";
+            this.customTextBox2.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
+            this.customTextBox2.PasswordChar = false;
+            this.customTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox2.PlaceholderText = "Nhập mật khẩu";
+            this.customTextBox2.Size = new System.Drawing.Size(287, 40);
+            this.customTextBox2.TabIndex = 2;
+            this.customTextBox2.UnderlinedStyle = false;
+            // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox1.BorderColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.customTextBox1.BorderRadius = 10;
+            this.customTextBox1.BorderSize = 1;
+            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox1.Location = new System.Drawing.Point(47, 168);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.PlaceholderText = "example@gmail.com";
+            this.customTextBox1.Size = new System.Drawing.Size(287, 40);
+            this.customTextBox1.TabIndex = 2;
+            this.customTextBox1.UnderlinedStyle = false;
+            // 
+
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(43, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 21);
+
+            this.label3.Size = new System.Drawing.Size(86, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mật khẩu";
+            this.label3.Click += new System.EventHandler(this.label2_Click_1);
+
             // 
             // label2
             // 
@@ -140,6 +205,7 @@
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(43, 143);
             this.label2.Name = "label2";
+
             this.label2.Size = new System.Drawing.Size(53, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email";
@@ -212,6 +278,7 @@
             this.tbxUsername.Size = new System.Drawing.Size(287, 40);
             this.tbxUsername.TabIndex = 2;
             this.tbxUsername.UnderlinedStyle = false;
+
             // 
             // LoginForm
             // 

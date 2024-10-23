@@ -138,7 +138,6 @@ namespace GUI.TruniControls
                 SetPlaceholder();
             }
         }
-
         [Category("Advance")]
         public int BorderRadius
         {
@@ -355,6 +354,10 @@ namespace GUI.TruniControls
         }
         #endregion
 
+        private void CustomTextBox_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

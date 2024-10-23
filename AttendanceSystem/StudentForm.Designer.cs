@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
@@ -39,11 +40,11 @@
             this.customButton2 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
             this.label8 = new System.Windows.Forms.Label();
+
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -54,21 +55,29 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.customButton3 = new GUI.CustomButton();
+
+            this.customButton2 = new GUI.CustomButton();
             this.customButton4 = new GUI.CustomButton();
-            this.customButton9 = new GUI.CustomButton();
-            this.customButton10 = new GUI.CustomButton();
+            this.customButton1 = new GUI.CustomButton();
+            this.customButton6 = new GUI.CustomButton();
+            this.customButton7 = new GUI.CustomButton();
+            this.customButton8 = new GUI.CustomButton();
+            this.customButton5 = new GUI.CustomButton();
+            this.customTextBox2 = new GUI.TruniControls.CustomTextBox();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
+            this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+
             this.SuspendLayout();
             // 
             // dataGridViewStudents
@@ -76,14 +85,17 @@
             this.dataGridViewStudents.AllowUserToAddRows = false;
             this.dataGridViewStudents.AllowUserToDeleteRows = false;
             this.dataGridViewStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+
+            this.dataGridViewStudents.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+
             this.dataGridViewStudents.ColumnHeadersHeight = 45;
             this.dataGridViewStudents.EnableHeadersVisualStyles = false;
             this.dataGridViewStudents.Location = new System.Drawing.Point(18, 252);
@@ -98,13 +110,23 @@
             // 
             // panel7
             // 
+
+            this.panel7.Controls.Add(this.pictureBox5);
+            this.panel7.Controls.Add(this.pictureBox6);
+            this.panel7.Controls.Add(this.customButton2);
+            this.panel7.Controls.Add(this.customButton4);
+            this.panel7.Controls.Add(this.customButton1);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Controls.Add(this.panel2);
+            this.panel7.Controls.Add(this.customTextBox2);
             this.panel7.Controls.Add(this.customTextBox1);
             this.panel7.Controls.Add(this.ccbxStudentCount);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.label3);
-            this.panel7.Location = new System.Drawing.Point(18, 21);
+
+            this.panel7.Location = new System.Drawing.Point(21, 20);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1014, 159);
@@ -158,7 +180,8 @@
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::GUI.Properties.Resources.icons8_hand_901;
-            this.pictureBox5.Location = new System.Drawing.Point(184, 200);
+
+            this.pictureBox5.Location = new System.Drawing.Point(786, 21);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +194,8 @@
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::GUI.Properties.Resources.icons8_qr_code_96;
-            this.pictureBox6.Location = new System.Drawing.Point(133, 200);
+
+            this.pictureBox6.Location = new System.Drawing.Point(735, 21);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(30, 30);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -179,48 +203,19 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.Transparent;
-            this.customButton2.BorderColor = System.Drawing.Color.Black;
-            this.customButton2.BorderRadius = 10;
-            this.customButton2.BorderSize = 1;
-            this.customButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.Black;
-            this.customButton2.Location = new System.Drawing.Point(179, 197);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(37, 37);
-            this.customButton2.TabIndex = 14;
-            this.customButton2.UseVisualStyleBackColor = false;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderColor = System.Drawing.Color.Black;
-            this.customButton1.BorderRadius = 10;
-            this.customButton1.BorderSize = 1;
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(129, 197);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(37, 37);
-            this.customButton1.TabIndex = 14;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
+
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(22, 207);
+
+            this.label8.Location = new System.Drawing.Point(628, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 21);
             this.label8.TabIndex = 13;
             this.label8.Text = "Điểm danh:";
             // 
+
             // label5
             // 
             this.label5.AutoSize = true;
@@ -266,27 +261,7 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Thông tin sinh viên";
             // 
-            // customTextBox3
-            // 
-            this.customTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox3.BorderColor = System.Drawing.Color.Transparent;
-            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.customTextBox3.BorderRadius = 8;
-            this.customTextBox3.BorderSize = 1;
-            this.customTextBox3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox3.Location = new System.Drawing.Point(646, 5);
-            this.customTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox3.Multiline = false;
-            this.customTextBox3.Name = "customTextBox3";
-            this.customTextBox3.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
-            this.customTextBox3.PasswordChar = false;
-            this.customTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox3.PlaceholderText = "Tìm kiếm";
-            this.customTextBox3.Size = new System.Drawing.Size(259, 36);
-            this.customTextBox3.TabIndex = 4;
-            this.customTextBox3.UnderlinedStyle = false;
-            // 
+
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Silver;
@@ -391,108 +366,215 @@
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // panel1
+
+            // customButton2
             // 
-            this.panel1.Controls.Add(this.customButton3);
-            this.panel1.Controls.Add(this.customButton4);
-            this.panel1.Controls.Add(this.customButton9);
-            this.panel1.Controls.Add(this.customButton10);
-            this.panel1.Location = new System.Drawing.Point(603, 194);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 47);
-            this.panel1.TabIndex = 11;
-            // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.customButton3.BorderColor = System.Drawing.Color.Black;
-            this.customButton3.BorderRadius = 20;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Image = ((System.Drawing.Image)(resources.GetObject("customButton3.Image")));
-            this.customButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton3.Location = new System.Drawing.Point(321, 1);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.customButton3.Size = new System.Drawing.Size(97, 45);
-            this.customButton3.TabIndex = 8;
-            this.customButton3.Text = "Chọn";
-            this.customButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton3.UseVisualStyleBackColor = false;
+            this.customButton2.BackColor = System.Drawing.Color.Transparent;
+            this.customButton2.BorderColor = System.Drawing.Color.Black;
+            this.customButton2.BorderRadius = 10;
+            this.customButton2.BorderSize = 1;
+            this.customButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.Black;
+            this.customButton2.Location = new System.Drawing.Point(781, 18);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(37, 37);
+            this.customButton2.TabIndex = 14;
+            this.customButton2.UseVisualStyleBackColor = false;
             // 
             // customButton4
             // 
-            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(172)))), ((int)(((byte)(29)))));
-            this.customButton4.BorderColor = System.Drawing.Color.Black;
+            this.customButton4.BackColor = System.Drawing.Color.Gainsboro;
+            this.customButton4.BorderColor = System.Drawing.Color.Transparent;
             this.customButton4.BorderRadius = 20;
-            this.customButton4.BorderSize = 0;
+            this.customButton4.BorderSize = 1;
             this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.customButton4.FlatAppearance.BorderSize = 0;
             this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton4.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
             this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Image = ((System.Drawing.Image)(resources.GetObject("customButton4.Image")));
-            this.customButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton4.Location = new System.Drawing.Point(214, 1);
+            this.customButton4.Location = new System.Drawing.Point(832, 14);
             this.customButton4.Name = "customButton4";
-            this.customButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.customButton4.Size = new System.Drawing.Size(97, 45);
-            this.customButton4.TabIndex = 7;
-            this.customButton4.Text = "Sửa";
-            this.customButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton4.Size = new System.Drawing.Size(198, 45);
+            this.customButton4.TabIndex = 14;
+            this.customButton4.Text = "Danh sách điểm danh";
             this.customButton4.UseVisualStyleBackColor = false;
+            this.customButton4.Click += new System.EventHandler(this.customButton4_Click);
             // 
-            // customButton9
+            // customButton1
             // 
-            this.customButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
-            this.customButton9.BorderColor = System.Drawing.Color.Black;
-            this.customButton9.BorderRadius = 20;
-            this.customButton9.BorderSize = 0;
-            this.customButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton9.FlatAppearance.BorderSize = 0;
-            this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton9.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton9.ForeColor = System.Drawing.Color.White;
-            this.customButton9.Image = ((System.Drawing.Image)(resources.GetObject("customButton9.Image")));
-            this.customButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton9.Location = new System.Drawing.Point(108, 1);
-            this.customButton9.Name = "customButton9";
-            this.customButton9.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.customButton9.Size = new System.Drawing.Size(97, 45);
-            this.customButton9.TabIndex = 6;
-            this.customButton9.Text = "Xóa";
-            this.customButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton9.UseVisualStyleBackColor = false;
+            this.customButton1.BackColor = System.Drawing.Color.Transparent;
+            this.customButton1.BorderColor = System.Drawing.Color.Black;
+            this.customButton1.BorderRadius = 10;
+            this.customButton1.BorderSize = 1;
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.Black;
+            this.customButton1.Location = new System.Drawing.Point(731, 18);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(37, 37);
+            this.customButton1.TabIndex = 14;
+            this.customButton1.UseVisualStyleBackColor = false;
             // 
-            // customButton10
+            // customButton6
             // 
-            this.customButton10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.customButton10.BackColor = System.Drawing.Color.DarkGreen;
-            this.customButton10.BorderColor = System.Drawing.Color.Black;
-            this.customButton10.BorderRadius = 20;
-            this.customButton10.BorderSize = 0;
-            this.customButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton10.FlatAppearance.BorderSize = 0;
-            this.customButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton10.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton10.ForeColor = System.Drawing.Color.White;
-            this.customButton10.Image = ((System.Drawing.Image)(resources.GetObject("customButton10.Image")));
-            this.customButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton10.Location = new System.Drawing.Point(1, 1);
-            this.customButton10.Name = "customButton10";
-            this.customButton10.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.customButton10.Size = new System.Drawing.Size(97, 45);
-            this.customButton10.TabIndex = 9;
-            this.customButton10.Text = "Thêm";
-            this.customButton10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.customButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton10.UseVisualStyleBackColor = false;
+            this.customButton6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.customButton6.BorderColor = System.Drawing.Color.Black;
+            this.customButton6.BorderRadius = 20;
+            this.customButton6.BorderSize = 0;
+            this.customButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton6.FlatAppearance.BorderSize = 0;
+            this.customButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton6.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton6.ForeColor = System.Drawing.Color.White;
+            this.customButton6.Image = ((System.Drawing.Image)(resources.GetObject("customButton6.Image")));
+            this.customButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton6.Location = new System.Drawing.Point(344, 3);
+            this.customButton6.Name = "customButton6";
+            this.customButton6.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.customButton6.Size = new System.Drawing.Size(97, 45);
+            this.customButton6.TabIndex = 8;
+            this.customButton6.Text = "Chọn";
+            this.customButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton6.UseVisualStyleBackColor = false;
+            // 
+            // customButton7
+            // 
+            this.customButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(172)))), ((int)(((byte)(29)))));
+            this.customButton7.BorderColor = System.Drawing.Color.Black;
+            this.customButton7.BorderRadius = 20;
+            this.customButton7.BorderSize = 0;
+            this.customButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton7.FlatAppearance.BorderSize = 0;
+            this.customButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton7.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton7.ForeColor = System.Drawing.Color.White;
+            this.customButton7.Image = ((System.Drawing.Image)(resources.GetObject("customButton7.Image")));
+            this.customButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton7.Location = new System.Drawing.Point(242, 3);
+            this.customButton7.Name = "customButton7";
+            this.customButton7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.customButton7.Size = new System.Drawing.Size(97, 45);
+            this.customButton7.TabIndex = 7;
+            this.customButton7.Text = "Sửa";
+            this.customButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton7.UseVisualStyleBackColor = false;
+            // 
+            // customButton8
+            // 
+            this.customButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
+            this.customButton8.BorderColor = System.Drawing.Color.Black;
+            this.customButton8.BorderRadius = 20;
+            this.customButton8.BorderSize = 0;
+            this.customButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton8.FlatAppearance.BorderSize = 0;
+            this.customButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton8.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton8.ForeColor = System.Drawing.Color.White;
+            this.customButton8.Image = ((System.Drawing.Image)(resources.GetObject("customButton8.Image")));
+            this.customButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton8.Location = new System.Drawing.Point(141, 3);
+            this.customButton8.Name = "customButton8";
+            this.customButton8.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.customButton8.Size = new System.Drawing.Size(97, 45);
+            this.customButton8.TabIndex = 6;
+            this.customButton8.Text = "Xóa";
+            this.customButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton8.UseVisualStyleBackColor = false;
+            // 
+            // customButton5
+            // 
+            this.customButton5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.customButton5.BackColor = System.Drawing.Color.DarkGreen;
+            this.customButton5.BorderColor = System.Drawing.Color.Black;
+            this.customButton5.BorderRadius = 20;
+            this.customButton5.BorderSize = 0;
+            this.customButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton5.FlatAppearance.BorderSize = 0;
+            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton5.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton5.ForeColor = System.Drawing.Color.White;
+            this.customButton5.Image = ((System.Drawing.Image)(resources.GetObject("customButton5.Image")));
+            this.customButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton5.Location = new System.Drawing.Point(40, 3);
+            this.customButton5.Name = "customButton5";
+            this.customButton5.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.customButton5.Size = new System.Drawing.Size(97, 45);
+            this.customButton5.TabIndex = 9;
+            this.customButton5.Text = "Thêm";
+            this.customButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.customButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton5.UseVisualStyleBackColor = false;
+            // 
+            // customTextBox2
+            // 
+            this.customTextBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox2.BorderColor = System.Drawing.Color.Transparent;
+            this.customTextBox2.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.customTextBox2.BorderRadius = 0;
+            this.customTextBox2.BorderSize = 1;
+            this.customTextBox2.Font = new System.Drawing.Font("Arial Narrow", 9F);
+            this.customTextBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox2.Location = new System.Drawing.Point(136, 86);
+            this.customTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox2.Multiline = false;
+            this.customTextBox2.Name = "customTextBox2";
+            this.customTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.customTextBox2.PasswordChar = false;
+            this.customTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox2.PlaceholderText = "";
+            this.customTextBox2.Size = new System.Drawing.Size(158, 35);
+            this.customTextBox2.TabIndex = 4;
+            this.customTextBox2.Texts = "";
+            this.customTextBox2.UnderlinedStyle = false;
+            // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.customTextBox1.BorderRadius = 0;
+            this.customTextBox1.BorderSize = 1;
+            this.customTextBox1.Font = new System.Drawing.Font("Arial Narrow", 9F);
+            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox1.Location = new System.Drawing.Point(135, 51);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.PlaceholderText = "";
+            this.customTextBox1.Size = new System.Drawing.Size(159, 35);
+            this.customTextBox1.TabIndex = 4;
+            this.customTextBox1.Texts = "";
+            this.customTextBox1.UnderlinedStyle = false;
+            // 
+            // customTextBox3
+            // 
+            this.customTextBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox3.BorderColor = System.Drawing.Color.Transparent;
+            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.customTextBox3.BorderRadius = 8;
+            this.customTextBox3.BorderSize = 1;
+            this.customTextBox3.Font = new System.Drawing.Font("Arial Narrow", 9F);
+            this.customTextBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox3.Location = new System.Drawing.Point(713, 11);
+            this.customTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox3.Multiline = false;
+            this.customTextBox3.Name = "customTextBox3";
+            this.customTextBox3.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
+            this.customTextBox3.PasswordChar = false;
+            this.customTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox3.PlaceholderText = "Tìm kiếm";
+            this.customTextBox3.Size = new System.Drawing.Size(259, 35);
+            this.customTextBox3.TabIndex = 4;
+            this.customTextBox3.Texts = "";
+            this.customTextBox3.UnderlinedStyle = false;
             // 
             // StudentForm
             // 
@@ -505,11 +587,13 @@
             this.Name = "StudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentForm";
+            this.Load += new System.EventHandler(this.StudentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -517,7 +601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+
             this.ResumeLayout(false);
 
         }
@@ -546,12 +630,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private CustomButton customButton2;
         private CustomButton customButton1;
-        private TruniControls.CustomTextBox customTextBox1;
-        private TruniControls.CustomTextBox ccbxStudentCount;
-        private System.Windows.Forms.Panel panel1;
-        private CustomButton customButton3;
+
         private CustomButton customButton4;
-        private CustomButton customButton9;
-        private CustomButton customButton10;
     }
 }
