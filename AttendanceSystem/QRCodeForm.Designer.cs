@@ -167,6 +167,7 @@
             this.customButton1.TabIndex = 3;
             this.customButton1.UseVisualStyleBackColor = false;
             // 
+
             // txtUrlToCopy
             // 
             this.txtUrlToCopy.BackColor = System.Drawing.SystemColors.Window;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI;
 
 namespace AttendanceSystem
 {
@@ -57,7 +58,7 @@ namespace AttendanceSystem
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            loadForm(new ScheduleForm());
+            loadForm(new StudentForm());
             btnSchedule.BackColor = Color.DarkRed;
             btnSchedule.ForeColor = Color.White;
             btnGroup.BackColor = Color.Beige;

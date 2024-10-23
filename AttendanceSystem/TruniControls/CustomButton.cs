@@ -16,7 +16,7 @@ namespace GUI
         private int  borderSize;
         private int  borderRadius;
         private Color borderColor;
-        //private Color originalColor;
+
 
         [Category("Advance")]
         public int BorderSize {

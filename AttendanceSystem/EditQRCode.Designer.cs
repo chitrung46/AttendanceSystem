@@ -149,6 +149,7 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Thời gian";
             // 
+
             // txtUrl
             // 
             this.txtUrl.BackColor = System.Drawing.SystemColors.Window;
