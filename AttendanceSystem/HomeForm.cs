@@ -58,7 +58,7 @@ namespace AttendanceSystem
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            loadForm(new StudentForm());
+            loadForm(new ScheduleForm());
             btnSchedule.BackColor = Color.DarkRed;
             btnSchedule.ForeColor = Color.White;
             btnGroup.BackColor = Color.Beige;

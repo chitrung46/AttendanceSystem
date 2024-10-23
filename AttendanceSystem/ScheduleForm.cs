@@ -16,5 +16,15 @@ namespace AttendanceSystem
         {
             InitializeComponent();
         }
+
+        private void lblSchoolName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
