@@ -92,6 +92,24 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUDFacultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDFacultyForm.Designer.cs">
+      <DependentUpon>CRUDFacultyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDSchoolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDSchoolForm.Designer.cs">
+      <DependentUpon>CRUDSchoolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDSubjectForm.Designer.cs">
+      <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditQRCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,12 @@
     </Compile>
     <Compile Include="Element.Designer.cs">
       <DependentUpon>Element.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="QRCodeForm.cs">
       <SubType>Form</SubType>
@@ -119,11 +143,11 @@
     <Compile Include="TruniControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GroupForm.cs">
+    <Compile Include="CreateGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupForm.Designer.cs">
-      <DependentUpon>GroupForm.cs</DependentUpon>
+    <Compile Include="CreateGroupForm.Designer.cs">
+      <DependentUpon>CreateGroupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -163,14 +187,29 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CRUDFacultyForm.resx">
+      <DependentUpon>CRUDFacultyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDSchoolForm.resx">
+      <DependentUpon>CRUDSchoolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDSubjectForm.resx">
+      <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditQRCode.resx">
       <DependentUpon>EditQRCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Element.resx">
       <DependentUpon>Element.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateGroupForm.resx">
+      <DependentUpon>CreateGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupForm.resx">
       <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="homeForm.en.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

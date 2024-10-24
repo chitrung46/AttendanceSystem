@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class GroupForm : Form
+    public partial class CRUDSubjectForm : Form
     {
-        public GroupForm()
+        public CRUDSubjectForm()
         {
             InitializeComponent();
         }
-
-        private void customTextBox3_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
