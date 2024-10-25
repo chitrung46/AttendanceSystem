@@ -273,6 +273,11 @@ namespace GUI.TruniControls
             this.Invalidate();
             SetPlaceholder();
         }
+        public bool ReadOnly
+        {
+            get { return textBox1.ReadOnly; }
+            set { textBox1.ReadOnly = value; }
+        }
         private void textBox1_Click(object sender, EventArgs e)
         {
             this.OnClick(e);
