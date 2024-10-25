@@ -33,5 +33,11 @@ namespace GUI
         {
 
         }
+
+        private void btnListData_Click(object sender, EventArgs e)
+        {
+            AttendanceListForm attendanceListForm = new AttendanceListForm();
+            attendanceListForm.Show();
+        }
     }
 }

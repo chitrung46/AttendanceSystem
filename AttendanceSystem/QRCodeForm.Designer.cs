@@ -28,35 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.customButton1 = new GUI.CustomButton();
-            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
+            this.txtUrlToCopy = new GUI.TruniControls.CustomTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureQRCode = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTiming = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnOpenData = new GUI.CustomButton();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureQRCode)).BeginInit();
             this.SuspendLayout();
             // 
             // customPanel1
             // 
             this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
+            this.customPanel1.BorderSize = 0;
             this.customPanel1.Controls.Add(this.pictureBox2);
             this.customPanel1.Controls.Add(this.customButton1);
-            this.customPanel1.Controls.Add(this.customTextBox1);
+            this.customPanel1.Controls.Add(this.txtUrlToCopy);
             this.customPanel1.Controls.Add(this.panel2);
             this.customPanel1.Controls.Add(this.panel1);
             this.customPanel1.Controls.Add(this.customPanel2);
@@ -99,27 +104,26 @@
             this.customButton1.TabIndex = 3;
             this.customButton1.UseVisualStyleBackColor = false;
             // 
-            // customTextBox1
+            // txtUrlToCopy
             // 
-            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.customTextBox1.BorderRadius = 5;
-            this.customTextBox1.BorderSize = 1;
-            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox1.Location = new System.Drawing.Point(42, 480);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.PlaceholderText = "https://form.jotform.com/242614120852044";
-            this.customTextBox1.Size = new System.Drawing.Size(361, 35);
-            this.customTextBox1.TabIndex = 2;
-            this.customTextBox1.Text = "";
-            this.customTextBox1.UnderlinedStyle = false;
+            this.txtUrlToCopy.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUrlToCopy.BorderColor = System.Drawing.Color.Transparent;
+            this.txtUrlToCopy.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.txtUrlToCopy.BorderRadius = 5;
+            this.txtUrlToCopy.BorderSize = 1;
+            this.txtUrlToCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUrlToCopy.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUrlToCopy.Location = new System.Drawing.Point(42, 480);
+            this.txtUrlToCopy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUrlToCopy.Multiline = false;
+            this.txtUrlToCopy.Name = "txtUrlToCopy";
+            this.txtUrlToCopy.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtUrlToCopy.PasswordChar = false;
+            this.txtUrlToCopy.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtUrlToCopy.PlaceholderText = "https://form.jotform.com/242614120852044";
+            this.txtUrlToCopy.Size = new System.Drawing.Size(361, 35);
+            this.txtUrlToCopy.TabIndex = 2;
+            this.txtUrlToCopy.UnderlinedStyle = false;
             // 
             // panel2
             // 
@@ -140,8 +144,10 @@
             // customPanel2
             // 
             this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 40;
-            this.customPanel2.Controls.Add(this.pictureBox1);
+            this.customPanel2.BorderSize = 0;
+            this.customPanel2.Controls.Add(this.pictureQRCode);
             this.customPanel2.ForeColor = System.Drawing.Color.Black;
             this.customPanel2.GradientAngle = 90F;
             this.customPanel2.GradientBottomColor = System.Drawing.Color.Transparent;
@@ -152,15 +158,15 @@
             this.customPanel2.TabIndex = 0;
             this.customPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
-            // pictureBox1
+            // pictureQRCode
             // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.qr_code_242614120852044;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(249, 249);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureQRCode.Image = global::GUI.Properties.Resources.qr_code_242614120852044;
+            this.pictureQRCode.Location = new System.Drawing.Point(21, 16);
+            this.pictureQRCode.Name = "pictureQRCode";
+            this.pictureQRCode.Size = new System.Drawing.Size(249, 249);
+            this.pictureQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureQRCode.TabIndex = 0;
+            this.pictureQRCode.TabStop = false;
             // 
             // label3
             // 
@@ -208,17 +214,17 @@
             this.label4.Text = "Thời gian còn lại";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label5
+            // lblTiming
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Montserrat ExtraBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(715, 286);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(283, 61);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "00 : 00 : 00";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTiming.AutoSize = true;
+            this.lblTiming.BackColor = System.Drawing.Color.Transparent;
+            this.lblTiming.Font = new System.Drawing.Font("Montserrat ExtraBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiming.Location = new System.Drawing.Point(715, 286);
+            this.lblTiming.Name = "lblTiming";
+            this.lblTiming.Size = new System.Drawing.Size(275, 59);
+            this.lblTiming.TabIndex = 0;
+            this.lblTiming.Text = "00 : 00 : 00";
+            this.lblTiming.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label6
             // 
@@ -256,13 +262,38 @@
             this.label8.Text = "sec";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnOpenData
+            // 
+            this.btnOpenData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btnOpenData.BorderColor = System.Drawing.Color.White;
+            this.btnOpenData.BorderRadius = 20;
+            this.btnOpenData.BorderSize = 0;
+            this.btnOpenData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenData.FlatAppearance.BorderSize = 0;
+            this.btnOpenData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenData.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenData.ForeColor = System.Drawing.Color.White;
+            this.btnOpenData.Location = new System.Drawing.Point(778, 389);
+            this.btnOpenData.Name = "btnOpenData";
+            this.btnOpenData.Size = new System.Drawing.Size(149, 44);
+            this.btnOpenData.TabIndex = 2;
+            this.btnOpenData.Text = "Mở danh sách";
+            this.btnOpenData.UseVisualStyleBackColor = false;
+            this.btnOpenData.Visible = false;
+            this.btnOpenData.Click += new System.EventHandler(this.btnOpenData_Click);
+            // 
             // QRCodeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 632);
+            this.Controls.Add(this.btnOpenData);
             this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTiming);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -270,12 +301,13 @@
             this.Name = "QRCodeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QRCodeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QRCodeForm_FormClosing);
             this.Load += new System.EventHandler(this.QRCodeForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.customPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureQRCode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,17 +319,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private TruniControls.CustomPanel customPanel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureQRCode;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private TruniControls.CustomTextBox customTextBox1;
+        private TruniControls.CustomTextBox txtUrlToCopy;
         private System.Windows.Forms.PictureBox pictureBox2;
         private CustomButton customButton1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTiming;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer timer1;
+        private CustomButton btnOpenData;
     }
 }
