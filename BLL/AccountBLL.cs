@@ -27,5 +27,10 @@ namespace BLL
             return info;
                 
         }
+        public Account getAccountByEmailDLA(string email) 
+        {
+            Account acc = accAccess.getAccountByEmailDLA(email);
+            return acc;
+        }
     }
 }

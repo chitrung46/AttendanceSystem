@@ -39,8 +39,9 @@ namespace AttendanceSystem
                 case "Email hoặc mật khẩu không chính xác!":
                     MessageBox.Show("Email hoặc mật khẩu không chính xác!");
                     return;
-            }    
-            HomeForm home = new HomeForm();
+            }
+            acc = accBLL.getAccountByEmailDLA(tbxUsername.Text);
+            HomeForm home = new HomeForm(acc);
             home.Show();
             this.Hide();
         }

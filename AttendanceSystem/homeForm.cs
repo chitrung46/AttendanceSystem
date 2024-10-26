@@ -7,18 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 using GUI;
 
 namespace AttendanceSystem
 {
     public partial class HomeForm : Form
     {
+        private readonly Account acc;
         public HomeForm()
         {
             InitializeComponent();
             loadForm(new SchoolForm());
             btnSchool.BackColor = Color.DarkRed;
             btnSchool.ForeColor = Color.White;
+        }
+        public HomeForm(Account acc)
+        {
+            InitializeComponent();
+            this.acc = acc;
+            loadForm(new SchoolForm());
+            btnSchool.BackColor = Color.DarkRed;
+            btnSchool.ForeColor = Color.White;
+            
         }
 
         public void loadForm(object Form)
@@ -47,7 +58,16 @@ namespace AttendanceSystem
 
         private void btnGroup_Click(object sender, EventArgs e)
         {
-            loadForm(new GroupForm());
+            //loadForm(new GroupForm());
+            if (acc == null)
+            {
+                MessageBox.Show("Account information is not available.");
+                return; // Exit the method if acc is null
+            }
+
+            GroupForm groupForm = new GroupForm(acc.id); // Now acc should be set
+            groupForm.Tag = this; // Set the reference to Home
+            loadForm(groupForm);
             btnGroup.BackColor = Color.DarkRed;
             btnGroup.ForeColor = Color.White;
             btnSchool.BackColor = Color.Beige;
@@ -58,7 +78,7 @@ namespace AttendanceSystem
 
         private void btnSchedule_Click(object sender, EventArgs e)
         {
-            loadForm(new StudentForm());
+            loadForm(new ScheduleForm());
             btnSchedule.BackColor = Color.DarkRed;
             btnSchedule.ForeColor = Color.White;
             btnGroup.BackColor = Color.Beige;

@@ -28,24 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
-            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
-            this.ccbxStudentCount = new GUI.TruniControls.CustomTextBox();
+            this.tbxStudent = new GUI.TruniControls.CustomTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.customButton2 = new GUI.CustomButton();
             this.customButton1 = new GUI.CustomButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.customButton3 = new GUI.CustomButton();
+            this.customButton4 = new GUI.CustomButton();
+            this.customButton9 = new GUI.CustomButton();
+            this.customButton10 = new GUI.CustomButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,52 +57,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.customButton3 = new GUI.CustomButton();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton9 = new GUI.CustomButton();
-            this.customButton10 = new GUI.CustomButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
+            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel6.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewStudents
-            // 
-            this.dataGridViewStudents.AllowUserToAddRows = false;
-            this.dataGridViewStudents.AllowUserToDeleteRows = false;
-            this.dataGridViewStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewStudents.ColumnHeadersHeight = 45;
-            this.dataGridViewStudents.EnableHeadersVisualStyles = false;
-            this.dataGridViewStudents.Location = new System.Drawing.Point(18, 252);
-            this.dataGridViewStudents.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridViewStudents.Name = "dataGridViewStudents";
-            this.dataGridViewStudents.ReadOnly = true;
-            this.dataGridViewStudents.RowHeadersVisible = false;
-            this.dataGridViewStudents.RowHeadersWidth = 51;
-            this.dataGridViewStudents.Size = new System.Drawing.Size(1001, 327);
-            this.dataGridViewStudents.TabIndex = 2;
-            this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.customTextBox1);
-            this.panel7.Controls.Add(this.ccbxStudentCount);
+            this.panel7.Controls.Add(this.tbxStudent);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label4);
@@ -118,7 +92,7 @@
             this.customTextBox1.BorderFocusColor = System.Drawing.Color.DarkGreen;
             this.customTextBox1.BorderRadius = 8;
             this.customTextBox1.BorderSize = 1;
-            this.customTextBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customTextBox1.ForeColor = System.Drawing.Color.Black;
             this.customTextBox1.Location = new System.Drawing.Point(151, 106);
             this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -128,30 +102,75 @@
             this.customTextBox1.PasswordChar = false;
             this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(148, 36);
+            this.customTextBox1.Size = new System.Drawing.Size(148, 33);
             this.customTextBox1.TabIndex = 16;
             this.customTextBox1.UnderlinedStyle = false;
             // 
-            // ccbxStudentCount
+            // tbxStudent
             // 
-            this.ccbxStudentCount.BackColor = System.Drawing.SystemColors.Window;
-            this.ccbxStudentCount.BorderColor = System.Drawing.Color.Black;
-            this.ccbxStudentCount.BorderFocusColor = System.Drawing.Color.DarkGreen;
-            this.ccbxStudentCount.BorderRadius = 8;
-            this.ccbxStudentCount.BorderSize = 1;
-            this.ccbxStudentCount.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ccbxStudentCount.ForeColor = System.Drawing.Color.Black;
-            this.ccbxStudentCount.Location = new System.Drawing.Point(151, 55);
-            this.ccbxStudentCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ccbxStudentCount.Multiline = false;
-            this.ccbxStudentCount.Name = "ccbxStudentCount";
-            this.ccbxStudentCount.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.ccbxStudentCount.PasswordChar = false;
-            this.ccbxStudentCount.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ccbxStudentCount.PlaceholderText = "";
-            this.ccbxStudentCount.Size = new System.Drawing.Size(400, 36);
-            this.ccbxStudentCount.TabIndex = 15;
-            this.ccbxStudentCount.UnderlinedStyle = false;
+            this.tbxStudent.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxStudent.BorderColor = System.Drawing.Color.Black;
+            this.tbxStudent.BorderFocusColor = System.Drawing.Color.DarkGreen;
+            this.tbxStudent.BorderRadius = 8;
+            this.tbxStudent.BorderSize = 1;
+            this.tbxStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxStudent.ForeColor = System.Drawing.Color.Black;
+            this.tbxStudent.Location = new System.Drawing.Point(151, 55);
+            this.tbxStudent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbxStudent.Multiline = false;
+            this.tbxStudent.Name = "tbxStudent";
+            this.tbxStudent.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbxStudent.PasswordChar = false;
+            this.tbxStudent.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbxStudent.PlaceholderText = "";
+            this.tbxStudent.Size = new System.Drawing.Size(400, 33);
+            this.tbxStudent.TabIndex = 15;
+            this.tbxStudent.UnderlinedStyle = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(5, 114);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(131, 18);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Mã số sinh viên:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label6.Location = new System.Drawing.Point(343, 65);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 18);
+            this.label6.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(5, 63);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Họ và tên:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(195, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Thông tin sinh viên";
             // 
             // pictureBox5
             // 
@@ -214,57 +233,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(22, 207);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 21);
+            this.label8.Size = new System.Drawing.Size(93, 18);
             this.label8.TabIndex = 13;
             this.label8.Text = "Điểm danh:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(5, 114);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 21);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Mã số sinh viên:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label6.Location = new System.Drawing.Point(343, 65);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 26);
-            this.label6.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(5, 63);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Họ và tên:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(213, 27);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Thông tin sinh viên";
             // 
             // customTextBox3
             // 
@@ -273,7 +247,7 @@
             this.customTextBox3.BorderFocusColor = System.Drawing.Color.Transparent;
             this.customTextBox3.BorderRadius = 8;
             this.customTextBox3.BorderSize = 1;
-            this.customTextBox3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customTextBox3.ForeColor = System.Drawing.Color.DimGray;
             this.customTextBox3.Location = new System.Drawing.Point(646, 5);
             this.customTextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -283,7 +257,7 @@
             this.customTextBox3.PasswordChar = false;
             this.customTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.customTextBox3.PlaceholderText = "Tìm kiếm";
-            this.customTextBox3.Size = new System.Drawing.Size(259, 36);
+            this.customTextBox3.Size = new System.Drawing.Size(259, 33);
             this.customTextBox3.TabIndex = 4;
             this.customTextBox3.UnderlinedStyle = false;
             // 
@@ -314,15 +288,123 @@
             this.panel6.Size = new System.Drawing.Size(1036, 593);
             this.panel6.TabIndex = 5;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.customButton3);
+            this.panel1.Controls.Add(this.customButton4);
+            this.panel1.Controls.Add(this.customButton9);
+            this.panel1.Controls.Add(this.customButton10);
+            this.panel1.Location = new System.Drawing.Point(603, 194);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(419, 47);
+            this.panel1.TabIndex = 11;
+            // 
+            // customButton3
+            // 
+            this.customButton3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.customButton3.BorderColor = System.Drawing.Color.Black;
+            this.customButton3.BorderRadius = 20;
+            this.customButton3.BorderSize = 0;
+            this.customButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton3.ForeColor = System.Drawing.Color.White;
+            this.customButton3.Image = ((System.Drawing.Image)(resources.GetObject("customButton3.Image")));
+            this.customButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton3.Location = new System.Drawing.Point(321, 1);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.customButton3.Size = new System.Drawing.Size(97, 45);
+            this.customButton3.TabIndex = 8;
+            this.customButton3.Text = "Lưu";
+            this.customButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton3.UseVisualStyleBackColor = false;
+            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
+            // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(172)))), ((int)(((byte)(29)))));
+            this.customButton4.BorderColor = System.Drawing.Color.Black;
+            this.customButton4.BorderRadius = 20;
+            this.customButton4.BorderSize = 0;
+            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton4.ForeColor = System.Drawing.Color.White;
+            this.customButton4.Image = ((System.Drawing.Image)(resources.GetObject("customButton4.Image")));
+            this.customButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton4.Location = new System.Drawing.Point(214, 1);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.customButton4.Size = new System.Drawing.Size(97, 45);
+            this.customButton4.TabIndex = 7;
+            this.customButton4.Text = "Sửa";
+            this.customButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton4.UseVisualStyleBackColor = false;
+            this.customButton4.Click += new System.EventHandler(this.customButton4_Click);
+            // 
+            // customButton9
+            // 
+            this.customButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
+            this.customButton9.BorderColor = System.Drawing.Color.Black;
+            this.customButton9.BorderRadius = 20;
+            this.customButton9.BorderSize = 0;
+            this.customButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton9.FlatAppearance.BorderSize = 0;
+            this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton9.ForeColor = System.Drawing.Color.White;
+            this.customButton9.Image = ((System.Drawing.Image)(resources.GetObject("customButton9.Image")));
+            this.customButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton9.Location = new System.Drawing.Point(108, 1);
+            this.customButton9.Name = "customButton9";
+            this.customButton9.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.customButton9.Size = new System.Drawing.Size(97, 45);
+            this.customButton9.TabIndex = 6;
+            this.customButton9.Text = "Xóa";
+            this.customButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton9.UseVisualStyleBackColor = false;
+            this.customButton9.Click += new System.EventHandler(this.customButton9_Click);
+            // 
+            // customButton10
+            // 
+            this.customButton10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.customButton10.BackColor = System.Drawing.Color.DarkGreen;
+            this.customButton10.BorderColor = System.Drawing.Color.Black;
+            this.customButton10.BorderRadius = 20;
+            this.customButton10.BorderSize = 0;
+            this.customButton10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton10.FlatAppearance.BorderSize = 0;
+            this.customButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton10.ForeColor = System.Drawing.Color.White;
+            this.customButton10.Image = ((System.Drawing.Image)(resources.GetObject("customButton10.Image")));
+            this.customButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton10.Location = new System.Drawing.Point(1, 1);
+            this.customButton10.Name = "customButton10";
+            this.customButton10.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.customButton10.Size = new System.Drawing.Size(97, 45);
+            this.customButton10.TabIndex = 9;
+            this.customButton10.Text = "Thêm";
+            this.customButton10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.customButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton10.UseVisualStyleBackColor = false;
+            this.customButton10.Click += new System.EventHandler(this.customButton10_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 39);
+            this.label1.Size = new System.Drawing.Size(174, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhóm TH02";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 
@@ -391,108 +473,17 @@
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // dataGridViewStudents
             // 
-            this.panel1.Controls.Add(this.customButton3);
-            this.panel1.Controls.Add(this.customButton4);
-            this.panel1.Controls.Add(this.customButton9);
-            this.panel1.Controls.Add(this.customButton10);
-            this.panel1.Location = new System.Drawing.Point(603, 194);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(419, 47);
-            this.panel1.TabIndex = 11;
-            // 
-            // customButton3
-            // 
-            this.customButton3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.customButton3.BorderColor = System.Drawing.Color.Black;
-            this.customButton3.BorderRadius = 20;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Image = ((System.Drawing.Image)(resources.GetObject("customButton3.Image")));
-            this.customButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton3.Location = new System.Drawing.Point(321, 1);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.customButton3.Size = new System.Drawing.Size(97, 45);
-            this.customButton3.TabIndex = 8;
-            this.customButton3.Text = "Chọn";
-            this.customButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton3.UseVisualStyleBackColor = false;
-            // 
-            // customButton4
-            // 
-            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(172)))), ((int)(((byte)(29)))));
-            this.customButton4.BorderColor = System.Drawing.Color.Black;
-            this.customButton4.BorderRadius = 20;
-            this.customButton4.BorderSize = 0;
-            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Image = ((System.Drawing.Image)(resources.GetObject("customButton4.Image")));
-            this.customButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton4.Location = new System.Drawing.Point(214, 1);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.customButton4.Size = new System.Drawing.Size(97, 45);
-            this.customButton4.TabIndex = 7;
-            this.customButton4.Text = "Sửa";
-            this.customButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton4.UseVisualStyleBackColor = false;
-            // 
-            // customButton9
-            // 
-            this.customButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
-            this.customButton9.BorderColor = System.Drawing.Color.Black;
-            this.customButton9.BorderRadius = 20;
-            this.customButton9.BorderSize = 0;
-            this.customButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton9.FlatAppearance.BorderSize = 0;
-            this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton9.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton9.ForeColor = System.Drawing.Color.White;
-            this.customButton9.Image = ((System.Drawing.Image)(resources.GetObject("customButton9.Image")));
-            this.customButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton9.Location = new System.Drawing.Point(108, 1);
-            this.customButton9.Name = "customButton9";
-            this.customButton9.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.customButton9.Size = new System.Drawing.Size(97, 45);
-            this.customButton9.TabIndex = 6;
-            this.customButton9.Text = "Xóa";
-            this.customButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton9.UseVisualStyleBackColor = false;
-            // 
-            // customButton10
-            // 
-            this.customButton10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.customButton10.BackColor = System.Drawing.Color.DarkGreen;
-            this.customButton10.BorderColor = System.Drawing.Color.Black;
-            this.customButton10.BorderRadius = 20;
-            this.customButton10.BorderSize = 0;
-            this.customButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton10.FlatAppearance.BorderSize = 0;
-            this.customButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton10.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton10.ForeColor = System.Drawing.Color.White;
-            this.customButton10.Image = ((System.Drawing.Image)(resources.GetObject("customButton10.Image")));
-            this.customButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton10.Location = new System.Drawing.Point(1, 1);
-            this.customButton10.Name = "customButton10";
-            this.customButton10.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.customButton10.Size = new System.Drawing.Size(97, 45);
-            this.customButton10.TabIndex = 9;
-            this.customButton10.Text = "Thêm";
-            this.customButton10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.customButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton10.UseVisualStyleBackColor = false;
+            this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStudents.Location = new System.Drawing.Point(18, 254);
+            this.dataGridViewStudents.Name = "dataGridViewStudents";
+            this.dataGridViewStudents.RowHeadersWidth = 51;
+            this.dataGridViewStudents.RowTemplate.Height = 24;
+            this.dataGridViewStudents.Size = new System.Drawing.Size(1014, 325);
+            this.dataGridViewStudents.TabIndex = 15;
+            this.dataGridViewStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellClick);
+            this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
             // 
             // StudentForm
             // 
@@ -505,26 +496,25 @@
             this.Name = "StudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
+            this.Load += new System.EventHandler(this.StudentForm_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewStudents;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -547,11 +537,12 @@
         private CustomButton customButton2;
         private CustomButton customButton1;
         private TruniControls.CustomTextBox customTextBox1;
-        private TruniControls.CustomTextBox ccbxStudentCount;
+        private TruniControls.CustomTextBox tbxStudent;
         private System.Windows.Forms.Panel panel1;
         private CustomButton customButton3;
         private CustomButton customButton4;
         private CustomButton customButton9;
         private CustomButton customButton10;
+        private System.Windows.Forms.DataGridView dataGridViewStudents;
     }
 }

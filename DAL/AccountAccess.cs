@@ -15,5 +15,11 @@ namespace DAL
             string info = checkLoginDTO(acc);
             return info;
         }
+
+        public Account getAccountByEmailDLA(string email) 
+        {
+            Account acc = getAccountByEmail(email);
+            return acc;
+        }
     }
 }
