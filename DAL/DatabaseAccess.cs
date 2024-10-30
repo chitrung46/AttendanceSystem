@@ -37,7 +37,7 @@ namespace DAL
             {
                 while (reader.Read())
                 {
-                    user = reader.GetString(0);
+                    user = reader.GetInt32(0).ToString();
                 }
                 reader.Close();
                 conn.Close();
