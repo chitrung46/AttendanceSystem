@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.TruniControls
 {
@@ -17,16 +18,17 @@ namespace GUI.TruniControls
     {
         //Fields
         private Color backColor = Color.WhiteSmoke;
-        private Color iconColor = Color.MediumSlateBlue;
-        private Color listBackColor = Color.FromArgb(230, 228, 245);
+        private Color iconColor = Color.Black;
+        private Color listBackColor = Color.WhiteSmoke;
         private Color listTextColor = Color.DimGray;
-        private Color borderColor = Color.MediumSlateBlue;
+        private Color borderColor = Color.Black;
         private int borderSize = 1;
+        private int borderRadius = 10;
 
         //Items
-        private ComboBox cmbList;
+        private System.Windows.Forms.ComboBox cmbList;
         private Label lblText;
-        private Button btnIcon;
+        private System.Windows.Forms.Button btnIcon;
 
         //Events
         public event EventHandler OnSelectedIndexChanged;//Default event
@@ -34,9 +36,9 @@ namespace GUI.TruniControls
         //Constructor
         public CustomComboBox()
         {
-            cmbList = new ComboBox();
+            cmbList = new System.Windows.Forms.ComboBox();
             lblText = new Label();
-            btnIcon = new Button();
+            btnIcon = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
             //ComboBox: Dropdown list
@@ -83,15 +85,6 @@ namespace GUI.TruniControls
         }
 
         //Private methods
-        private void AdjustComboBoxDimensions()
-        {
-            cmbList.Width = lblText.Width;
-            cmbList.Location = new Point()
-            {
-                X = this.Width - this.Padding.Right - cmbList.Width,
-                Y = lblText.Bottom - cmbList.Height
-            };
-        }
 
         //Event methods
 
@@ -216,6 +209,17 @@ namespace GUI.TruniControls
         }
 
         [Category("Appearance")]
+        public int BorderRadius
+        {
+            get => borderRadius;
+            set
+            {
+                borderRadius = value;
+                this.Invalidate();
+            }
+        }
+
+        [Category("Appearance")]
         public override Color ForeColor
         {
             get { return base.ForeColor; }
@@ -263,7 +267,7 @@ namespace GUI.TruniControls
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [Localizable(true)]
         [MergableProperty(false)]
-        public ComboBox.ObjectCollection Items
+        public System.Windows.Forms.ComboBox.ObjectCollection Items
         {
             get { return cmbList.Items; }
         }
@@ -364,6 +368,71 @@ namespace GUI.TruniControls
         {
             base.OnResize(e);
             AdjustComboBoxDimensions();
+        }
+
+        private void AdjustComboBoxDimensions()
+        {
+            cmbList.Width = lblText.Width + btnIcon.Width;
+            cmbList.Height = lblText.Height;
+            cmbList.Location = new Point()
+            {
+                X = this.borderSize,
+                Y = lblText.Bottom - lblText.Height - this.borderSize
+            };
+        }
+
+        private GraphicsPath GetFigurePath(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            float curveSize = radius * 2F;
+
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);
+            path.AddArc(rect.Right - curveSize, rect.Y, curveSize, curveSize, 270, 90);
+            path.AddArc(rect.Right - curveSize, rect.Bottom - curveSize, curveSize, curveSize, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - curveSize, curveSize, curveSize, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            Graphics graph = e.Graphics;
+
+            if (borderRadius > 1)//Rounded TextBox
+            {
+                //-Fields
+                var rectBorderSmooth = this.ClientRectangle;
+                var rectBorder = Rectangle.Inflate(rectBorderSmooth, -5 * borderSize, -5 * borderSize);
+                int smoothSize = borderSize > 0 ? borderSize : 1;
+
+                using (GraphicsPath pathBorderSmooth = GetFigurePath(rectBorderSmooth, borderRadius))
+                using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
+                using (Pen penBorderSmooth = new Pen(this.Parent.BackColor, smoothSize))
+                using (Pen penBorder = new Pen(borderColor, borderSize))
+                {
+                    //-Drawing
+                    this.Region = new Region(pathBorderSmooth);//Set the rounded region of UserControl
+                    graph.SmoothingMode = SmoothingMode.AntiAlias;
+                    penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
+
+                    //Draw border smoothing
+                    graph.DrawPath(penBorderSmooth, pathBorderSmooth);
+                    //Draw border
+                    graph.DrawPath(penBorder, pathBorder);
+
+                }
+            }
+            else //Square/Normal TextBox
+            {
+                //Draw border
+                using (Pen penBorder = new Pen(borderColor, borderSize))
+                {
+                    this.Region = new Region(this.ClientRectangle);
+                    penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                    graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
+                }
+            }
         }
     }
 }

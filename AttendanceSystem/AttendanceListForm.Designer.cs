@@ -45,7 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.customButton5 = new GUI.CustomButton();
+            this.customButton5 = new GUI.TruniControls.CustomButton();
             this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAttendance)).BeginInit();
             this.panel3.SuspendLayout();
@@ -340,6 +340,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label4;
-        private CustomButton customButton5;
+        private TruniControls.CustomButton customButton5;
     }
 }

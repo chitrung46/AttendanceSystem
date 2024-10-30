@@ -27,7 +27,7 @@ namespace GUI
             QRCodeForm qrCode = new QRCodeForm();
             if (!checkIsEmptyCustomTxtBox(txtUrl) && !checkIsEmptyTime(mtxtTime))
             {
-                urlQRCode = txtUrl.Texts; //get url from textBox
+                urlQRCode = txtUrl.Text; //get url from textBox
                 timeQRCode = mtxtTime.Text;
                 qrCode.Show();
                 this.Close();
@@ -40,7 +40,7 @@ namespace GUI
 
         private bool checkIsEmptyCustomTxtBox(CustomTextBox txtBox)
         {
-            if(txtBox.Texts == "")
+            if(txtBox.Text == "")
             {
                 return true;
             }

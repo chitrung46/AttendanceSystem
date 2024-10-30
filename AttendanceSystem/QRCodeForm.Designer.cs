@@ -37,7 +37,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.customButton1 = new GUI.CustomButton();
+            this.customButton1 = new GUI.TruniControls.CustomButton();
             this.txtUrlToCopy = new GUI.TruniControls.CustomTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOpenData = new GUI.CustomButton();
+            this.btnOpenData = new GUI.TruniControls.CustomButton();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.customPanel2.SuspendLayout();
@@ -187,7 +187,7 @@
             this.txtUrlToCopy.PlaceholderText = "";
             this.txtUrlToCopy.Size = new System.Drawing.Size(361, 35);
             this.txtUrlToCopy.TabIndex = 1;
-            this.txtUrlToCopy.Texts = "";
+            this.txtUrlToCopy.Text = "";
             this.txtUrlToCopy.UnderlinedStyle = false;
             this.txtUrlToCopy.Load += new System.EventHandler(this.customTextBox1_Load);
             // 
@@ -325,13 +325,13 @@
         private System.Windows.Forms.Panel panel2;
         private TruniControls.CustomTextBox txtUrlToCopy;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private CustomButton customButton1;
+        private TruniControls.CustomButton customButton1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTiming;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Timer timer1;
-        private CustomButton btnOpenData;
+        private TruniControls.CustomButton btnOpenData;
     }
 }

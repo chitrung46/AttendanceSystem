@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using System.Windows.Forms;
+
+namespace GUI
 {
     partial class StudentForm
     {
@@ -37,8 +39,8 @@
             this.ccbxStudentCount = new GUI.TruniControls.CustomTextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.customButton2 = new GUI.CustomButton();
-            this.customButton1 = new GUI.CustomButton();
+            this.customButton2 = new GUI.TruniControls.CustomButton();
+            this.customButton1 = new GUI.TruniControls.CustomButton();
             this.label8 = new System.Windows.Forms.Label();
 
             this.label5 = new System.Windows.Forms.Label();
@@ -56,13 +58,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
 
-            this.customButton2 = new GUI.CustomButton();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton1 = new GUI.CustomButton();
-            this.customButton6 = new GUI.CustomButton();
-            this.customButton7 = new GUI.CustomButton();
-            this.customButton8 = new GUI.CustomButton();
-            this.customButton5 = new GUI.CustomButton();
+            this.customButton2 = new GUI.TruniControls.CustomButton();
+            this.customButton4 = new GUI.TruniControls.CustomButton();
+            this.customButton1 = new GUI.TruniControls.CustomButton();
+            this.customButton6 = new GUI.TruniControls.CustomButton();
+            this.customButton7 = new GUI.TruniControls.CustomButton();
+            this.customButton8 = new GUI.TruniControls.CustomButton();
+            this.customButton5 = new GUI.TruniControls.CustomButton();
             this.customTextBox2 = new GUI.TruniControls.CustomTextBox();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
@@ -529,7 +531,7 @@
             this.customTextBox2.PlaceholderText = "";
             this.customTextBox2.Size = new System.Drawing.Size(158, 35);
             this.customTextBox2.TabIndex = 4;
-            this.customTextBox2.Texts = "";
+            this.customTextBox2.Text = "";
             this.customTextBox2.UnderlinedStyle = false;
             // 
             // customTextBox1
@@ -551,7 +553,7 @@
             this.customTextBox1.PlaceholderText = "";
             this.customTextBox1.Size = new System.Drawing.Size(159, 35);
             this.customTextBox1.TabIndex = 4;
-            this.customTextBox1.Texts = "";
+            this.customTextBox1.Text = "";
             this.customTextBox1.UnderlinedStyle = false;
             // 
             // customTextBox3
@@ -573,7 +575,7 @@
             this.customTextBox3.PlaceholderText = "Tìm kiếm";
             this.customTextBox3.Size = new System.Drawing.Size(259, 35);
             this.customTextBox3.TabIndex = 4;
-            this.customTextBox3.Texts = "";
+            this.customTextBox3.Text = "";
             this.customTextBox3.UnderlinedStyle = false;
             // 
             // StudentForm
@@ -616,21 +618,33 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private TruniControls.CustomTextBox customTextBox1;
+        private TruniControls.CustomTextBox customTextBox2;
         private TruniControls.CustomTextBox customTextBox3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private CustomButton customButton2;
-        private CustomButton customButton1;
+        private TruniControls.CustomButton customButton2;
+        private TruniControls.CustomButton customButton1;
 
-        private CustomButton customButton4;
+        private TruniControls.CustomButton customButton4;
+        private TruniControls.CustomButton customButton5;
+        private TruniControls.CustomButton customButton6;
+        private TruniControls.CustomButton customButton7;
+        private TruniControls.CustomButton customButton8;
+        private TruniControls.CustomTextBox ccbxStudentCount;
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+
+
     }
 }

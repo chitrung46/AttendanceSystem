@@ -46,10 +46,10 @@
             this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.customButton3 = new GUI.CustomButton();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton9 = new GUI.CustomButton();
-            this.customButton10 = new GUI.CustomButton();
+            this.customButton3 = new GUI.TruniControls.CustomButton();
+            this.customButton4 = new GUI.TruniControls.CustomButton();
+            this.customButton9 = new GUI.TruniControls.CustomButton();
+            this.customButton10 = new GUI.TruniControls.CustomButton();
             this.ccpnlTotal.SuspendLayout();
             this.ccpnlSchoolInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupInformation)).BeginInit();
@@ -442,9 +442,9 @@
         private System.Windows.Forms.Label lblMaximumAbsences;
         private System.Windows.Forms.DataGridView dgvGroupInformation;
         private System.Windows.Forms.Panel panel2;
-        private CustomButton customButton3;
-        private CustomButton customButton4;
-        private CustomButton customButton9;
-        private CustomButton customButton10;
+        private TruniControls.CustomButton customButton3;
+        private TruniControls.CustomButton customButton4;
+        private TruniControls.CustomButton customButton9;
+        private TruniControls.CustomButton customButton10;
     }
 }

@@ -32,10 +32,10 @@
             this.cpnlTotal = new GUI.TruniControls.CustomPanel();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.customButton1 = new GUI.CustomButton();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton3 = new GUI.CustomButton();
-            this.customButton2 = new GUI.CustomButton();
+            this.customButton1 = new GUI.TruniControls.CustomButton();
+            this.customButton4 = new GUI.TruniControls.CustomButton();
+            this.customButton3 = new GUI.TruniControls.CustomButton();
+            this.customButton2 = new GUI.TruniControls.CustomButton();
             this.sgvStudyPeriod = new System.Windows.Forms.DataGridView();
             this.Thứ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.cpnl = new GUI.TruniControls.CustomPanel();
-            this.cbtnImportFile = new GUI.CustomButton();
+            this.cbtnImportFile = new GUI.TruniControls.CustomButton();
             this.dgvStudentList = new System.Windows.Forms.DataGridView();
             this.LoaiGiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cột = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -613,7 +613,7 @@
         private GUI.TruniControls.CustomPanel cpnl;
         private System.Windows.Forms.DataGridView dgvStudentList;
         private System.Windows.Forms.Label lblStudentList;
-        private GUI.CustomButton cbtnImportFile;
+        private GUI.TruniControls.CustomButton cbtnImportFile;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thứ;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioBD;
@@ -621,10 +621,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiGiaTri;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cột;
         private System.Windows.Forms.Panel panel2;
-        private GUI.CustomButton customButton1;
-        private GUI.CustomButton customButton4;
-        private GUI.CustomButton customButton3;
-        private GUI.CustomButton customButton2;
+        private GUI.TruniControls.CustomButton customButton1;
+        private GUI.TruniControls.CustomButton customButton4;
+        private GUI.TruniControls.CustomButton customButton3;
+        private GUI.TruniControls.CustomButton customButton2;
         private GUI.TruniControls.CustomComboBox ccbxSubject;
         private GUI.TruniControls.CustomComboBox ccbxDepartment;
         private GUI.TruniControls.CustomComboBox ccbxSchool;

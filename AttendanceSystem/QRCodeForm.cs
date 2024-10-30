@@ -41,7 +41,7 @@ namespace GUI
             string url = EditQRCode.instance.urlQRCode;
             string time = EditQRCode.instance.timeQRCode;
 
-            txtUrlToCopy.Texts = url;
+            txtUrlToCopy.Text = url;
             createQRCode(url);
 
             //Handle time from maskTextBox
@@ -91,7 +91,7 @@ namespace GUI
                 countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
                 btnOpenData.Visible = true;
                 string url = "https://form.jotform.com/";
-                txtUrlToCopy.Texts = url;
+                txtUrlToCopy.Text = url;
                 createQRCode("Hết Thời gian điểm danh");
             }
         }

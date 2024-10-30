@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Element));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.customButton6 = new GUI.CustomButton();
-            this.customButton7 = new GUI.CustomButton();
-            this.customButton8 = new GUI.CustomButton();
-            this.customButton5 = new GUI.CustomButton();
+            this.customButton6 = new GUI.TruniControls.CustomButton();
+            this.customButton7 = new GUI.TruniControls.CustomButton();
+            this.customButton8 = new GUI.TruniControls.CustomButton();
+            this.customButton5 = new GUI.TruniControls.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.customButton1 = new GUI.CustomButton();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton3 = new GUI.CustomButton();
-            this.customButton2 = new GUI.CustomButton();
+            this.customButton1 = new GUI.TruniControls.CustomButton();
+            this.customButton4 = new GUI.TruniControls.CustomButton();
+            this.customButton3 = new GUI.TruniControls.CustomButton();
+            this.customButton2 = new GUI.TruniControls.CustomButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.customButton9 = new GUI.CustomButton();
+            this.customButton9 = new GUI.TruniControls.CustomButton();
             this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
@@ -354,19 +354,19 @@
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel2;
-        private CustomButton customButton5;
-        private CustomButton customButton6;
-        private CustomButton customButton7;
-        private CustomButton customButton8;
+        private TruniControls.CustomButton customButton5;
+        private TruniControls.CustomButton customButton6;
+        private TruniControls.CustomButton customButton7;
+        private TruniControls.CustomButton customButton8;
         private System.Windows.Forms.Panel panel1;
-        private CustomButton customButton1;
-        private CustomButton customButton2;
-        private CustomButton customButton3;
-        private CustomButton customButton4;
+        private TruniControls.CustomButton customButton1;
+        private TruniControls.CustomButton customButton2;
+        private TruniControls.CustomButton customButton3;
+        private TruniControls.CustomButton customButton4;
         private TruniControls.CustomPanel customPanel1;
         private TruniControls.CustomTextBox customTextBox1;
         private System.Windows.Forms.TextBox textBox1;
         private TruniControls.CustomComboBox customComboBox1;
-        private CustomButton customButton9;
+        private TruniControls.CustomButton customButton9;
     }
 }

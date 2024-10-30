@@ -30,7 +30,7 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
-            this.customButton1 = new GUI.CustomButton();
+            this.customButton1 = new GUI.TruniControls.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
             this.mtxtTime = new System.Windows.Forms.MaskedTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -238,7 +238,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox mtxtTime;
-        private CustomButton customButton1;
+        private TruniControls.CustomButton customButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
