@@ -1,25 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using DTO;
 
 namespace DAL
 {
-    public class SchoolAccess
+    public class SchoolAccess:DatabaseAccess
     {
-        public DataTable GetAllSchools()
+        public List<School> GetSchoolList()
         {
-            DataTable dt = new DataTable();
+            List<School> list = new List<School>();
+            string query = "proc_getSchoolList";
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("proc_GetAllSchools", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new School
+                        {
+                            Id = (int)reader["id"],
+                            SchoolName = reader["schoolName"].ToString()
+                        });
+                    }
+                }
                 con.Close();
             }
-            return dt;
+            return list;
         }
 
         public bool InsertSchool(School school)
@@ -27,9 +37,9 @@ namespace DAL
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("proc_InsertSchool", con);
+                SqlCommand cmd = new SqlCommand("proc_insertSchool", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@sschoolName", school.sschoolName);
+                cmd.Parameters.AddWithValue("@schoolName", school.SchoolName);
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
                 return result > 0;
@@ -41,10 +51,10 @@ namespace DAL
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("proc_UpdateSchool", con);
+                SqlCommand cmd = new SqlCommand("proc_updateSchool", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", school.id);
-                cmd.Parameters.AddWithValue("@sschoolName", school.sschoolName);
+                cmd.Parameters.AddWithValue("@id", school.Id);
+                cmd.Parameters.AddWithValue("@schoolName", school.SchoolName);
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
                 return result > 0;
@@ -58,7 +68,7 @@ namespace DAL
                 using (SqlConnection con = SqlConnectionData.Connect())
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("proc_DeleteSchool", con);
+                    SqlCommand cmd = new SqlCommand("proc_deleteSchool", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", id);
                     int result = cmd.ExecuteNonQuery();
@@ -72,45 +82,32 @@ namespace DAL
             }
         }
 
-        public DataTable GetSchoolByName(string schoolName)
+        public School GetSchoolByName(string schoolName)
         {
-            string procName = "proc_GetSchoolByName";
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@schoolName", schoolName)
-            };
+            string query = "proc_getSchoolByName";
 
-            return ExecuteQuery(procName, parameters, isStoredProc: true);
-        }
-
-        private DataTable ExecuteQuery(string queryOrProcName, SqlParameter[] parameters = null, bool isStoredProc = false)
-        {
-            DataTable dt = new DataTable();
-            try
+            using (SqlConnection con = SqlConnectionData.Connect())
             {
-                using (SqlConnection con = SqlConnectionData.Connect())
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(queryOrProcName, con))
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@schoolName", schoolName);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
                     {
-                        cmd.CommandType = isStoredProc ? CommandType.StoredProcedure : CommandType.Text;
-                        if (parameters != null)
+                        School school = new School
                         {
-                            cmd.Parameters.AddRange(parameters);
-                        }
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);
-                        }
+                            Id = (int)reader["id"],
+                            SchoolName = reader["schoolName"].ToString()
+                        };
+                        con.Close();
+                        return school;
                     }
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error executing query: " + ex.Message);
-            }
-            return dt;
+                } 
+                con.Close();
+                return null;
+            }    
         }
     }
 }

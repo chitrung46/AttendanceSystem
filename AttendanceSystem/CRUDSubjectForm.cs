@@ -119,13 +119,20 @@ namespace GUI
         //Load data from school to datagridview
         private void LoadSchoolData()
         {
-            DataTable dtSchools = schoolBLL.GetAllSchools();
+            List<School> schoolList = schoolBLL.GetSchoolList();
+            dataGridView1.Rows.Clear();
 
-            if (dtSchools != null && dtSchools.Rows.Count > 0)
+            foreach (School school in schoolList)
+            {
+                dataGridView1.Rows.Add(school.SchoolName);
+                dataGridView1.Columns["schoolName"].HeaderText = "Tên trường";
+            }
+
+            if (schoolList != null)
             {
                 //Set data from combobox
-                comboBoxSchool.DataSource = dtSchools;
-                comboBoxSchool.DisplayMember = "sschoolName";
+                comboBoxSchool.DataSource = schoolList;
+                comboBoxSchool.DisplayMember = "schoolName";
                 comboBoxSchool.ValueMember = "id";
 
                 // Đặt giá trị mặc định (placeholder)

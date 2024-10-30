@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Xml.Linq;
@@ -10,7 +11,7 @@ namespace DAL
     {
         public static SqlConnection Connect()
         {
-            string connectionString = @"Data Source=ANH-QUAN;Initial Catalog=ATTENDANCE_SYSTEM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            string connectionString = @"Data Source=CHITRUNG-LAPTOP\TRUNG_SQL;Initial Catalog=ATTENDANCE_SYSTEM;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connectionString);
             return conn;
         }
@@ -43,132 +44,6 @@ namespace DAL
             }
             conn.Close();
             return user;
-        }
-        public DataTable ExecuteQuery(string queryOrProcName, SqlParameter[] parameters = null, bool isStoredProc = false)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                using (SqlConnection con = SqlConnectionData.Connect())
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(queryOrProcName, con))
-                    {
-                        if (isStoredProc)
-                        {
-                            cmd.CommandType = CommandType.StoredProcedure;  // Nếu là Stored Procedure
-                        }
-                        else
-                        {
-                            cmd.CommandType = CommandType.Text;  // Nếu là câu truy vấn thông thường
-                        }
-
-                        if (parameters != null)
-                        {
-                            cmd.Parameters.AddRange(parameters);  // Thêm các tham số nếu có
-                        }
-
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);  // Điền dữ liệu vào DataTable
-                        }
-                    }
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error executing query: " + ex.Message);
-            }
-            return dt;  // Trả về DataTable kết quả
-        }
-
-
-
-        // Lấy tất cả trường học
-        public DataTable GetAllSchools()
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection con = SqlConnectionData.Connect())
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("proc_GetAllSchools", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                con.Close();
-            }
-            return dt;
-        }
-
-
-        // Thêm trường học mới
-        public bool InsertSchool(School school)
-        {
-            using (SqlConnection con = SqlConnectionData.Connect())
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("proc_InsertSchool", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@sschoolName", school.sschoolName);
-                int result = cmd.ExecuteNonQuery();
-                con.Close();
-                return result > 0;
-            }
-        }
-
-
-
-        // Cập nhật trường học
-        public bool UpdateSchool(School school)
-        {
-            using (SqlConnection con = SqlConnectionData.Connect())
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("proc_UpdateSchool", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", school.id);
-                cmd.Parameters.AddWithValue("@sschoolName", school.sschoolName);
-                int result = cmd.ExecuteNonQuery();
-                con.Close();
-                return result > 0;
-            }
-        }
-
-
-        // Xóa trường học
-        public bool DeleteSchool(int id)
-        {
-            try
-            {
-                using (SqlConnection con = SqlConnectionData.Connect())
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("proc_DeleteSchool", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", id);
-                    int result = cmd.ExecuteNonQuery();
-                    con.Close();
-                    return result > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error deleting school: " + ex.Message);
-            }
-        }
-
-        // Trong SchoolAccess.cs hoặc lớp truy cập dữ liệu tương tự
-        public DataTable GetSchoolByName(string schoolName)
-        {
-            string procName = "proc_GetSchoolByName";
-
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-        new SqlParameter("@schoolName", schoolName)
-            };
-
-            return ExecuteQuery(procName, parameters, isStoredProc: true);
         }
 
 
@@ -239,7 +114,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand("proc_insertFaculty", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@facultyName", faculty.facultyName);
-                cmd.Parameters.AddWithValue("@schoolId", faculty.SchoolId);  // Thêm tham số @schoolId nếu cần
+                cmd.Parameters.AddWithValue("@schoolId", faculty.schoolId);  // Thêm tham số @schoolId nếu cần
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
                 return result > 0;

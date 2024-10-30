@@ -18,7 +18,6 @@ namespace DTO
 
         public Account()
         {
-
         }
 
         public Account(string id, string accountName, string gender, DateTime birthday, string email, string sPassword, string phoneNumber)
@@ -31,56 +30,5 @@ namespace DTO
             this.sPassword = sPassword;
             this.phoneNumber = phoneNumber;
         }
-
-
     }
-
-    public class School
-    {
-        public int id { get; set; }
-        public string sschoolName { get; set; }
-
-        public School() { }
-
-        public School(int id, string sschoolName)
-        {
-            this.id = id;
-            this.sschoolName = sschoolName;
-        }
-    }
-
-    public class Faculty
-    {
-        public int id { get; set; }
-        public string facultyName { get; set; }
-
-        public int SchoolId { get; set; }
-
-        public Faculty() { }
-
-        public Faculty(int id, string facultyName, int schoolId)
-        {
-            this.id = id;
-            this.facultyName = facultyName;
-            this.SchoolId = schoolId;
-        }
-    }
-
-    public class Subject
-    {
-        public int id { get; set; }
-        public string subjectName { get; set; }
-        public int facultyId { get; set; }
-
-
-        public Subject() { }
-
-        public Subject(int id, string subjectName, int facultyId)
-        {
-            this.id = id;
-            this.subjectName = subjectName;
-            this.facultyId = facultyId;
-        }
-    }
-
 }

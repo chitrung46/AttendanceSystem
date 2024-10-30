@@ -11,21 +11,18 @@ namespace BLL
 {
     public class SchoolBLL
     {
-        // DatabaseAccess schoolAccess = new DatabaseAccess();
         private SchoolAccess schoolAccess = new SchoolAccess();
 
-        // Lấy toàn bộ dữ liệu từ bảng SCHOOL
-        public DataTable GetAllSchools()
+        public List<School> GetSchoolList()
         {
-            // Bạn có thể thêm logic nghiệp vụ ở đây nếu cần
-            return schoolAccess.GetAllSchools();
+            return schoolAccess.GetSchoolList();
         }
 
         // Thêm mới trường học
-        public bool AddSchool(School school)
+        public bool InsertSchool(School school)
         {
             // Kiểm tra logic nghiệp vụ trước khi thêm
-            if (string.IsNullOrWhiteSpace(school.sschoolName))
+            if (string.IsNullOrWhiteSpace(school.SchoolName))
             {
                 throw new ArgumentException("Tên trường không được để trống.");
             }
@@ -36,7 +33,7 @@ namespace BLL
         public bool UpdateSchool(School school)
         {
             // Sửa lại tên thuộc tính Id (chữ "I" viết hoa)
-            if (school.id <= 0 || string.IsNullOrWhiteSpace(school.sschoolName))
+            if (school.Id <= 0 || string.IsNullOrWhiteSpace(school.SchoolName))
             {
                 throw new ArgumentException("Dữ liệu không hợp lệ.");
             }
@@ -52,7 +49,7 @@ namespace BLL
             }
             try
             {
-                return schoolAccess.DeleteSchool(id); // Gọi đến phương thức trong lớp DAL
+                return schoolAccess.DeleteSchool(id);
             }
             catch (Exception ex)
             {
@@ -61,25 +58,36 @@ namespace BLL
         }
 
 
-        // Trong SchoolBLL.cs
         public bool IsSchoolNameExists(string schoolName, int? excludeId = null)
         {
-            DataTable dt = schoolAccess.GetSchoolByName(schoolName);
+            School school = schoolAccess.GetSchoolByName(schoolName);
 
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                // Nếu excludeId != null thì kiểm tra xem ID có khác với trường hiện tại không (để phục vụ cho việc sửa)
-                if (excludeId != null)
-                {
-                    int existingId = Convert.ToInt32(dt.Rows[0]["id"]);
-                    if (existingId == excludeId)
-                    {
-                        return false;  // Không tính là trùng nếu tên trùng với chính trường hiện tại đang sửa
-                    }
-                }
-                return true;  // Tên trường đã tồn tại
-            }
-            return false;  // Tên trường chưa tồn tại
+            if (school == null)
+                return false;
+
+            if (excludeId == null)
+                return true;
+
+            if (excludeId == school.Id)
+                return false;
+
+            return false;
+
+
+            //if (school != null && dt.Rows.Count > 0)
+            //{
+            //    // Nếu excludeId != null thì kiểm tra xem ID có khác với trường hiện tại không (để phục vụ cho việc sửa)
+            //    if (excludeId != null)
+            //    {
+            //        int existingId = Convert.ToInt32(dt.Rows[0]["id"]);
+            //        if (existingId == excludeId)
+            //        {
+            //            return false;  // Không tính là trùng nếu tên trùng với chính trường hiện tại đang sửa
+            //        }
+            //    }
+            //    return true;  // Tên trường đã tồn tại
+            //}
+            //return false;  // Tên trường chưa tồn tại
         }
 
     }

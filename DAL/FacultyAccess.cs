@@ -59,7 +59,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand("proc_insertFaculty", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@facultyName", faculty.facultyName);
-                cmd.Parameters.AddWithValue("@schoolId", faculty.SchoolId);
+                cmd.Parameters.AddWithValue("@schoolId", faculty.schoolId);
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
                 return result > 0;

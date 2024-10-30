@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using System.Drawing;
+using System.Collections.Generic;
 
 
 namespace GUI
@@ -106,19 +107,20 @@ namespace GUI
         // Phương thức tải dữ liệu vào ComboBox (Danh sách trường)
         private void LoadSchoolData()
         {
-            DataTable dtSchools = schoolBLL.GetAllSchools();
-            if (dtSchools != null && dtSchools.Rows.Count > 0)
-            {
-                comboBoxSchool.DataSource = dtSchools;
-                comboBoxSchool.DisplayMember = "sschoolName";  // Tên trường để hiển thị
-                comboBoxSchool.ValueMember = "id";             // ID trường
-                comboBoxSchool.SelectedIndex = -1;             // Để không có trường nào được chọn mặc định
-                comboBoxSchool.Text = "-- Chọn Trường --";     // Hiển thị văn bản mặc định
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu trường học.");
-            }
+            List<School> schoolList = schoolBLL.GetSchoolList();
+
+            //if (dtSchools != null && dtSchools.Rows.Count > 0)
+            //{
+            //    comboBoxSchool.DataSource = dtSchools;
+            //    comboBoxSchool.DisplayMember = "sschoolName";  // Tên trường để hiển thị
+            //    comboBoxSchool.ValueMember = "id";             // ID trường
+            //    comboBoxSchool.SelectedIndex = -1;             // Để không có trường nào được chọn mặc định
+            //    comboBoxSchool.Text = "-- Chọn Trường --";     // Hiển thị văn bản mặc định
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không có dữ liệu trường học.");
+            //}
         }
 
 
@@ -374,7 +376,7 @@ namespace GUI
             Faculty newFaculty = new Faculty
             {
                 facultyName = facultyName,
-                SchoolId = selectedSchoolId
+                schoolId = selectedSchoolId
             };
 
             try
@@ -406,7 +408,7 @@ namespace GUI
             {
                 id = facultyId,
                 facultyName = facultyName,
-                SchoolId = selectedSchoolId
+                schoolId = selectedSchoolId
             };
 
             try
