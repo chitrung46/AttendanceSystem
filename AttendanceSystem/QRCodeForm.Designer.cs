@@ -300,6 +300,7 @@
             this.Name = "QRCodeForm";
             this.Text = "QRCodeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QRCodeForm_FormClosing);
+            this.Load += new System.EventHandler(this.QRCodeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureQRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.customPanel1.ResumeLayout(false);

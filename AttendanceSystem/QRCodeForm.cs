@@ -46,6 +46,7 @@ namespace GUI
 
             //Handle time from maskTextBox
             string[] time_arr = splitTimeFromMaskTextBox(time);
+
             int hour = Int32.Parse(time_arr[0]);
             int minute = Int32.Parse(time_arr[1]);
             int second = Int32.Parse(time_arr[2]);

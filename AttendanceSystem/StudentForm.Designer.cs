@@ -1,7 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace GUI
+﻿namespace GUI
 {
+    using System.Windows.Forms;
     partial class StudentForm
     {
         /// <summary>

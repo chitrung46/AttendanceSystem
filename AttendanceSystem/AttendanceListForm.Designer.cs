@@ -59,6 +59,7 @@ namespace GUI
             this.dataGridViewAttendance.RowTemplate.Height = 24;
             this.dataGridViewAttendance.Size = new System.Drawing.Size(1002, 432);
             this.dataGridViewAttendance.TabIndex = 0;
+            this.dataGridViewAttendance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAttendance_CellContentClick);
             // 
             // btnLoaddata
             // 
