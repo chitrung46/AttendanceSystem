@@ -170,12 +170,6 @@
     <Compile Include="CreateGroupForm.Designer.cs">
       <DependentUpon>CreateGroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QRCodeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QRCodeForm.Designer.cs">
-      <DependentUpon>QRCodeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>
     </Compile>

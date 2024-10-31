@@ -59,15 +59,5 @@ namespace GUI
             }
             return false;
         }
-
-        private void EditQRCode_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditQRCode_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

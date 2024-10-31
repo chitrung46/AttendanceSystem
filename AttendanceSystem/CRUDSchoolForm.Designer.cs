@@ -35,17 +35,17 @@ namespace GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_sua = new GUI.CustomButton();
-            this.button_xoa = new GUI.CustomButton();
-            this.button_them = new GUI.CustomButton();
+            this.button_sua = new GUI.TruniControls.CustomButton();
+            this.button_xoa = new GUI.TruniControls.CustomButton();
+            this.button_them = new GUI.TruniControls.CustomButton();
             this.lblGroupName = new System.Windows.Forms.Label();
             this.lblGroupInformation = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.schoolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_huy = new GUI.CustomButton();
-            this.button_luu = new GUI.CustomButton();
+            this.button_huy = new GUI.TruniControls.CustomButton();
+            this.button_luu = new GUI.TruniControls.CustomButton();
             this.textBox_name = new GUI.TruniControls.CustomTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -336,17 +336,18 @@ namespace GUI
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private CustomButton button_sua;
-        private CustomButton button_xoa;
-        private CustomButton button_them;
+        private TruniControls.CustomButton button_sua;
+        private TruniControls.CustomButton button_xoa;
+        private TruniControls.CustomButton button_them;
         private TruniControls.CustomTextBox textBox_name;
         private System.Windows.Forms.Label lblGroupName;
         private System.Windows.Forms.Label lblGroupInformation;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private CustomButton button_luu;
-        private CustomButton button_huy;
+        private TruniControls.CustomButton button_luu;
+        private TruniControls.CustomButton button_huy;
         private DataGridViewCheckBoxColumn checkBox;
         private DataGridViewTextBoxColumn schoolName;
+        private TruniControls.CustomTextBox ctxtGroupName;
     }
 }

@@ -30,22 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CRUDFacultyForm));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.customButton3 = new GUI.CustomButton();
-            this.customButton4 = new GUI.CustomButton();
-            this.customButton9 = new GUI.CustomButton();
-            this.customButton10 = new GUI.CustomButton();
+            this.customButton3 = new GUI.TruniControls.CustomButton();
+            this.customButton4 = new GUI.TruniControls.CustomButton();
+            this.customButton9 = new GUI.TruniControls.CustomButton();
+            this.customButton10 = new GUI.TruniControls.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tbxFaculty = new GUI.TruniControls.CustomTextBox();
             this.lblSchool = new System.Windows.Forms.Label();
             this.lblGroupInformation = new System.Windows.Forms.Label();
             this.lblFaculty = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_sua = new GUI.CustomButton();
-            this.button_xoa = new GUI.CustomButton();
-            this.button_them = new GUI.CustomButton();
-            this.button_huy = new GUI.CustomButton();
-            this.button_luu = new GUI.CustomButton();
+            this.button_sua = new GUI.TruniControls.CustomButton();
+            this.button_xoa = new GUI.TruniControls.CustomButton();
+            this.button_them = new GUI.TruniControls.CustomButton();
+            this.button_huy = new GUI.TruniControls.CustomButton();
+            this.button_luu = new GUI.TruniControls.CustomButton();
             this.comboBoxSchool = new GUI.TruniControls.CustomComboBox();
             this.textBox_faculty = new GUI.TruniControls.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -175,26 +174,7 @@
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // tbxFaculty
-            // 
-            this.tbxFaculty.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxFaculty.BorderColor = System.Drawing.Color.Black;
-            this.tbxFaculty.BorderFocusColor = System.Drawing.Color.DarkGreen;
-            this.tbxFaculty.BorderRadius = 8;
-            this.tbxFaculty.BorderSize = 1;
-            this.tbxFaculty.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxFaculty.ForeColor = System.Drawing.Color.Black;
-            this.tbxFaculty.Location = new System.Drawing.Point(115, 108);
-            this.tbxFaculty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbxFaculty.Multiline = false;
-            this.tbxFaculty.Name = "tbxFaculty";
-            this.tbxFaculty.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbxFaculty.PasswordChar = false;
-            this.tbxFaculty.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbxFaculty.PlaceholderText = "";
-            this.tbxFaculty.Size = new System.Drawing.Size(385, 36);
-            this.tbxFaculty.TabIndex = 22;
-            this.tbxFaculty.UnderlinedStyle = false;
+
             // 
             // lblSchool
             // 
@@ -425,10 +405,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private CustomButton customButton3;
-        private CustomButton customButton4;
-        private CustomButton customButton9;
-        private CustomButton customButton10;
+        private TruniControls.CustomButton customButton3;
+        private TruniControls.CustomButton customButton4;
+        private TruniControls.CustomButton customButton9;
+        private TruniControls.CustomButton customButton10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private TruniControls.CustomTextBox textBox_faculty;
@@ -436,11 +416,10 @@
         private System.Windows.Forms.Label lblGroupInformation;
         private System.Windows.Forms.Label lblFaculty;
         private TruniControls.CustomComboBox comboBoxSchool;
-        private CustomButton button_huy;
-        private CustomButton button_luu;
-        private CustomButton button_them;
-        private CustomButton button_xoa;
-        private CustomButton button_sua;
-        private System.Windows.Forms.Panel panel2;
+        private TruniControls.CustomButton button_huy;
+        private TruniControls.CustomButton button_luu;
+        private TruniControls.CustomButton button_them;
+        private TruniControls.CustomButton button_xoa;
+        private TruniControls.CustomButton button_sua;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.customButton1 = new GUI.TruniControls.CustomButton();
             this.customPanel2 = new GUI.TruniControls.CustomPanel();
@@ -45,16 +44,6 @@
             this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources._6ef13ee5a0d6e46cfab0da7ef6abd8591;
-            this.pictureBox1.Location = new System.Drawing.Point(383, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(896, 632);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // customPanel1
             // 
@@ -74,7 +63,6 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(514, 534);
             this.customPanel1.TabIndex = 1;
-            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
             // 
             // customButton1
             // 
@@ -150,11 +138,10 @@
             this.label5.Font = new System.Drawing.Font("Montserrat Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(41, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 18);
+            this.label5.Size = new System.Drawing.Size(70, 18);
             this.label5.TabIndex = 0;
             this.label5.Text = "Thời gian";
             // 
-
             // txtUrl
             // 
             this.txtUrl.BackColor = System.Drawing.SystemColors.Window;
@@ -172,6 +159,7 @@
             this.txtUrl.PasswordChar = false;
             this.txtUrl.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtUrl.PlaceholderText = "https://form.jotform.com/242614120852044";
+            this.txtUrl.ReadOnly = false;
             this.txtUrl.Size = new System.Drawing.Size(361, 32);
             this.txtUrl.TabIndex = 2;
             this.txtUrl.UnderlinedStyle = false;
@@ -183,7 +171,7 @@
             this.label4.Font = new System.Drawing.Font("Montserrat Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(41, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 18);
+            this.label4.Size = new System.Drawing.Size(91, 18);
             this.label4.TabIndex = 0;
             this.label4.Text = "Liên kết URL";
             // 
@@ -205,7 +193,7 @@
             this.label1.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(168, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 32);
+            this.label1.Size = new System.Drawing.Size(168, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tạo QR Code";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -231,8 +219,6 @@
             this.Name = "EditQRCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditQRCode";
-            this.Load += new System.EventHandler(this.EditQRCode_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);

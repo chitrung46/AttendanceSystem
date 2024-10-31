@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CRUDSubjectForm));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_sua = new GUI.CustomButton();
-            this.button_xoa = new GUI.CustomButton();
-            this.button_them = new GUI.CustomButton();
+            this.button_sua = new GUI.TruniControls.CustomButton();
+            this.button_xoa = new GUI.TruniControls.CustomButton();
+            this.button_them = new GUI.TruniControls.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
@@ -44,8 +44,8 @@
             this.comboBoxFaculty = new GUI.TruniControls.CustomComboBox();
             this.textBox_subject = new GUI.TruniControls.CustomTextBox();
             this.comboBoxSchool = new GUI.TruniControls.CustomComboBox();
-            this.button_huy = new GUI.CustomButton();
-            this.button_luu = new GUI.CustomButton();
+            this.button_huy = new GUI.TruniControls.CustomButton();
+            this.button_luu = new GUI.TruniControls.CustomButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -371,9 +371,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private CustomButton button_sua;
-        private CustomButton button_xoa;
-        private CustomButton button_them;
+        private TruniControls.CustomButton button_sua;
+        private TruniControls.CustomButton button_xoa;
+        private TruniControls.CustomButton button_them;
         private System.Windows.Forms.Label label1;
         private TruniControls.CustomTextBox textBox_subject;
         private TruniControls.CustomComboBox comboBoxSchool;
@@ -383,7 +383,9 @@
         private System.Windows.Forms.Label lblSchool;
         private System.Windows.Forms.Label lblGroupInformation;
         private TruniControls.CustomComboBox comboBoxFaculty;
-        private CustomButton button_huy;
-        private CustomButton button_luu;
+        private TruniControls.CustomButton button_huy;
+        private TruniControls.CustomButton button_luu;
+        private TruniControls.CustomTextBox customTextBox1;
+        private TruniControls.CustomComboBox customComboBox1;
     }
 }

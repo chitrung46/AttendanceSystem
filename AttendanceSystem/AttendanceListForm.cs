@@ -38,11 +38,6 @@ namespace GUI
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private Stream DownloadImage(string imageUrl)
         {
             try
@@ -88,7 +83,6 @@ namespace GUI
                 dataGridViewAttendance.Columns.Add("student_code", "Mã số sinh viên");
                 dataGridViewAttendance.Columns.Add("attendance_code", "Mã điểm danh");
                 dataGridViewAttendance.Columns.Add("location", "Vị trí");
-                dataGridViewAttendance.Columns.Add("submit_datetime", "Thời gian");
 
                 DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
                 imgColumn.HeaderText = "Hình ảnh";
@@ -199,29 +193,6 @@ namespace GUI
             return pictureBox;
         }
 
-
-
-        private void dataGridViewAttendance_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 6 && e.RowIndex >= 0)
-            {
-                PictureBox pictureBox = showImageByPictureBox();
-                pictureBox.Image = (System.Drawing.Image)dataGridViewAttendance.CurrentRow.Cells[6].Value;
-                this.Controls.Add(pictureBox);
-                pictureBox.BringToFront();
-            }
-            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
-            {
-                if ((bool)dataGridViewAttendance.CurrentRow.Cells[0].Value == false)
-                {
-                    dataGridViewAttendance.CurrentRow.Cells[0].Value = true;
-                }
-                else
-                {
-                    dataGridViewAttendance.CurrentRow.Cells[0].Value = false;
-                }
-            }
-        }
 
         private void btnLoaddata_Click(object sender, EventArgs e)
         {

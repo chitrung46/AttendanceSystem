@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using System.Windows.Forms;
+
+namespace GUI
 {
     partial class AttendanceListForm
     {
@@ -30,14 +32,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewAttendance = new System.Windows.Forms.DataGridView();
-            this.btnLoaddata = new GUI.CustomButton();
+            this.btnLoaddata = new GUI.TruniControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAttendance)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewAttendance
@@ -63,7 +59,6 @@
             this.dataGridViewAttendance.RowTemplate.Height = 24;
             this.dataGridViewAttendance.Size = new System.Drawing.Size(1002, 432);
             this.dataGridViewAttendance.TabIndex = 0;
-            this.dataGridViewAttendance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAttendance_CellContentClick);
             // 
             // btnLoaddata
             // 
@@ -96,14 +91,6 @@
             this.Text = "AttendanceListForm";
             this.Load += new System.EventHandler(this.AttendanceListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAttendance)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,6 +98,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewAttendance;
-        private CustomButton btnLoaddata;
+        private TruniControls.CustomButton btnLoaddata;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

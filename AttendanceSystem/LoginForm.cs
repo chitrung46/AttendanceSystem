@@ -21,10 +21,15 @@ namespace AttendanceSystem
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            acc.email = tbxUsername.Text;
-            acc.sPassword = tbxPassword.Text;
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+            acc.email = txtUsername.Text;
+            acc.sPassword = txtPassword.Text;
 
             string getUser = accBLL.checkLogin(acc);
 
@@ -39,7 +44,7 @@ namespace AttendanceSystem
                 case "Email hoặc mật khẩu không chính xác!":
                     MessageBox.Show("Email hoặc mật khẩu không chính xác!");
                     return;
-            }    
+            }
             HomeForm home = new HomeForm();
             home.Show();
             this.Hide();
