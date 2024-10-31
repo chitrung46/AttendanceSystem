@@ -12,60 +12,45 @@ namespace BLL
 
     public class FacultyBLL
     {
-        //private DatabaseAccess facultyAccess = new DatabaseAccess();  // Đối tượng truy cập cơ sở dữ liệu
         private FacultyAccess facultyAccess = new FacultyAccess();
 
-        // Lấy danh sách tất cả các khoa
-        public DataTable GetAllFaculty()
+        public List<Dictionary<string, object>> GetFacultyNameListWithSchoolName()
         {
-            return facultyAccess.GetAllFaculties();
+            return facultyAccess.GetFacultyNameListWithSchoolName();
         }
 
-        public DataTable GetAllFacultiesWithSchoolName()
+        public List<Faculty> GetFacultyList ()
         {
-            try
-            {
-                return facultyAccess.GetAllFacultiesWithSchoolName();  // Gọi phương thức DAL
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi lấy danh sách khoa: " + ex.Message);
-            }
-        }
-        public bool IsFacultyExist(string facultyName, int schoolId)
-        {
-            return facultyAccess.CheckIfFacultyExists(facultyName, schoolId);
+            return facultyAccess.GetFacultyList();
         }
 
-
-        public DataTable GetFacultiesBySchoolId(int schoolId)
+        public List<Faculty> GetFacultyBySchoolName (string schoolName)
         {
-            // Giả sử bạn đã có phương thức trong lớp DAL để lấy danh sách khoa theo ID trường
-            return facultyAccess.GetFacultiesBySchoolId(schoolId);
+            return facultyAccess.GetFacultyBySchoolName(schoolName);
+        }
+        public Faculty GetFacultyByName(string facultyName)
+        {
+            return facultyAccess.GetFacultyByName(facultyName);
         }
 
-
-        // Thêm khoa mới
-        public bool InsertFaculty(Faculty faculty)
+        public bool InsertFaculty(string facultyName, int schoolId)
         {
-            if (faculty == null || string.IsNullOrEmpty(faculty.facultyName))
+            if (string.IsNullOrEmpty(facultyName))
             {
                 throw new ArgumentException("Thông tin khoa không hợp lệ.");
             }
-            return facultyAccess.InsertFaculty(faculty);
+            return facultyAccess.InsertFaculty(facultyName, schoolId);
         }
 
-        // Cập nhật thông tin khoa
         public bool UpdateFaculty(Faculty faculty)
         {
-            if (faculty == null || string.IsNullOrEmpty(faculty.facultyName) || faculty.id <= 0)
+            if (faculty == null || string.IsNullOrEmpty(faculty.FacultyName) || faculty.Id <= 0)
             {
                 throw new ArgumentException("Thông tin khoa không hợp lệ.");
             }
             return facultyAccess.UpdateFaculty(faculty);
         }
 
-        // Xóa khoa
         public bool DeleteFaculty(int id)
         {
             if (id <= 0)
@@ -75,14 +60,13 @@ namespace BLL
             return facultyAccess.DeleteFaculty(id);
         }
 
-
-        public DataTable GetAllSchoolFaculties()
+        public bool IsFacultyExist(string facultyName, int schoolId)
         {
-            return facultyAccess.GetAllSchoolFaculties();  // Phương thức này sẽ gọi DAL để lấy tất cả các trường và khoa
+            if (string.IsNullOrEmpty(facultyName) || schoolId <= 0)
+            {
+                throw new ArgumentException("Dữ liệu không hợp lệ.");
+            }
+            return facultyAccess.IsFacultyExist(facultyName, schoolId);
         }
-
-
-
     }
-
 }

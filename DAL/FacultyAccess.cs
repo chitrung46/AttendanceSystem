@@ -1,65 +1,127 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using DTO;
 
 namespace DAL
 {
-    public class FacultyAccess
+    public class FacultyAccess:DatabaseAccess
     {
-        public DataTable GetAllFaculties()
+        public List<Dictionary<string, object>> GetFacultyNameListWithSchoolName()
         {
-            DataTable dt = new DataTable();
+            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("proc_getAllFaculties", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
+                using (SqlCommand cmd = new SqlCommand("proc_getFacultyNameOrderBySchoolName", con))
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Dictionary<string, object>
+                        {
+                            { "id", reader["id"]},
+                            {"schoolId", reader["schoolId"]},
+                            {"facultyName", reader["facultyName"]},
+                            {"schoolName", reader["schoolName"] }
+                        });
+                    }    
+                }
                 con.Close();
             }
-            return dt;
+            return list;
         }
 
-        public DataTable GetAllFacultiesWithSchoolName()
+        public List<Faculty> GetFacultyList ()
         {
-            DataTable dt = new DataTable();
+            List<Faculty> list = new List<Faculty>();
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("proc_GetAllFacultiesWithSchoolName", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
+                using (SqlCommand cmd = new SqlCommand("proc_getFacultyList", con))
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Faculty
+                        {
+                            Id = (int)reader["id"],
+                            FacultyName = (string)reader["facultyName"],
+                            SchoolId = (int)reader["schoolId"]
+                        });
+                    }
+                }
                 con.Close();
             }
-            return dt;
+            return list;
         }
 
-        public DataTable GetAllSchoolFaculties()
+        public List<Faculty> GetFacultyBySchoolName(string schoolName)
+        {
+            List<Faculty> list = new List<Faculty>();
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("proc_getFacultyBySchoolName", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@schoolName", schoolName);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Faculty
+                        {
+                            Id = (int)reader["id"],
+                            FacultyName = (string)reader["facultyName"],
+                            SchoolId = (int)reader["schoolId"]
+                        });
+                    }
+                }
+                con.Close();
+            }
+            return list;
+        }
+
+
+
+        public Faculty GetFacultyByName(string facultyName)
         {
             using (SqlConnection con = SqlConnectionData.Connect())
             {
-                SqlCommand cmd = new SqlCommand("proc_GetAllSchoolFaculties", con);
-                cmd.CommandType = CommandType.StoredProcedure;  // Đặt CommandType là StoredProcedure
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("proc_getFacultyByName", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@facultyName", facultyName);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        Faculty faculty = new Faculty
+                        {
+                            Id = (int)reader["id"],
+                            FacultyName = (string)reader["facultyName"],
+                            SchoolId = (int)reader["schoolId"] 
+                        };
+                        con.Close();
+                        return faculty;
+                    }
+                }
+                con.Close();
+                return null;
             }
         }
 
-        public bool InsertFaculty(Faculty faculty)
+        public bool InsertFaculty(string facultyName, int schoolId)
         {
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("proc_insertFaculty", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@facultyName", faculty.facultyName);
-                cmd.Parameters.AddWithValue("@schoolId", faculty.schoolId);
+                cmd.Parameters.AddWithValue("@facultyName", facultyName);
+                cmd.Parameters.AddWithValue("@schoolId", schoolId);
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
                 return result > 0;
@@ -73,8 +135,9 @@ namespace DAL
                 con.Open();
                 SqlCommand cmd = new SqlCommand("proc_updateFaculty", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", faculty.id);
-                cmd.Parameters.AddWithValue("@facultyName", faculty.facultyName);
+                cmd.Parameters.AddWithValue("@id", faculty.Id);
+                cmd.Parameters.AddWithValue("@facultyName", faculty.FacultyName);
+                cmd.Parameters.AddWithValue("@schoolId", faculty.SchoolId);
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
                 return result > 0;
@@ -95,61 +158,18 @@ namespace DAL
             }
         }
 
-        public DataTable GetFacultiesBySchoolId(int schoolId)
-        {
-            DataTable dt = new DataTable();
+        public bool IsFacultyExist(string facultyName, int schoolId) {
             using (SqlConnection con = SqlConnectionData.Connect())
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("proc_GetFacultiesBySchoolId", con);
+                SqlCommand cmd = new SqlCommand("proc_isFacultyExist", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@schoolId", schoolId);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                con.Close();
-            }
-            return dt;
-        }
-
-        public bool CheckIfFacultyExists(string facultyName, int schoolId)
-        {
-            using (SqlConnection con = SqlConnectionData.Connect())
-            {
-                SqlCommand cmd = new SqlCommand("proc_CheckIfFacultyExists", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số cho stored procedure
                 cmd.Parameters.AddWithValue("@facultyName", facultyName);
                 cmd.Parameters.AddWithValue("@schoolId", schoolId);
-
-                con.Open();
-
-                // ExecuteScalar trả về giá trị đầu tiên của hàng đầu tiên.
                 int result = (int)cmd.ExecuteScalar();
                 con.Close();
-
-                return result > 0; // Nếu số lượng lớn hơn 0, thì đã tồn tại khoa này.
+                return result > 0;
             }
         }
-        public object ExecuteScalar(string query, SqlParameter[] parameters)
-        {
-            object result = null;
-
-            using (SqlConnection con = SqlConnectionData.Connect())
-            {
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddRange(parameters);
-                    con.Open();
-                    result = cmd.ExecuteScalar();  // ExecuteScalar sẽ trả về giá trị đầu tiên của hàng đầu tiên
-                    con.Close();
-                }
-            }
-
-            return result;
-        }
-
-
-
     }
 }

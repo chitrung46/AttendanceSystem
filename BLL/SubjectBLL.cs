@@ -12,89 +12,47 @@ namespace BLL
 
     public class subjectBLL
     {
-        //private DatabaseAccess subjectAccess = new DatabaseAccess();  // Đối tượng truy cập cơ sở dữ liệu
         private SubjectAccess subjectAccess = new SubjectAccess();
-        private FacultyAccess FacultyAccess = new FacultyAccess();
 
-        // Lấy danh sách tất cả các khoa
-        public DataTable GetAllsubject()
+        public List<Dictionary<string, object>> GetSubjectNameListWithSchoolNameAndFacultyName ()
         {
-            return FacultyAccess.GetAllFaculties();
+            return subjectAccess.GetSubjectNameListWithSchoolNameAndFacultyName();
         }
-
-        public DataTable GetAllFacultiesWithSchoolName()
+        public bool InsertSubject(string subjectName, int facultyId)
         {
-            try
-            {
-                return FacultyAccess.GetAllFacultiesWithSchoolName();  // Gọi phương thức DAL
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi lấy danh sách khoa: " + ex.Message);
-            }
-        }
-
-        public DataTable GetAllSubjectsWithDetails()
-        {
-            try
-            {
-                // Gọi DAL để lấy dữ liệu
-                return subjectAccess.GetAllSubjectsWithDetails();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error fetching subjects with details: " + ex.Message);
-            }
-        }
-
-        // Thêm môn học mới
-        public bool InsertSubject(Subject subject)
-        {
-            if (subject == null || string.IsNullOrEmpty(subject.subjectName))
+            if (string.IsNullOrEmpty(subjectName))
             {
                 throw new ArgumentException("Thông tin môn học không hợp lệ.");
             }
-
-            // Kiểm tra xem đã tồn tại môn học với cùng tên, trong cùng khoa và trường chưa
-            if (subjectAccess.CheckIfSubjectExists(subject.subjectName, subject.facultyId))
-            {
-                throw new Exception("Môn học này đã tồn tại trong cùng trường và khoa.");
-            }
-
-            return subjectAccess.InsertSubject(subject);  // Gọi phương thức InsertSubject() từ DAL
+            return subjectAccess.InsertSubject(subjectName, facultyId);  
         }
 
-        public bool CheckIfSubjectExists(string subjectName, int facultyId)
+        public bool IsSubjectExist(string subjectName, int facultyId, int schoolId)
         {
-            try
+            if (string.IsNullOrEmpty(subjectName) || facultyId <= 0 || schoolId <= 0)
             {
-                return subjectAccess.CheckIfSubjectExists(subjectName, facultyId);  // Gọi phương thức DAL
+                throw new ArgumentException("Dữ liệu không hợp lệ.");
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi kiểm tra môn học: " + ex.Message);
-            }
+            return subjectAccess.IsSubjectExist(subjectName, facultyId, schoolId);
         }
 
 
-        // Cập nhật thông tin môn học
-        public bool UpdateSubject(Subject subject)  // Giữ tên function là UpdateFaculty nhưng nội dung là xử lý cập nhật môn học
+        public bool UpdateSubject(Subject subject)  
         {
-            if (subject == null || string.IsNullOrEmpty(subject.subjectName) || subject.id <= 0)
+            if (subject == null || string.IsNullOrEmpty(subject.SubjectName) || subject.Id <= 0)
             {
                 throw new ArgumentException("Thông tin môn học không hợp lệ.");
             }
-            return subjectAccess.UpdateSubject(subject);  // Gọi phương thức UpdateSubject() từ DAL
+            return subjectAccess.UpdateSubject(subject);
         }
 
-        // Xóa môn học
-        public bool DeleteSubject(int id)  // Giữ tên function là DeleteFaculty nhưng nội dung là xóa môn học
+        public bool DeleteSubject(int id)  
         {
             if (id <= 0)
             {
                 throw new ArgumentException("ID môn học không hợp lệ.");
             }
-            return subjectAccess.DeleteSubject(id);  // Gọi phương thức DeleteSubject() từ DAL
+            return subjectAccess.DeleteSubject(id); 
         }
 
 

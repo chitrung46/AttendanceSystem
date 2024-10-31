@@ -134,27 +134,6 @@ namespace GUI
             this.button_them.UseVisualStyleBackColor = false;
             this.button_them.Click += new System.EventHandler(this.button_them_Click_1);
             // 
-            // ctxtGroupName
-            // 
-            this.ctxtGroupName.BackColor = System.Drawing.SystemColors.Window;
-            this.ctxtGroupName.BorderColor = System.Drawing.Color.Black;
-            this.ctxtGroupName.BorderFocusColor = System.Drawing.Color.DarkGreen;
-            this.ctxtGroupName.BorderRadius = 8;
-            this.ctxtGroupName.BorderSize = 1;
-            this.ctxtGroupName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctxtGroupName.ForeColor = System.Drawing.Color.Black;
-            this.ctxtGroupName.Location = new System.Drawing.Point(118, 54);
-            this.ctxtGroupName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ctxtGroupName.Multiline = false;
-            this.ctxtGroupName.Name = "ctxtGroupName";
-            this.ctxtGroupName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.ctxtGroupName.PasswordChar = false;
-            this.ctxtGroupName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ctxtGroupName.PlaceholderText = "";
-            this.ctxtGroupName.Size = new System.Drawing.Size(484, 36);
-            this.ctxtGroupName.TabIndex = 16;
-            this.ctxtGroupName.UnderlinedStyle = false;
-            // 
             // lblGroupName
             // 
             this.lblGroupName.AutoSize = true;
@@ -308,6 +287,28 @@ namespace GUI
             this.textBox_name.Size = new System.Drawing.Size(484, 33);
             this.textBox_name.TabIndex = 16;
             this.textBox_name.UnderlinedStyle = false;
+            // 
+            // ctxtGroupName
+            // 
+            this.ctxtGroupName.BackColor = System.Drawing.SystemColors.Window;
+            this.ctxtGroupName.BorderColor = System.Drawing.Color.Black;
+            this.ctxtGroupName.BorderFocusColor = System.Drawing.Color.DarkGreen;
+            this.ctxtGroupName.BorderRadius = 8;
+            this.ctxtGroupName.BorderSize = 1;
+            this.ctxtGroupName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxtGroupName.ForeColor = System.Drawing.Color.Black;
+            this.ctxtGroupName.Location = new System.Drawing.Point(118, 54);
+            this.ctxtGroupName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ctxtGroupName.Multiline = false;
+            this.ctxtGroupName.Name = "ctxtGroupName";
+            this.ctxtGroupName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.ctxtGroupName.PasswordChar = false;
+            this.ctxtGroupName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.ctxtGroupName.PlaceholderText = "";
+            this.ctxtGroupName.ReadOnly = false;
+            this.ctxtGroupName.Size = new System.Drawing.Size(484, 36);
+            this.ctxtGroupName.TabIndex = 16;
+            this.ctxtGroupName.UnderlinedStyle = false;
             // 
             // CRUDSchoolForm
             // 

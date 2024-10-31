@@ -29,130 +29,111 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CRUDFacultyForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.customButton3 = new GUI.TruniControls.CustomButton();
-            this.customButton4 = new GUI.TruniControls.CustomButton();
-            this.customButton9 = new GUI.TruniControls.CustomButton();
-            this.customButton10 = new GUI.TruniControls.CustomButton();
+            this.btnUpdate = new GUI.TruniControls.CustomButton();
+            this.btnDelete = new GUI.TruniControls.CustomButton();
+            this.btnAdd = new GUI.TruniControls.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvFaculty = new System.Windows.Forms.DataGridView();
+            this.checkBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.facultyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schoolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facultyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schoolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSchool = new System.Windows.Forms.Label();
             this.lblGroupInformation = new System.Windows.Forms.Label();
             this.lblFaculty = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button_sua = new GUI.TruniControls.CustomButton();
-            this.button_xoa = new GUI.TruniControls.CustomButton();
-            this.button_them = new GUI.TruniControls.CustomButton();
-            this.button_huy = new GUI.TruniControls.CustomButton();
-            this.button_luu = new GUI.TruniControls.CustomButton();
-            this.comboBoxSchool = new GUI.TruniControls.CustomComboBox();
-            this.textBox_faculty = new GUI.TruniControls.CustomTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cmbSchoolName = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new GUI.TruniControls.CustomButton();
+            this.btnSave = new GUI.TruniControls.CustomButton();
+            this.txtFaculty = new GUI.TruniControls.CustomTextBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFaculty)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.customButton3);
-            this.panel2.Controls.Add(this.customButton4);
-            this.panel2.Controls.Add(this.customButton9);
-            this.panel2.Controls.Add(this.customButton10);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Location = new System.Drawing.Point(7, 168);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(419, 47);
             this.panel2.TabIndex = 19;
             // 
-            // customButton3
+            // btnUpdate
             // 
-            this.customButton3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.customButton3.BorderColor = System.Drawing.Color.Black;
-            this.customButton3.BorderRadius = 20;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Image = ((System.Drawing.Image)(resources.GetObject("customButton3.Image")));
-            this.customButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton3.Location = new System.Drawing.Point(321, 1);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.customButton3.Size = new System.Drawing.Size(97, 45);
-            this.customButton3.TabIndex = 8;
-            this.customButton3.Text = "Chọn";
-            this.customButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton3.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(172)))), ((int)(((byte)(29)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.BorderSize = 0;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(218, 1);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUpdate.Size = new System.Drawing.Size(97, 45);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // customButton4
+            // btnDelete
             // 
-            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(172)))), ((int)(((byte)(29)))));
-            this.customButton4.BorderColor = System.Drawing.Color.Black;
-            this.customButton4.BorderRadius = 20;
-            this.customButton4.BorderSize = 0;
-            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Image = ((System.Drawing.Image)(resources.GetObject("customButton4.Image")));
-            this.customButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton4.Location = new System.Drawing.Point(214, 1);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.customButton4.Size = new System.Drawing.Size(97, 45);
-            this.customButton4.TabIndex = 7;
-            this.customButton4.Text = "Sửa";
-            this.customButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton4.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.Black;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::GUI.Properties.Resources.icons8_delete_20__1_;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(109, 1);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnDelete.Size = new System.Drawing.Size(97, 45);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // customButton9
+            // btnAdd
             // 
-            this.customButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
-            this.customButton9.BorderColor = System.Drawing.Color.Black;
-            this.customButton9.BorderRadius = 20;
-            this.customButton9.BorderSize = 0;
-            this.customButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton9.FlatAppearance.BorderSize = 0;
-            this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton9.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton9.ForeColor = System.Drawing.Color.White;
-            this.customButton9.Image = ((System.Drawing.Image)(resources.GetObject("customButton9.Image")));
-            this.customButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton9.Location = new System.Drawing.Point(108, 1);
-            this.customButton9.Name = "customButton9";
-            this.customButton9.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.customButton9.Size = new System.Drawing.Size(97, 45);
-            this.customButton9.TabIndex = 6;
-            this.customButton9.Text = "Xóa";
-            this.customButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton9.UseVisualStyleBackColor = false;
-            // 
-            // customButton10
-            // 
-            this.customButton10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.customButton10.BackColor = System.Drawing.Color.DarkGreen;
-            this.customButton10.BorderColor = System.Drawing.Color.Black;
-            this.customButton10.BorderRadius = 20;
-            this.customButton10.BorderSize = 0;
-            this.customButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton10.FlatAppearance.BorderSize = 0;
-            this.customButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton10.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton10.ForeColor = System.Drawing.Color.White;
-            this.customButton10.Image = ((System.Drawing.Image)(resources.GetObject("customButton10.Image")));
-            this.customButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton10.Location = new System.Drawing.Point(1, 1);
-            this.customButton10.Name = "customButton10";
-            this.customButton10.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.customButton10.Size = new System.Drawing.Size(97, 45);
-            this.customButton10.TabIndex = 9;
-            this.customButton10.Text = "Thêm";
-            this.customButton10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.customButton10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton10.UseVisualStyleBackColor = false;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnAdd.BorderColor = System.Drawing.Color.Black;
+            this.btnAdd.BorderRadius = 20;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::GUI.Properties.Resources.icons8_plus_20__1_;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(0, 1);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnAdd.Size = new System.Drawing.Size(97, 45);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel1
             // 
@@ -162,19 +143,91 @@
             this.panel1.Size = new System.Drawing.Size(980, 2);
             this.panel1.TabIndex = 24;
             // 
-            // dataGridView1
+            // dgvFaculty
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 299);
-            this.dataGridView1.TabIndex = 23;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvFaculty.AllowUserToAddRows = false;
+            this.dgvFaculty.AllowUserToDeleteRows = false;
+            this.dgvFaculty.AllowUserToResizeColumns = false;
+            this.dgvFaculty.AllowUserToResizeRows = false;
+            this.dgvFaculty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFaculty.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFaculty.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFaculty.ColumnHeadersHeight = 30;
+            this.dgvFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvFaculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.checkBox,
+            this.facultyId,
+            this.schoolId,
+            this.facultyName,
+            this.schoolName});
+            this.dgvFaculty.Location = new System.Drawing.Point(8, 221);
+            this.dgvFaculty.Name = "dgvFaculty";
+            this.dgvFaculty.ReadOnly = true;
+            this.dgvFaculty.RowHeadersVisible = false;
+            this.dgvFaculty.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvFaculty.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFaculty.RowTemplate.Height = 24;
+            this.dgvFaculty.Size = new System.Drawing.Size(985, 299);
+            this.dgvFaculty.TabIndex = 23;
+            this.dgvFaculty.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFaculty_CellLeave);
+            this.dgvFaculty.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvFaculty_CellMouseClick);
+            this.dgvFaculty.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvFaculty_CurrentCellDirtyStateChanged);
             // 
-
+            // checkBox
+            // 
+            this.checkBox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.checkBox.FillWeight = 9.625667F;
+            this.checkBox.HeaderText = "";
+            this.checkBox.MinimumWidth = 6;
+            this.checkBox.Name = "checkBox";
+            this.checkBox.ReadOnly = true;
+            this.checkBox.Width = 30;
+            // 
+            // facultyId
+            // 
+            this.facultyId.HeaderText = "Mã Khoa";
+            this.facultyId.MinimumWidth = 6;
+            this.facultyId.Name = "facultyId";
+            this.facultyId.ReadOnly = true;
+            this.facultyId.Visible = false;
+            // 
+            // schoolId
+            // 
+            this.schoolId.HeaderText = "Mã Trường";
+            this.schoolId.MinimumWidth = 6;
+            this.schoolId.Name = "schoolId";
+            this.schoolId.ReadOnly = true;
+            this.schoolId.Visible = false;
+            // 
+            // facultyName
+            // 
+            this.facultyName.FillWeight = 145.1871F;
+            this.facultyName.HeaderText = "Tên Khoa";
+            this.facultyName.MinimumWidth = 6;
+            this.facultyName.Name = "facultyName";
+            this.facultyName.ReadOnly = true;
+            // 
+            // schoolName
+            // 
+            this.schoolName.FillWeight = 145.1871F;
+            this.schoolName.HeaderText = "Tên Trường";
+            this.schoolName.MinimumWidth = 6;
+            this.schoolName.Name = "schoolName";
+            this.schoolName.ReadOnly = true;
             // 
             // lblSchool
             // 
@@ -206,197 +259,103 @@
             this.lblFaculty.TabIndex = 25;
             this.lblFaculty.Text = "Tên Khoa:";
             // 
-            // panel2
+            // cmbSchoolName
             // 
-            this.panel2.Controls.Add(this.button_sua);
-            this.panel2.Controls.Add(this.button_xoa);
-            this.panel2.Controls.Add(this.button_them);
-            this.panel2.Location = new System.Drawing.Point(7, 168);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(419, 47);
-            this.panel2.TabIndex = 19;
+            this.cmbSchoolName.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSchoolName.FormattingEnabled = true;
+            this.cmbSchoolName.Location = new System.Drawing.Point(116, 59);
+            this.cmbSchoolName.Name = "cmbSchoolName";
+            this.cmbSchoolName.Size = new System.Drawing.Size(384, 29);
+            this.cmbSchoolName.TabIndex = 30;
             // 
-            // button_sua
+            // btnCancel
             // 
-            this.button_sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(172)))), ((int)(((byte)(29)))));
-            this.button_sua.BorderColor = System.Drawing.Color.Black;
-            this.button_sua.BorderRadius = 20;
-            this.button_sua.BorderSize = 0;
-            this.button_sua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_sua.FlatAppearance.BorderSize = 0;
-            this.button_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_sua.ForeColor = System.Drawing.Color.White;
-            this.button_sua.Image = ((System.Drawing.Image)(resources.GetObject("button_sua.Image")));
-            this.button_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_sua.Location = new System.Drawing.Point(214, 1);
-            this.button_sua.Name = "button_sua";
-            this.button_sua.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button_sua.Size = new System.Drawing.Size(97, 45);
-            this.button_sua.TabIndex = 7;
-            this.button_sua.Text = "Sửa";
-            this.button_sua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_sua.UseVisualStyleBackColor = false;
-            this.button_sua.Click += new System.EventHandler(this.button_sua_Click);
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.BorderRadius = 20;
+            this.btnCancel.BorderSize = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(887, 108);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnCancel.Size = new System.Drawing.Size(97, 45);
+            this.btnCancel.TabIndex = 28;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button_xoa
+            // btnSave
             // 
-            this.button_xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
-            this.button_xoa.BorderColor = System.Drawing.Color.Black;
-            this.button_xoa.BorderRadius = 20;
-            this.button_xoa.BorderSize = 0;
-            this.button_xoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_xoa.FlatAppearance.BorderSize = 0;
-            this.button_xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_xoa.ForeColor = System.Drawing.Color.White;
-            this.button_xoa.Image = ((System.Drawing.Image)(resources.GetObject("button_xoa.Image")));
-            this.button_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_xoa.Location = new System.Drawing.Point(108, 1);
-            this.button_xoa.Name = "button_xoa";
-            this.button_xoa.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.button_xoa.Size = new System.Drawing.Size(97, 45);
-            this.button_xoa.TabIndex = 6;
-            this.button_xoa.Text = "Xóa";
-            this.button_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_xoa.UseVisualStyleBackColor = false;
-            this.button_xoa.Click += new System.EventHandler(this.button_xoa_Click);
+            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderSize = 1;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(765, 108);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnSave.Size = new System.Drawing.Size(97, 45);
+            this.btnSave.TabIndex = 27;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button_them
+            // txtFaculty
             // 
-            this.button_them.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_them.BackColor = System.Drawing.Color.DarkGreen;
-            this.button_them.BorderColor = System.Drawing.Color.Black;
-            this.button_them.BorderRadius = 20;
-            this.button_them.BorderSize = 0;
-            this.button_them.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_them.FlatAppearance.BorderSize = 0;
-            this.button_them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_them.ForeColor = System.Drawing.Color.White;
-            this.button_them.Image = ((System.Drawing.Image)(resources.GetObject("button_them.Image")));
-            this.button_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_them.Location = new System.Drawing.Point(1, 1);
-            this.button_them.Name = "button_them";
-            this.button_them.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button_them.Size = new System.Drawing.Size(97, 45);
-            this.button_them.TabIndex = 9;
-            this.button_them.Text = "Thêm";
-            this.button_them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_them.UseVisualStyleBackColor = false;
-            this.button_them.Click += new System.EventHandler(this.button_them_Click);
-            // 
-            // button_huy
-            // 
-            this.button_huy.BackColor = System.Drawing.Color.DimGray;
-            this.button_huy.BorderColor = System.Drawing.Color.Black;
-            this.button_huy.BorderRadius = 20;
-            this.button_huy.BorderSize = 1;
-            this.button_huy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_huy.FlatAppearance.BorderSize = 0;
-            this.button_huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_huy.ForeColor = System.Drawing.Color.White;
-            this.button_huy.Image = ((System.Drawing.Image)(resources.GetObject("button_huy.Image")));
-            this.button_huy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_huy.Location = new System.Drawing.Point(887, 108);
-            this.button_huy.Name = "button_huy";
-            this.button_huy.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button_huy.Size = new System.Drawing.Size(97, 45);
-            this.button_huy.TabIndex = 28;
-            this.button_huy.Text = "Hủy";
-            this.button_huy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_huy.UseVisualStyleBackColor = false;
-            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
-            // 
-            // button_luu
-            // 
-            this.button_luu.BackColor = System.Drawing.Color.DimGray;
-            this.button_luu.BorderColor = System.Drawing.Color.Black;
-            this.button_luu.BorderRadius = 20;
-            this.button_luu.BorderSize = 1;
-            this.button_luu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_luu.FlatAppearance.BorderSize = 0;
-            this.button_luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_luu.ForeColor = System.Drawing.Color.White;
-            this.button_luu.Image = ((System.Drawing.Image)(resources.GetObject("button_luu.Image")));
-            this.button_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_luu.Location = new System.Drawing.Point(765, 108);
-            this.button_luu.Name = "button_luu";
-            this.button_luu.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button_luu.Size = new System.Drawing.Size(97, 45);
-            this.button_luu.TabIndex = 27;
-            this.button_luu.Text = "Lưu";
-            this.button_luu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_luu.UseVisualStyleBackColor = false;
-            this.button_luu.Click += new System.EventHandler(this.button_luu_Click);
-            // 
-            // comboBoxSchool
-            // 
-            this.comboBoxSchool.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxSchool.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxSchool.BorderSize = 1;
-            this.comboBoxSchool.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboBoxSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxSchool.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxSchool.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxSchool.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboBoxSchool.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboBoxSchool.Location = new System.Drawing.Point(115, 60);
-            this.comboBoxSchool.MinimumSize = new System.Drawing.Size(200, 30);
-            this.comboBoxSchool.Name = "comboBoxSchool";
-            this.comboBoxSchool.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxSchool.Size = new System.Drawing.Size(484, 30);
-            this.comboBoxSchool.TabIndex = 26;
-            this.comboBoxSchool.Texts = "";
-            this.comboBoxSchool.OnSelectedIndexChanged += new System.EventHandler(this.comboBoxSchool_OnSelectedIndexChanged);
-            // 
-            // textBox_faculty
-            // 
-            this.textBox_faculty.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox_faculty.BorderColor = System.Drawing.Color.Black;
-            this.textBox_faculty.BorderFocusColor = System.Drawing.Color.DarkGreen;
-            this.textBox_faculty.BorderRadius = 8;
-            this.textBox_faculty.BorderSize = 1;
-            this.textBox_faculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_faculty.ForeColor = System.Drawing.Color.Black;
-            this.textBox_faculty.Location = new System.Drawing.Point(115, 108);
-            this.textBox_faculty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_faculty.Multiline = false;
-            this.textBox_faculty.Name = "textBox_faculty";
-            this.textBox_faculty.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textBox_faculty.PasswordChar = false;
-            this.textBox_faculty.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBox_faculty.PlaceholderText = "";
-            this.textBox_faculty.ReadOnly = false;
-            this.textBox_faculty.Size = new System.Drawing.Size(385, 33);
-            this.textBox_faculty.TabIndex = 22;
-            this.textBox_faculty.UnderlinedStyle = false;
+            this.txtFaculty.BackColor = System.Drawing.SystemColors.Window;
+            this.txtFaculty.BorderColor = System.Drawing.Color.Black;
+            this.txtFaculty.BorderFocusColor = System.Drawing.Color.DarkGreen;
+            this.txtFaculty.BorderRadius = 8;
+            this.txtFaculty.BorderSize = 1;
+            this.txtFaculty.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFaculty.ForeColor = System.Drawing.Color.Black;
+            this.txtFaculty.Location = new System.Drawing.Point(115, 105);
+            this.txtFaculty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFaculty.Multiline = false;
+            this.txtFaculty.Name = "txtFaculty";
+            this.txtFaculty.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtFaculty.PasswordChar = false;
+            this.txtFaculty.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtFaculty.PlaceholderText = "";
+            this.txtFaculty.ReadOnly = false;
+            this.txtFaculty.Size = new System.Drawing.Size(385, 36);
+            this.txtFaculty.TabIndex = 22;
+            this.txtFaculty.UnderlinedStyle = false;
             // 
             // CRUDFacultyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(996, 531);
-            this.Controls.Add(this.button_huy);
-            this.Controls.Add(this.button_luu);
-            this.Controls.Add(this.comboBoxSchool);
+            this.Controls.Add(this.cmbSchoolName);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblFaculty);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox_faculty);
+            this.Controls.Add(this.dgvFaculty);
+            this.Controls.Add(this.txtFaculty);
             this.Controls.Add(this.lblSchool);
             this.Controls.Add(this.lblGroupInformation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CRUDFacultyForm";
             this.Text = "CRUDFacultyForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Click += new System.EventHandler(this.CRUDFacultyForm_Click);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFaculty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,21 +364,22 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private TruniControls.CustomButton customButton3;
-        private TruniControls.CustomButton customButton4;
-        private TruniControls.CustomButton customButton9;
-        private TruniControls.CustomButton customButton10;
+        private TruniControls.CustomButton btnUpdate;
+        private TruniControls.CustomButton btnDelete;
+        private TruniControls.CustomButton btnAdd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private TruniControls.CustomTextBox textBox_faculty;
+        private System.Windows.Forms.DataGridView dgvFaculty;
+        private TruniControls.CustomTextBox txtFaculty;
         private System.Windows.Forms.Label lblSchool;
         private System.Windows.Forms.Label lblGroupInformation;
         private System.Windows.Forms.Label lblFaculty;
-        private TruniControls.CustomComboBox comboBoxSchool;
-        private TruniControls.CustomButton button_huy;
-        private TruniControls.CustomButton button_luu;
-        private TruniControls.CustomButton button_them;
-        private TruniControls.CustomButton button_xoa;
-        private TruniControls.CustomButton button_sua;
+        private TruniControls.CustomButton btnCancel;
+        private TruniControls.CustomButton btnSave;
+        private System.Windows.Forms.ComboBox cmbSchoolName;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facultyId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn schoolId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facultyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn schoolName;
     }
 }

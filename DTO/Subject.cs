@@ -8,9 +8,9 @@ namespace DTO
 {
     public class Subject
     {
-        public int id { get; set; }
-        public string subjectName { get; set; }
-        public int facultyId { get; set; }
+        private int id;
+        private string subjectName;
+        private int facultyId;
 
 
         public Subject() { }
@@ -21,5 +21,9 @@ namespace DTO
             this.subjectName = subjectName;
             this.facultyId = facultyId;
         }
+
+        public int Id { get => id; set => id = value; }
+        public string SubjectName { get => subjectName; set => subjectName = value; }
+        public int FacultyId { get => facultyId; set => facultyId = value; }
     }
 }

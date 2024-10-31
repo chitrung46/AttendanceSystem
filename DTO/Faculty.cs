@@ -8,10 +8,9 @@ namespace DTO
 {
     public class Faculty
     {
-        public int id { get; set; }
-        public string facultyName { get; set; }
-
-        public int schoolId { get; set; }
+        private int id;
+        private string facultyName;
+        private int schoolId;
 
         public Faculty() { }
 
@@ -21,5 +20,9 @@ namespace DTO
             this.facultyName = facultyName;
             this.schoolId = schoolId;
         }
+
+        public int Id { get => id; set => id = value; }
+        public string FacultyName { get => facultyName; set => facultyName = value; }
+        public int SchoolId { get => schoolId; set => schoolId = value; }
     }
 }

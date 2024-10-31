@@ -57,6 +57,11 @@ namespace BLL
             }
         }
 
+        public School GetSchoolByName(string schoolName)
+        {
+            return schoolAccess.GetSchoolByName(schoolName);
+        }
+
 
         public bool IsSchoolNameExists(string schoolName, int? excludeId = null)
         {

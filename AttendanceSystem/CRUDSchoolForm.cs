@@ -91,6 +91,7 @@ namespace GUI
                     ClearFields();
                 }
                 isButtonDeleteEnbled= false;
+                isButtonCancelEnbled = false;
             }
         }
 
