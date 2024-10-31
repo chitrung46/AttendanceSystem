@@ -16,7 +16,7 @@ namespace AttendanceSystem
         public SchoolForm()
         {
             InitializeComponent();
-            //loadForm(new CRUDSchoolForm());
+            loadForm(new CRUDSchoolForm());
             pnlSchool.BackColor = Color.DodgerBlue;
             pnlFaculty.BackColor = Color.White;
             pnlSubject.BackColor = Color.White;
@@ -36,7 +36,7 @@ namespace AttendanceSystem
         }
         private void btnSchool_Click(object sender, EventArgs e)
         {
-            //loadForm(new CRUDSchoolForm());
+            loadForm(new CRUDSchoolForm());
             pnlSchool.BackColor = Color.DodgerBlue;
             pnlFaculty.BackColor = Color.White;
             pnlSubject.BackColor = Color.White;
@@ -44,7 +44,7 @@ namespace AttendanceSystem
 
         private void btnFaculty_Click(object sender, EventArgs e)
         {
-            //loadForm(new CRUDFacultyForm());
+            loadForm(new CRUDFacultyForm());
             pnlFaculty.BackColor = Color.DodgerBlue;
             pnlSchool.BackColor = Color.White;
             pnlSubject.BackColor = Color.White;
@@ -52,7 +52,7 @@ namespace AttendanceSystem
 
         private void btnSubject_Click(object sender, EventArgs e)
         {
-            //loadForm(new CRUDSubjectForm());
+            loadForm(new CRUDSubjectForm());
             pnlSubject.BackColor = Color.DodgerBlue;
             pnlSchool.BackColor = Color.White;
             pnlFaculty.BackColor = Color.White;

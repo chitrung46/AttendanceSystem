@@ -34,6 +34,8 @@
             this.button_xoa = new GUI.CustomButton();
             this.button_them = new GUI.CustomButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
+            this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
             this.lblFaculty = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -139,6 +141,46 @@
             this.label1.Size = new System.Drawing.Size(79, 18);
             this.label1.TabIndex = 38;
             this.label1.Text = "Tên Môn:";
+            // 
+            // customTextBox1
+            // 
+            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox1.BorderColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.DarkGreen;
+            this.customTextBox1.BorderRadius = 8;
+            this.customTextBox1.BorderSize = 1;
+            this.customTextBox1.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.customTextBox1.Location = new System.Drawing.Point(638, 108);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.PlaceholderText = "";
+            this.customTextBox1.Size = new System.Drawing.Size(346, 36);
+            this.customTextBox1.TabIndex = 37;
+            this.customTextBox1.UnderlinedStyle = false;
+            // 
+            // customComboBox1
+            // 
+            this.customComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.customComboBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customComboBox1.BorderSize = 1;
+            this.customComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.customComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customComboBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.customComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.customComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.customComboBox1.ListTextColor = System.Drawing.Color.DimGray;
+            this.customComboBox1.Location = new System.Drawing.Point(115, 60);
+            this.customComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.customComboBox1.Name = "customComboBox1";
+            this.customComboBox1.Padding = new System.Windows.Forms.Padding(1);
+            this.customComboBox1.Size = new System.Drawing.Size(484, 30);
+            this.customComboBox1.TabIndex = 36;
+            this.customComboBox1.Texts = "";
             // 
             // lblFaculty
             // 

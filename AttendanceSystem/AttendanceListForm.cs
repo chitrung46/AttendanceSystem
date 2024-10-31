@@ -26,7 +26,7 @@ namespace GUI
     public partial class AttendanceListForm : Form
     {
         private string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly }; // Specify the required scopes
-        private string serviceAccountCredentialFilePath = "E://Downloads/credentials.json"; // Path to your service account file
+        private string serviceAccountCredentialFilePath = "credentials/credential.json"; // Path to your service account file
 
         public AttendanceListForm()
         {
@@ -60,16 +60,29 @@ namespace GUI
             }
         }
 
+        private string relativePath(string subPath)
+        {
+            string fullPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..", "..", subPath);
+            return fullPath;
+        }
+
         private async void handleImportDataGridView()
         {
             IList<IList<Object>> values = await handleDataSheet();
-            if( !dataGridViewAttendance.Columns.Contains("image_url")
-                && !dataGridViewAttendance.Columns.Contains("submit_datetime")
+            MessageBox.Show("vale", values.Count.ToString());
+            //check lenght of values
+            if (!dataGridViewAttendance.Columns.Contains("image_url")
                 && !dataGridViewAttendance.Columns.Contains("location")
                 && !dataGridViewAttendance.Columns.Contains("attendance_code")
                 && !dataGridViewAttendance.Columns.Contains("student_code")
-                && !dataGridViewAttendance.Columns.Contains("name"))
+                && !dataGridViewAttendance.Columns.Contains("name")
+                && !dataGridViewAttendance.Columns.Contains("checkbox"))
             {
+                DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+                checkBoxColumn.HeaderText = "Chọn";
+                checkBoxColumn.Name = "checkBox";
+                dataGridViewAttendance.Columns.Add(checkBoxColumn);
+
                 dataGridViewAttendance.Columns.Add("number", "Số thứ tự");
                 dataGridViewAttendance.Columns.Add("name", "Họ và tên");
                 dataGridViewAttendance.Columns.Add("student_code", "Mã số sinh viên");
@@ -84,33 +97,35 @@ namespace GUI
                 dataGridViewAttendance.Columns.Add(imgColumn);
 
                 //Change size of column 
-                dataGridViewAttendance.Columns[0].Width = 75;
-                dataGridViewAttendance.Columns[6].Width = 65;
+                //dataGridViewAttendance.Columns[0].Width = 40;
+                //dataGridViewAttendance.Columns[1].Width = 75;
+                //dataGridViewAttendance.Columns[6].Width = 65;
 
 
             }
-            
+
             foreach (var row in values)
             {
                 bool isExist = false;
-                if(dataGridViewAttendance.Rows.Count > 0)
+                if (dataGridViewAttendance.Rows.Count > 0)
                 {
                     foreach (DataGridViewRow checkRow in dataGridViewAttendance.Rows)
                     {
-                        if(checkRow.Cells[2].Value.ToString() == row[2].ToString())
+                        if (checkRow.Cells[3].Value != null && checkRow.Cells[3].Value.ToString() == row[2].ToString())
                         {
                             isExist = true;
                             break;
                         }
                     }
+
                 }
-                if(isExist == false)
+                if (isExist == false)
                 {
-                    Stream stream = DownloadImage(row[5].ToString());
+                    Stream stream = DownloadImage(row[4].ToString());
                     PictureBox pictureBox = new PictureBox();
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-                    int row_index = dataGridViewAttendance.Rows.Count + 1;
-                    dataGridViewAttendance.Rows.Add(row_index, row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[0].ToString(), image);
+                    int rowIndex = dataGridViewAttendance.Rows.Count + 1;
+                    dataGridViewAttendance.Rows.Add(false, rowIndex, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), image);
                 }
             }
 
@@ -120,7 +135,7 @@ namespace GUI
         {
             // Load the service account credential file
             GoogleCredential credential;
-            using (var stream = new FileStream(serviceAccountCredentialFilePath, FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream(relativePath(serviceAccountCredentialFilePath), FileMode.Open, FileAccess.Read))
             {
                 credential = GoogleCredential.FromStream(stream)
                                              .CreateScoped(Scopes);  // Specify scopes here
@@ -134,8 +149,8 @@ namespace GUI
             });
 
             // Define request parameters
-            string spreadsheetId = "1BOxPY_t0e1jTJgUyTx-nPxEe2BlxONhfnUE7EcpfQww";  // Add your spreadsheet ID
-            string range = "'Form Responses'!A2:F";  // Specify the range
+            string spreadsheetId = "1MzRoL9K0djJ0F_qgsiz60obSAPxvMyA5L-F5_ZSESGc";  // Add your spreadsheet ID
+            string range = "'Form Responses'!A2:E";  // Specify the range
 
             // Fetch the data from the Google Sheet
             SpreadsheetsResource.ValuesResource.GetRequest request = service.Spreadsheets.Values.Get(spreadsheetId, range);
@@ -184,7 +199,31 @@ namespace GUI
             return pictureBox;
         }
 
-        private void customButton5_Click(object sender, EventArgs e)
+
+
+        private void dataGridViewAttendance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 6 && e.RowIndex >= 0)
+            {
+                PictureBox pictureBox = showImageByPictureBox();
+                pictureBox.Image = (System.Drawing.Image)dataGridViewAttendance.CurrentRow.Cells[6].Value;
+                this.Controls.Add(pictureBox);
+                pictureBox.BringToFront();
+            }
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                if ((bool)dataGridViewAttendance.CurrentRow.Cells[0].Value == false)
+                {
+                    dataGridViewAttendance.CurrentRow.Cells[0].Value = true;
+                }
+                else
+                {
+                    dataGridViewAttendance.CurrentRow.Cells[0].Value = false;
+                }
+            }
+        }
+
+        private void btnLoaddata_Click(object sender, EventArgs e)
         {
             handleImportDataGridView();
 

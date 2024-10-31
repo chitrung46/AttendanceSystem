@@ -126,55 +126,31 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-
-            // label3
+            // pictureBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 232);
-            this.label3.Name = "label3";
-
-            this.label3.Size = new System.Drawing.Size(86, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Mật khẩu";
+            this.pictureBox1.Image = global::GUI.Properties.Resources.login_gif;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(522, 583);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 143);
-            this.label2.Name = "label2";
-
-            this.label2.Size = new System.Drawing.Size(53, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Email";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(101, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng nhập";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btnLogin.BorderColor = System.Drawing.Color.White;
-            this.btnLogin.BorderRadius = 40;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(47, 329);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(287, 40);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.customButton1.BorderColor = System.Drawing.Color.White;
+            this.customButton1.BorderRadius = 40;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(47, 329);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(287, 40);
+            this.customButton1.TabIndex = 3;
+            this.customButton1.Text = "Đăng nhập";
+            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // tbxPassword
             // 
@@ -199,25 +175,25 @@
             // 
             // tbxUsername
             // 
-            this.tbxUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxUsername.BorderColor = System.Drawing.Color.Black;
-            this.tbxUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.tbxUsername.BorderRadius = 10;
-            this.tbxUsername.BorderSize = 1;
-            this.tbxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxUsername.Location = new System.Drawing.Point(47, 168);
-            this.tbxUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbxUsername.Multiline = false;
-            this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
-            this.tbxUsername.PasswordChar = false;
-            this.tbxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbxUsername.PlaceholderText = "example@gmail.com";
-            this.tbxUsername.Size = new System.Drawing.Size(287, 40);
-            this.tbxUsername.TabIndex = 2;
-            this.tbxUsername.UnderlinedStyle = false;
-
+            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox1.BorderColor = System.Drawing.Color.Black;
+            this.customTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.customTextBox1.BorderRadius = 10;
+            this.customTextBox1.BorderSize = 1;
+            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox1.Location = new System.Drawing.Point(47, 168);
+            this.customTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.customTextBox1.Multiline = false;
+            this.customTextBox1.Name = "customTextBox1";
+            this.customTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
+            this.customTextBox1.PasswordChar = false;
+            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox1.PlaceholderText = "example@gmail.com";
+            this.customTextBox1.Size = new System.Drawing.Size(287, 35);
+            this.customTextBox1.TabIndex = 2;
+            this.customTextBox1.Texts = "";
+            this.customTextBox1.UnderlinedStyle = false;
             // 
             // LoginForm
             // 
@@ -249,9 +225,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
-        private GUI.TruniControls.CustomButton btnLogin;
-        private GUI.TruniControls.CustomTextBox tbxPassword;
-        private GUI.TruniControls.CustomTextBox tbxUsername;
+        private GUI.CustomButton customButton1;
+        private GUI.TruniControls.CustomTextBox customTextBox2;
+        private GUI.TruniControls.CustomTextBox customTextBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

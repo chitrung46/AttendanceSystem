@@ -40,9 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customPanel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -58,7 +59,9 @@
             // customPanel1
             // 
             this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
+            this.customPanel1.BorderSize = 0;
             this.customPanel1.Controls.Add(this.customButton1);
             this.customPanel1.Controls.Add(this.customPanel2);
             this.customPanel1.Controls.Add(this.label2);
@@ -95,7 +98,9 @@
             // customPanel2
             // 
             this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 40;
+            this.customPanel2.BorderSize = 0;
             this.customPanel2.Controls.Add(this.mtxtTime);
             this.customPanel2.Controls.Add(this.panel4);
             this.customPanel2.Controls.Add(this.panel3);
@@ -116,7 +121,7 @@
             this.mtxtTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTime.Location = new System.Drawing.Point(45, 116);
-            this.mtxtTime.Mask = "00:00:00";
+            this.mtxtTime.Mask = "00 : 00 : 00";
             this.mtxtTime.Name = "mtxtTime";
             this.mtxtTime.Size = new System.Drawing.Size(361, 18);
             this.mtxtTime.TabIndex = 2;
@@ -168,7 +173,7 @@
             this.txtUrl.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtUrl.PlaceholderText = "https://form.jotform.com/242614120852044";
             this.txtUrl.Size = new System.Drawing.Size(361, 32);
-            this.txtUrl.TabIndex = 1;
+            this.txtUrl.TabIndex = 2;
             this.txtUrl.UnderlinedStyle = false;
             // 
             // label4
@@ -205,6 +210,16 @@
             this.label1.Text = "Tạo QR Code";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources._6ef13ee5a0d6e46cfab0da7ef6abd8591;
+            this.pictureBox1.Location = new System.Drawing.Point(383, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(896, 632);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // EditQRCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -222,6 +237,7 @@
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

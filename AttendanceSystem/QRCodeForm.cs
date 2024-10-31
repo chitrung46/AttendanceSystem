@@ -15,7 +15,7 @@ namespace GUI
     {
         private TimeSpan countdownTime; // TimeSpan to hold countdown duration
         private Timer countdownTimer; // Timer for countdown
-
+        private bool isCountdownRunning = false; // Flag to check if countdown is running
         public QRCodeForm()
         {
             InitializeComponent();
@@ -50,11 +50,12 @@ namespace GUI
             int minute = Int32.Parse(time_arr[1]);
             int second = Int32.Parse(time_arr[2]);
             countdownTime = new TimeSpan(hour, minute, second);
-            lblTiming.Text =countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
+            lblTiming.Text = countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
             countdownTimer = new Timer();
             countdownTimer.Interval = 1000; // 1 second
             countdownTimer.Tick += timer1_Tick;
             StartCountdown();
+
         }
 
         private string[] splitTimeFromMaskTextBox(string time)
@@ -62,13 +63,11 @@ namespace GUI
             string[] timeArray = time.Split(':');
             return timeArray;
         }
-
-        private void customPanel1_Paint(object sender, PaintEventArgs e)
+        private void StartCountdown()
         {
-
+            countdownTimer.Start();
         }
-
-        private void lblTiming_Click(object sender, EventArgs e)
+        private void customPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -84,30 +83,39 @@ namespace GUI
             {
                 countdownTime = countdownTime.Subtract(TimeSpan.FromSeconds(1));
                 lblTiming.Text = countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
+                isCountdownRunning = true;
             }
             else
             {
                 countdownTimer.Stop();
+                isCountdownRunning = false;
                 countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
                 btnOpenData.Visible = true;
                 string url = "https://form.jotform.com/";
                 txtUrlToCopy.Text = url;
                 createQRCode("Hết Thời gian điểm danh");
             }
+
         }
 
         private void btnOpenData_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            AttendanceListForm attendanceListForm = new AttendanceListForm();
+            attendanceListForm.Show();
+            this.Close();
         }
 
-        private void pictureQRCode_Click(object sender, EventArgs e)
+        private void QRCodeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void customTextBox1_Load(object sender, EventArgs e)
-        {
+            if (isCountdownRunning)
+            {
+                DialogResult notify = MessageBox.Show("Quá trình điểm danh" +
+                    " đang diễn ra, bạn có chắn chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (notify == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
 
         }
     }

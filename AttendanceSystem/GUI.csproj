@@ -42,8 +42,8 @@
     <Reference Include="Google.Apis.Core, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.Core.1.68.0\lib\net462\Google.Apis.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Sheets.v4, Version=1.68.0.3547, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Sheets.v4.1.68.0.3547\lib\net462\Google.Apis.Sheets.v4.dll</HintPath>
+    <Reference Include="Google.Apis.Sheets.v4, Version=1.68.0.3568, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Sheets.v4.1.68.0.3568\lib\net462\Google.Apis.Sheets.v4.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -107,12 +107,29 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="AttendanceListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AttendanceListForm.Designer.cs">
       <DependentUpon>AttendanceListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDFacultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDFacultyForm.Designer.cs">
+      <DependentUpon>CRUDFacultyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDSchoolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDSchoolForm.Designer.cs">
+      <DependentUpon>CRUDSchoolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDSubjectForm.Designer.cs">
+      <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditQRCode.cs">
       <SubType>Form</SubType>
@@ -131,6 +148,27 @@
     </Compile>
     <Compile Include="GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QRCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRCodeForm.Designer.cs">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruniControls\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateGroupForm.Designer.cs">
+      <DependentUpon>CreateGroupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="QRCodeForm.cs">
       <SubType>Form</SubType>
@@ -191,9 +229,17 @@
     <Compile Include="TruniControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-
     <EmbeddedResource Include="AttendanceListForm.resx">
       <DependentUpon>AttendanceListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDFacultyForm.resx">
+      <DependentUpon>CRUDFacultyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDSchoolForm.resx">
+      <DependentUpon>CRUDSchoolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDSubjectForm.resx">
+      <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditQRCode.resx">
       <DependentUpon>EditQRCode.cs</DependentUpon>
@@ -311,13 +357,7 @@
     <None Include="Resources\6ef13ee5a0d6e46cfab0da7ef6abd8591.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-filter-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-filter-1001.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-filter-1002.png" />
+    <Folder Include="credentials\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

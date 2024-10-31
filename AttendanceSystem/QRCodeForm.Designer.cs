@@ -46,6 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTiming = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnOpenData = new GUI.TruniControls.CustomButton();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -121,7 +127,9 @@
             // customPanel1
             // 
             this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.Black;
             this.customPanel1.BorderRadius = 30;
+            this.customPanel1.BorderSize = 0;
             this.customPanel1.Controls.Add(this.pictureBox2);
             this.customPanel1.Controls.Add(this.customButton1);
             this.customPanel1.Controls.Add(this.txtUrlToCopy);
@@ -176,7 +184,7 @@
             this.txtUrlToCopy.BorderRadius = 5;
             this.txtUrlToCopy.BorderSize = 1;
             this.txtUrlToCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUrlToCopy.ForeColor = System.Drawing.Color.Black;
+            this.txtUrlToCopy.ForeColor = System.Drawing.Color.DimGray;
             this.txtUrlToCopy.Location = new System.Drawing.Point(42, 480);
             this.txtUrlToCopy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUrlToCopy.Multiline = false;
@@ -210,7 +218,9 @@
             // customPanel2
             // 
             this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.BorderColor = System.Drawing.Color.Black;
             this.customPanel2.BorderRadius = 40;
+            this.customPanel2.BorderSize = 0;
             this.customPanel2.Controls.Add(this.pictureQRCode);
             this.customPanel2.ForeColor = System.Drawing.Color.Black;
             this.customPanel2.GradientAngle = 90F;
@@ -224,7 +234,7 @@
             // 
             // pictureQRCode
             // 
-            this.pictureQRCode.BackColor = System.Drawing.Color.Transparent;
+            this.pictureQRCode.Image = global::GUI.Properties.Resources.qr_code_242614120852044;
             this.pictureQRCode.Location = new System.Drawing.Point(21, 16);
             this.pictureQRCode.Name = "pictureQRCode";
             this.pictureQRCode.Size = new System.Drawing.Size(249, 249);
@@ -267,21 +277,85 @@
             this.label1.Text = "Quét QR Code";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(746, 250);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(213, 32);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Thời gian còn lại";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblTiming
+            // 
+            this.lblTiming.AutoSize = true;
+            this.lblTiming.BackColor = System.Drawing.Color.Transparent;
+            this.lblTiming.Font = new System.Drawing.Font("Montserrat ExtraBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiming.Location = new System.Drawing.Point(715, 286);
+            this.lblTiming.Name = "lblTiming";
+            this.lblTiming.Size = new System.Drawing.Size(275, 59);
+            this.lblTiming.TabIndex = 0;
+            this.lblTiming.Text = "00 : 00 : 00";
+            this.lblTiming.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(740, 347);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 21);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "hrs";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(840, 347);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "min";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(944, 347);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "sec";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // btnOpenData
             // 
             this.btnOpenData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btnOpenData.BorderColor = System.Drawing.Color.White;
-            this.btnOpenData.BorderRadius = 10;
+            this.btnOpenData.BorderRadius = 20;
             this.btnOpenData.BorderSize = 0;
             this.btnOpenData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOpenData.FlatAppearance.BorderSize = 0;
             this.btnOpenData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenData.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenData.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenData.ForeColor = System.Drawing.Color.White;
-            this.btnOpenData.Location = new System.Drawing.Point(788, 378);
+            this.btnOpenData.Location = new System.Drawing.Point(778, 389);
             this.btnOpenData.Name = "btnOpenData";
-            this.btnOpenData.Size = new System.Drawing.Size(128, 40);
-            this.btnOpenData.TabIndex = 3;
+            this.btnOpenData.Size = new System.Drawing.Size(149, 44);
+            this.btnOpenData.TabIndex = 2;
             this.btnOpenData.Text = "Mở danh sách";
             this.btnOpenData.UseVisualStyleBackColor = false;
             this.btnOpenData.Visible = false;
@@ -294,6 +368,7 @@
             this.ClientSize = new System.Drawing.Size(1098, 632);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.btnOpenData);
+            this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.lblTiming);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -302,6 +377,7 @@
             this.Name = "QRCodeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QRCodeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QRCodeForm_FormClosing);
             this.Load += new System.EventHandler(this.QRCodeForm_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();

@@ -313,14 +313,14 @@ namespace GUI
                 {
                     MessageBox.Show("Tên môn học không được để trống.");
                     return;
-                }
+        }
 
                 // Kiểm tra môn học đã tồn tại trong cùng trường và khoa hay chưa
                 if (subjectBLL.CheckIfSubjectExists(subjectName, selectedFacultyId))
                 {
                     MessageBox.Show("Môn học này đã tồn tại trong cùng trường và khoa.");
                     return;
-                }
+    }
 
                 // Nếu đang trong chế độ chỉnh sửa
                 if (isEditing && editingRowIndex >= 0)
@@ -330,7 +330,7 @@ namespace GUI
                     {
                         // Thêm mới môn học
                         AddNewSubject(subjectName, selectedFacultyId);
-                    }
+}
                     else
                     {
                         // Nếu có SubjectID, thì thực hiện cập nhật

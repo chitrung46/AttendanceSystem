@@ -172,7 +172,7 @@
   <data name="icons8-download-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-download-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-filter-1002" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-filter-1002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6ef13ee5a0d6e46cfab0da7ef6abd8591" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6ef13ee5a0d6e46cfab0da7ef6abd8591.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -31,16 +31,19 @@ namespace GUI
                 timeQRCode = mtxtTime.Text;
                 qrCode.Show();
                 this.Close();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Please fill in all the fields");
                 return;
             }
+
         }
+
 
         private bool checkIsEmptyCustomTxtBox(CustomTextBox txtBox)
         {
-            if(txtBox.Text == "")
+            if (txtBox.Text == "")
             {
                 return true;
             }
@@ -50,8 +53,8 @@ namespace GUI
         private bool checkIsEmptyTime(MaskedTextBox mtxtBox)
         {
             Console.WriteLine(mtxtBox.MaskedTextProvider.ToDisplayString());
-            if(mtxtBox.MaskedTextProvider.ToDisplayString().Contains('_'))
-            { 
+            if (mtxtBox.MaskedTextProvider.ToDisplayString().Contains('_'))
+            {
                 return true;
             }
             return false;
@@ -62,7 +65,7 @@ namespace GUI
 
         }
 
-        private void customPanel1_Paint(object sender, PaintEventArgs e)
+        private void EditQRCode_Load(object sender, EventArgs e)
         {
 
         }

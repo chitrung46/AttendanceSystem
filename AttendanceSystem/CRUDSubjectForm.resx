@@ -121,6 +121,15 @@
   <data name="button_sua.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAMhJREFUOE/VlFEKgkAURQeKliG0n6w/W0qf+iO1jmhVIVIb6D8ipnudZ6Mgz2ns
+        ow4c0vfqMBJl/gtr7QbuPnQtH+/DBYwllYwHw9ztosgl48GwcLsoCsl4OHS7IC5wD+/N3cRgDRM4g1cO
+        QHSQJ1tCxo4cCKPBCj7d5ZvuyU4cdFCDldxn8NFM9BhRgzxZJjNGz1CLkdFH5sna6AJqMRL0pTC6hXOo
+        xUhQsOUmrxqDwa//9Kb8Oawk0weLFJbwECjfOxz7UYx5Ac6or2DAsDA3AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="customButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAKhJREFUOE/tkTEOwjAQBM0HkPIeRMcDkv9QINHwJjoaaPKapKMxs9ZZCoGCuzQp
         GGkU2fKuzk5aDTnnrbTlMqzsgT02th2HkitW7hiblODGvnscseIvVQBv2Nl6hwMKX6EOW0g8sbV9Tarr
         u8v0A6aotEzqgtB0sjm6fnnTn+Dwt8kqoTf7lznKBIFjiX7iLxOETiX+TqxMEJwXxssE4QNezPOishWT

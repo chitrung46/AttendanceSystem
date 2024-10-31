@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using DTO;
 
@@ -16,7 +19,7 @@ namespace DAL
             return conn;
         }
     }
-
+    
     public class DatabaseAccess
     {
         public static string checkLoginDTO(Account acc)
@@ -29,6 +32,7 @@ namespace DAL
             command.Parameters.AddWithValue("@email", acc.email);
             command.Parameters.AddWithValue("@pass", acc.sPassword);
 
+            command.Connection = conn;
             SqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -37,6 +41,7 @@ namespace DAL
                     user = reader.GetInt32(0).ToString();
                 }
                 reader.Close();
+                conn.Close();
             }
             else
             {

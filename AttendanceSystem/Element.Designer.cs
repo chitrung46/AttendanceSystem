@@ -45,6 +45,8 @@
             this.customComboBox1 = new GUI.TruniControls.CustomComboBox();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
+            this.customPanel1 = new GUI.TruniControls.CustomPanel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
