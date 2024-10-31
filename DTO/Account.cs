@@ -8,17 +8,16 @@ namespace DTO
 {
     public class Account
     {
-        public string id { get; set; } 
+        public string id { get; set; }
         public string accountName { get; set; }
         public string gender { get; set; }
         public DateTime birthday { get; set; }
         public string email { get; set; }
         public string sPassword { get; set; }
         public string phoneNumber { get; set; }
-        
+
         public Account()
         {
-
         }
 
         public Account(string id, string accountName, string gender, DateTime birthday, string email, string sPassword, string phoneNumber)

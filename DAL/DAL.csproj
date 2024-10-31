@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SubjectAccess.cs" />
+    <Compile Include="FacultyAccess.cs" />
+    <Compile Include="SchoolAccess.cs" />
     <Compile Include="AccountAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
