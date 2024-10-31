@@ -34,7 +34,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Please fill in all the fields");
+                MessageBox.Show("Vui lòng điền đẩy đủ thông tin");
                 return;
             }
 

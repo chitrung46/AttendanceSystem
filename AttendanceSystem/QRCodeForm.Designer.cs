@@ -75,6 +75,7 @@
             // pictureQRCode
             // 
             this.pictureQRCode.BackColor = System.Drawing.Color.Transparent;
+            this.pictureQRCode.Image = global::GUI.Properties.Resources.qr_code_242614120852044;
             this.pictureQRCode.Location = new System.Drawing.Point(21, 16);
             this.pictureQRCode.Name = "pictureQRCode";
             this.pictureQRCode.Size = new System.Drawing.Size(249, 249);
@@ -220,6 +221,10 @@
             this.label1.Text = "Quét QR Code";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -294,6 +299,7 @@
             this.Controls.Add(this.label4);
             this.Name = "QRCodeForm";
             this.Text = "QRCodeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QRCodeForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureQRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.customPanel1.ResumeLayout(false);

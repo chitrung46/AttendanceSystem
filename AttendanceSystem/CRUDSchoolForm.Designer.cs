@@ -47,6 +47,7 @@ namespace GUI
             this.button_huy = new GUI.TruniControls.CustomButton();
             this.button_luu = new GUI.TruniControls.CustomButton();
             this.textBox_name = new GUI.TruniControls.CustomTextBox();
+            this.ctxtGroupName = new GUI.TruniControls.CustomTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
