@@ -51,11 +51,6 @@ namespace GUI
             createGroupForm.Show();
         }
 
-        private void dgvGroupInformation_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvGroupInformation_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             /***

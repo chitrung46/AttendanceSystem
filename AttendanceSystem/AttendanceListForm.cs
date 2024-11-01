@@ -19,7 +19,7 @@ using System.Threading;
 using System.Collections;
 using System.Net;
 using System.Windows.Controls;
-
+using DTO;
 
 namespace GUI
 {
@@ -27,10 +27,12 @@ namespace GUI
     {
         private string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly }; // Specify the required scopes
         private string serviceAccountCredentialFilePath = "credentials/credential.json"; // Path to your service account file
+        private Session session;
 
-        public AttendanceListForm()
+        public AttendanceListForm(Session session)
         {
             InitializeComponent();
+            this.session = session;
         }
 
         private void AttendanceListForm_Load(object sender, EventArgs e)

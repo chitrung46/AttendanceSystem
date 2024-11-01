@@ -149,12 +149,6 @@
     <Compile Include="CRUDSubjectForm.Designer.cs">
       <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditQRCode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditQRCode.Designer.cs">
-      <DependentUpon>EditQRCode.cs</DependentUpon>
-    </Compile>
     <Compile Include="Element.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CRUDSubjectForm.resx">
       <DependentUpon>CRUDSubjectForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditQRCode.resx">
-      <DependentUpon>EditQRCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Element.resx">
       <DependentUpon>Element.cs</DependentUpon>

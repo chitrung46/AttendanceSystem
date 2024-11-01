@@ -58,15 +58,14 @@ namespace AttendanceSystem
 
         private void btnGroup_Click(object sender, EventArgs e)
         {
-            //loadForm(new GroupForm());
             if (acc == null)
             {
                 MessageBox.Show("Account information is not available.");
-                return; // Exit the method if acc is null
+                return; 
             }
 
-            GroupForm groupForm = new GroupForm(acc.id); // Now acc should be set
-            groupForm.Tag = this; // Set the reference to Home
+            GroupForm groupForm = new GroupForm(acc.id); 
+            groupForm.Tag = this; 
             loadForm(groupForm);
             btnGroup.BackColor = Color.DarkRed;
             btnGroup.ForeColor = Color.White;

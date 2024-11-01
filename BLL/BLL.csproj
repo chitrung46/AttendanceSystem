@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SessionBLL.cs" />
     <Compile Include="SubjectBLL.cs" />
     <Compile Include="FacultyBLL.cs" />
     <Compile Include="SchoolBLL.cs" />

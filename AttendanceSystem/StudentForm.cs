@@ -35,25 +35,12 @@ namespace GUI
             dataGridViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-        
-        private void dataGridViewStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void ptbQRCode_Click(object sender, EventArgs e)
         {
-            EditQRCode editQRCode = new EditQRCode();
-            editQRCode.Show();
-
-        }
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            QRCodeForm qrForm = new QRCodeForm(groupId);
+            qrForm.Show();
 
         }
 

@@ -83,7 +83,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(811, 127);
             this.panel7.TabIndex = 0;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // txtMSSV
             // 
@@ -334,7 +333,6 @@
             this.dataGridViewStudents.Size = new System.Drawing.Size(811, 260);
             this.dataGridViewStudents.TabIndex = 15;
             this.dataGridViewStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellClick);
-            this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
             // 
             // btnListData
             // 
@@ -430,7 +428,6 @@
             this.label1.Size = new System.Drawing.Size(149, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhóm TH02";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 

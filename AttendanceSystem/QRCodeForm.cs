@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DTO;
+using QRCoder;
+using static System.Net.WebRequestMethods;
 
 namespace GUI
 {
@@ -15,10 +19,14 @@ namespace GUI
         private TimeSpan countdownTime; // TimeSpan to hold countdown duration
         private Timer countdownTimer; // Timer for countdown
         private bool isCountdownRunning = false;
+        private string timeQRCode;
+        private int groupId;
+        private SessionBLL sessionBLL = new SessionBLL();
 
-        public QRCodeForm()
+        public QRCodeForm(int groupId)
         {
             InitializeComponent();
+            this.groupId = groupId;
         }
 
         private void createQRCode(string url)
@@ -36,26 +44,14 @@ namespace GUI
             }
         }
 
-        private void QRCodeForm_Load(object sender, EventArgs e)
+        private bool checkIsEmptyTime(MaskedTextBox mtxtBox)
         {
-            string url = EditQRCode.instance.urlQRCode;
-            string time = EditQRCode.instance.timeQRCode;
-
-            txtUrlToCopy.Text = url;
-            createQRCode(url);
-
-            //Handle time from maskTextBox
-            string[] time_arr = splitTimeFromMaskTextBox(time);
-
-            int hour = Int32.Parse(time_arr[0]);
-            int minute = Int32.Parse(time_arr[1]);
-            int second = Int32.Parse(time_arr[2]);
-            countdownTime = new TimeSpan(hour, minute, second);
-            lblTiming.Text = countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
-            countdownTimer = new Timer();
-            countdownTimer.Interval = 1000; // 1 second
-            countdownTimer.Tick += timer1_Tick;
-            StartCountdown();
+            Console.WriteLine(mtxtBox.MaskedTextProvider.ToDisplayString());
+            if (mtxtBox.MaskedTextProvider.ToDisplayString().Contains('_'))
+            {
+                return true;
+            }
+            return false;
         }
 
         private string[] splitTimeFromMaskTextBox(string time)
@@ -63,10 +59,12 @@ namespace GUI
             string[] timeArray = time.Split(':');
             return timeArray;
         }
-
-        private void customPanel1_Paint(object sender, PaintEventArgs e)
+        public string GenerateRandomCode(int length)
         {
-
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            Random random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         private void StartCountdown()
@@ -86,15 +84,20 @@ namespace GUI
                 countdownTimer.Stop();
                 countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
                 btnOpenData.Visible = true;
-                string url = "https://form.jotform.com/";
-                txtUrlToCopy.Text = url;
                 createQRCode("Hết Thời gian điểm danh");
             }
         }
 
         private void btnOpenData_Click(object sender, EventArgs e)
         {
-            AttendanceListForm attendanceListForm   = new AttendanceListForm();
+            Session session = new Session
+            {
+                SessionName = sessionBLL.GetNewSessionName(groupId),
+                SessionTime = DateTime.Now,
+                Code = txtCode.Text,
+                GroupId = groupId
+            };
+            AttendanceListForm attendanceListForm = new AttendanceListForm(session);
             attendanceListForm.Show();
             this.Close();
         }
@@ -110,6 +113,38 @@ namespace GUI
                     e.Cancel = true;
                 }
             }    
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            if (!checkIsEmptyTime(mtxtTime))
+            {
+                timeQRCode = mtxtTime.Text;
+                string randomCode = GenerateRandomCode(6);
+                txtCode.Text = randomCode;
+
+                string time = timeQRCode;
+                string url = "https://attendance-app-opal-chi.vercel.app/";
+                createQRCode(url);
+
+                //Handle time from maskTextBox
+                string[] time_arr = splitTimeFromMaskTextBox(time);
+
+                int hour = Int32.Parse(time_arr[0]);
+                int minute = Int32.Parse(time_arr[1]);
+                int second = Int32.Parse(time_arr[2]);
+                countdownTime = new TimeSpan(hour, minute, second);
+                lblTiming.Text = countdownTime.ToString(@"hh\:mm\:ss").Replace(":", " : ");
+                countdownTimer = new Timer();
+                countdownTimer.Interval = 1000; // 1 second
+                countdownTimer.Tick += timer1_Tick;
+                StartCountdown();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đẩy đủ thông tin");
+                return;
+            }
         }
     }
 }

@@ -208,7 +208,6 @@
             this.dgvGroupInformation.RowTemplate.Height = 24;
             this.dgvGroupInformation.Size = new System.Drawing.Size(1005, 448);
             this.dgvGroupInformation.TabIndex = 1;
-            this.dgvGroupInformation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupInformation_CellContentClick);
             this.dgvGroupInformation.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupInformation_CellDoubleClick);
             // 
             // cpnlSearch

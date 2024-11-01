@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SessionAccess.cs" />
     <Compile Include="SubjectAccess.cs" />
     <Compile Include="FacultyAccess.cs" />
     <Compile Include="SchoolAccess.cs" />
