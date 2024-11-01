@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using DTO;
-using static DTO.CreateGF;
 
 namespace DAL
 {

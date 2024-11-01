@@ -79,6 +79,7 @@
     <Compile Include="Faculty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleDTO.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="StudentDTO.cs" />
   </ItemGroup>
   <ItemGroup>

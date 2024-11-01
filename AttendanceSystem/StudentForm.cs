@@ -41,13 +41,12 @@ namespace GUI
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void ptbQRCode_Click(object sender, EventArgs e)
         {
             EditQRCode editQRCode = new EditQRCode();
             editQRCode.Show();
 
         }
-
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
@@ -60,12 +59,11 @@ namespace GUI
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-            customButton10.Enabled = true; // Enable Add button
-            customButton9.Enabled = false;  // Disable Delete button
-            customButton4.Enabled = false;
-            customButton3.Enabled = false;// Disable Edit button
+            btnAdd.Enabled = true; // Enable Add button
+            btnDelete.Enabled = false;  // Disable Delete button
+            btnUpdate.Enabled = false;
             tbxStudent.Enabled = false;      // Disable name textbox
-            customTextBox1.Enabled = false;  // Disable ID textbox
+            txtMSSV.Enabled = false;  // Disable ID textbox
             LoadStudents();
         }
 
@@ -75,29 +73,29 @@ namespace GUI
             {
                 var row = dataGridViewStudents.Rows[e.RowIndex];
                 // Load student data into text boxes
-                customTextBox1.Text = row.Cells["Id"].Value.ToString();
+                txtMSSV.Text = row.Cells["Id"].Value.ToString();
                 tbxStudent.Text = $"{row.Cells["FirstName"].Value} {row.Cells["LastName"].Value}";
-                customButton9.Enabled = true;  // Enable Delete button
-                customButton4.Enabled = true;  // Enable Edit button
+                btnDelete.Enabled = true;  // Enable Delete button
+                btnUpdate.Enabled = true;  // Enable Edit button
             }
         }
 
-        private void customButton10_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             tbxStudent.Enabled = true;
-            customTextBox1.Enabled = true;
-            customButton3.Enabled = true;
+            txtMSSV.Enabled = true;
+            btnUpdate.Enabled = true;
 
             // Reset text boxes
             tbxStudent.Text = string.Empty;
-            customTextBox1.Text = string.Empty;
+            txtMSSV.Text = string.Empty;
 
             // Generate a new student ID
             int newStudentId = studentBLL.GetNextStudentIdDAL(); // Get next available ID
-            customTextBox1.Text = newStudentId.ToString(); //
+            txtMSSV.Text = newStudentId.ToString(); //
         }
 
-        private void customButton4_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (dataGridViewStudents.SelectedRows.Count > 0) // Ensure a row is selected
             {
@@ -107,7 +105,7 @@ namespace GUI
                 if (tbxStudent.Enabled) // Check if the text box is enabled
                 {
                     // When text box is enabled, we're in edit mode
-                    if (int.TryParse(customTextBox1.Text, out int studentId)) // Ensure the ID is valid
+                    if (int.TryParse(txtMSSV.Text, out int studentId)) // Ensure the ID is valid
                     {
                         var student = new StudentDTO
                         {
@@ -123,8 +121,8 @@ namespace GUI
 
                         // Reset controls after update
                         tbxStudent.Enabled = false; // Disable text box after saving
-                        customTextBox1.Enabled = true; // Enable ID text box again
-                        customTextBox1.Text = string.Empty; // Clear ID text box
+                        txtMSSV.Enabled = true; // Enable ID text box again
+                        txtMSSV.Text = string.Empty; // Clear ID text box
                         tbxStudent.Text = string.Empty; // Clear name text box
                     }
                     else
@@ -142,10 +140,10 @@ namespace GUI
                     var lastName = selectedRow.Cells["LastName"].Value.ToString();
                     tbxStudent.Text = $"{firstName} {lastName}"; // Concatenate first and last name
 
-                    customTextBox1.Text = studentId.ToString(); // Show student ID
+                    txtMSSV.Text = studentId.ToString(); // Show student ID
 
                     tbxStudent.Enabled = true; // Enable editing for name
-                    customTextBox1.Enabled = false; // Keep ID disabled
+                    txtMSSV.Enabled = false; // Keep ID disabled
                 }
             }
             else
@@ -154,7 +152,7 @@ namespace GUI
             }
         }
 
-        private void customButton9_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dataGridViewStudents.SelectedRows.Count > 0)
             {
@@ -190,7 +188,7 @@ namespace GUI
 
             var newStudent = new StudentDTO
             {
-                Id = int.Parse(customTextBox1.Text), // Use the entered ID
+                Id = int.Parse(txtMSSV.Text), // Use the entered ID
                 FirstName = firstName,
                 LastName = lastName,
                 STT = studentBLL.GetNextStudentIdDAL(), // Your logic to get STT
@@ -204,17 +202,6 @@ namespace GUI
             MessageBox.Show("Student added successfully with ID: " + studentId);
             LoadStudents();
             tbxStudent.Text = string.Empty; // Clear the text box for the next entry
-        }
-
-        private void StudentForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customButton4_Click(object sender, EventArgs e)
-        {
-            AttendanceListForm attendanceListForm = new AttendanceListForm();
-            attendanceListForm.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using GUI.TruniControls;
+﻿using DTO;
+using GUI.TruniControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,13 @@ namespace GUI
         public static EditQRCode instance;
         public string urlQRCode;
         public string timeQRCode;
-        public EditQRCode()
+        private int groupId;
+        private Session session;
+        public EditQRCode(int groupId)
         {
             InitializeComponent();
             instance = this;
+            this.groupId = groupId;
         }
 
         private void customButton1_Click(object sender, EventArgs e)

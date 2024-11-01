@@ -46,8 +46,8 @@
             this.lblStudyPeriod = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
-            this.customButton6 = new GUI.CustomButton();
-            this.customButton5 = new GUI.CustomButton();
+            this.customButton6 = new GUI.TruniControls.CustomButton();
+            this.customButton5 = new GUI.TruniControls.CustomButton();
             this.cpnl = new GUI.TruniControls.CustomPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.customTextBox2 = new GUI.TruniControls.CustomTextBox();
@@ -703,13 +703,13 @@
         private GUI.TruniControls.CustomComboBox ccbxSubject;
         private GUI.TruniControls.CustomComboBox ccbxDepartment;
         private GUI.TruniControls.CustomComboBox ccbxSchool;
-        private GUI.CustomButton customButton6;
-        private GUI.CustomButton customButton5;
+        private GUI.TruniControls.CustomButton customButton6;
+        private GUI.TruniControls.CustomButton customButton5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private GUI.TruniControls.CustomTextBox customTextBox1;
         private GUI.TruniControls.CustomTextBox customTextBox2;
-        private GUI.CustomButton customButton1;
+        private GUI.TruniControls.CustomButton customButton1;
         private System.Windows.Forms.DataGridView sgvStudyPeriod;
         private System.Windows.Forms.ComboBox ccbxDay;
         private System.Windows.Forms.DateTimePicker dttTimeEnd;

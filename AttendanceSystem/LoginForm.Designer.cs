@@ -32,17 +32,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnLogin = new GUI.TruniControls.CustomButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new GUI.TruniControls.CustomTextBox();
             this.txtPassword = new GUI.TruniControls.CustomTextBox();
             this.customTextBox1 = new GUI.TruniControls.CustomTextBox();
             this.customButton1 = new GUI.TruniControls.CustomButton();
-            this.txtUsername = new GUI.TruniControls.CustomTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnLogin = new GUI.TruniControls.CustomButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -96,10 +96,58 @@
             this.panel3.Size = new System.Drawing.Size(380, 434);
             this.panel3.TabIndex = 1;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btnLogin.BorderColor = System.Drawing.Color.White;
+            this.btnLogin.BorderRadius = 15;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(47, 330);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(287, 40);
+            this.btnLogin.TabIndex = 9;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(49, 232);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Mật khẩu";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(49, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Email";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(117, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 26);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Đăng nhập";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::GUI.Properties.Resources.icons8_email_96;
-            this.pictureBox4.Location = new System.Drawing.Point(53, 178);
+            this.pictureBox4.Location = new System.Drawing.Point(53, 175);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,7 +157,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_password_500;
-            this.pictureBox3.Location = new System.Drawing.Point(53, 267);
+            this.pictureBox3.Location = new System.Drawing.Point(53, 263);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 21);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,12 +167,34 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_hide_100;
-            this.pictureBox2.Location = new System.Drawing.Point(300, 267);
+            this.pictureBox2.Location = new System.Drawing.Point(300, 263);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUsername.BorderColor = System.Drawing.Color.Black;
+            this.txtUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.txtUsername.BorderRadius = 10;
+            this.txtUsername.BorderSize = 1;
+            this.txtUsername.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUsername.Location = new System.Drawing.Point(47, 169);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsername.Multiline = false;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
+            this.txtUsername.PasswordChar = false;
+            this.txtUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtUsername.PlaceholderText = "example@gmail.com";
+            this.txtUsername.ReadOnly = false;
+            this.txtUsername.Size = new System.Drawing.Size(287, 31);
+            this.txtUsername.TabIndex = 2;
+            this.txtUsername.UnderlinedStyle = false;
             // 
             // txtPassword
             // 
@@ -144,7 +214,7 @@
             this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPassword.PlaceholderText = "Nhập mật khẩu";
             this.txtPassword.ReadOnly = false;
-            this.txtPassword.Size = new System.Drawing.Size(287, 36);
+            this.txtPassword.Size = new System.Drawing.Size(287, 31);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UnderlinedStyle = false;
             // 
@@ -166,7 +236,7 @@
             this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.customTextBox1.PlaceholderText = "example@gmail.com";
             this.customTextBox1.ReadOnly = false;
-            this.customTextBox1.Size = new System.Drawing.Size(287, 35);
+            this.customTextBox1.Size = new System.Drawing.Size(287, 31);
             this.customTextBox1.TabIndex = 2;
             this.customTextBox1.UnderlinedStyle = false;
             // 
@@ -185,76 +255,6 @@
             this.customButton1.TabIndex = 3;
             this.customButton1.Text = "Đăng nhập";
             this.customButton1.UseVisualStyleBackColor = false;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsername.BorderColor = System.Drawing.Color.Black;
-            this.txtUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.txtUsername.BorderRadius = 10;
-            this.txtUsername.BorderSize = 1;
-            this.txtUsername.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsername.Location = new System.Drawing.Point(47, 169);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtUsername.Multiline = false;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
-            this.txtUsername.PasswordChar = false;
-            this.txtUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.PlaceholderText = "example@gmail.com";
-            this.txtUsername.ReadOnly = false;
-            this.txtUsername.Size = new System.Drawing.Size(287, 36);
-            this.txtUsername.TabIndex = 2;
-            this.txtUsername.UnderlinedStyle = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(117, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 32);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Đăng nhập";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 21);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Email";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 232);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 21);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Mật khẩu";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btnLogin.BorderColor = System.Drawing.Color.White;
-            this.btnLogin.BorderRadius = 15;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(47, 330);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(287, 40);
-            this.btnLogin.TabIndex = 9;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // LoginForm
             // 
