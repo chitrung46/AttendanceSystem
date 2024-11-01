@@ -74,9 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="Attendance.cs" />
     <Compile Include="GroupDTO.cs" />
     <Compile Include="Faculty.cs" />
     <Compile Include="GroupInfo.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleDTO.cs" />
     <Compile Include="Session.cs" />

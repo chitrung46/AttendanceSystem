@@ -20,6 +20,7 @@ using System.Collections;
 using System.Net;
 using System.Windows.Controls;
 using DTO;
+using BLL;
 
 namespace GUI
 {
@@ -28,6 +29,8 @@ namespace GUI
         private string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly }; // Specify the required scopes
         private string serviceAccountCredentialFilePath = "credentials/credential.json"; // Path to your service account file
         private Session session;
+        ImageBLL imageBLL = new ImageBLL();
+        AttendanceBLL attendanceBLL = new AttendanceBLL();
 
         public AttendanceListForm(Session session)
         {
@@ -73,6 +76,7 @@ namespace GUI
                 && !dataGridViewAttendance.Columns.Contains("attendance_code")
                 && !dataGridViewAttendance.Columns.Contains("student_code")
                 && !dataGridViewAttendance.Columns.Contains("name")
+                && !dataGridViewAttendance.Columns.Contains("time")
                 && !dataGridViewAttendance.Columns.Contains("checkbox"))
             {
                 DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
@@ -85,6 +89,7 @@ namespace GUI
                 dataGridViewAttendance.Columns.Add("student_code", "Mã số sinh viên");
                 dataGridViewAttendance.Columns.Add("attendance_code", "Mã điểm danh");
                 dataGridViewAttendance.Columns.Add("location", "Vị trí");
+                dataGridViewAttendance.Columns.Add("time", "Thời gian");
 
                 DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
                 imgColumn.HeaderText = "Hình ảnh";
@@ -96,8 +101,6 @@ namespace GUI
                 //dataGridViewAttendance.Columns[0].Width = 40;
                 //dataGridViewAttendance.Columns[1].Width = 75;
                 //dataGridViewAttendance.Columns[6].Width = 65;
-
-
             }
 
             foreach (var row in values)
@@ -107,6 +110,13 @@ namespace GUI
                 {
                     foreach (DataGridViewRow checkRow in dataGridViewAttendance.Rows)
                     {
+                        DateTime time = (DateTime)row[5];
+                        string codeQR = "ABAGFR";
+                        int mssv = 52200166;
+                        imageBLL.InsertImage(row[4].ToString());
+                        int imageId = imageBLL.GetImageByURL(row[4].ToString()).Id;
+
+                        attendanceBLL.InsertAttendance(time, "QR Code", "Có mặt", codeQR, mssv, imageId, session.Id);
                         if (checkRow.Cells[3].Value != null && checkRow.Cells[3].Value.ToString() == row[2].ToString())
                         {
                             isExist = true;
@@ -117,11 +127,12 @@ namespace GUI
                 }
                 if (isExist == false)
                 {
+                    
                     Stream stream = DownloadImage(row[4].ToString());
                     PictureBox pictureBox = new PictureBox();
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
                     int rowIndex = dataGridViewAttendance.Rows.Count + 1;
-                    dataGridViewAttendance.Rows.Add(false, rowIndex, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), image);
+                    dataGridViewAttendance.Rows.Add(false, rowIndex, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[5], image);
                 }
             }
 
