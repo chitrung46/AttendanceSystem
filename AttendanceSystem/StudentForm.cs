@@ -9,15 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace GUI
 {
     public partial class StudentForm : Form
     {
-        private StudentBLL studentBLL;
+        private StudentBLL studentBLL = new StudentBLL();
         private GroupInfo group;
         private string labelText;
         private int groupId;
+        private GroupBLL groupBLL = new GroupBLL();
+        private DynamicSessionTableBLL dstBLL = new DynamicSessionTableBLL();
         public StudentForm(GroupInfo group)
         {
             InitializeComponent();
@@ -25,17 +29,20 @@ namespace GUI
             this.groupId = group.GroupId;
             this.labelText = group.GroupName;
             label1.Text = labelText;
-            studentBLL = new StudentBLL();
+
             LoadStudents();
         }
         private void LoadStudents()
         {
-            List<StudentDTO> students = studentBLL.GetStudentsByGroupIdDAL(group.GroupId);
-            dataGridViewStudents.DataSource = students; // Bind the list to the DataGridView
-            dataGridViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //List<StudentDTO> students = studentBLL.GetStudentsByGroupIdDAL(group.GroupId);
+            //dataGridViewStudents.DataSource = students; // Bind the list to the DataGridView
+            //dataGridViewStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            System.Data.DataTable dst = dstBLL.GetSessionTableByGroupId(groupId);
+            dataGridViewStudents.DataSource = dst;
 
         }
-      
+
 
         private void ptbQRCode_Click(object sender, EventArgs e)
         {
@@ -60,8 +67,8 @@ namespace GUI
             {
                 var row = dataGridViewStudents.Rows[e.RowIndex];
                 // Load student data into text boxes
-                txtMSSV.Text = row.Cells["Id"].Value.ToString();
-                tbxStudent.Text = $"{row.Cells["FirstName"].Value} {row.Cells["LastName"].Value}";
+                txtMSSV.Text = row.Cells["MSSV"].Value.ToString();
+                tbxStudent.Text = $"{row.Cells["Ho"].Value} {row.Cells["Ten"].Value}";
                 btnDelete.Enabled = true;  // Enable Delete button
                 btnUpdate.Enabled = true;  // Enable Edit button
             }
@@ -147,7 +154,7 @@ namespace GUI
                 // Confirm deletion
                 if (MessageBox.Show("Are you sure you want to delete this student?", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    
+
                     // Get the student ID from the selected row
                     var studentId = (int)selectedRow.Cells["Id"].Value;
                     studentBLL.DeleteStudentDAL(studentId); // Delete the student
@@ -189,6 +196,79 @@ namespace GUI
             MessageBox.Show("Student added successfully with ID: " + studentId);
             LoadStudents();
             tbxStudent.Text = string.Empty; // Clear the text box for the next entry
+        }
+
+public void ExportToExcel(DataGridView dgv, int numMaximumAbsent)
+    {
+        using (SaveFileDialog sfd = new SaveFileDialog())
+        {
+            sfd.Filter = "Excel Workbook|*.xlsx";
+            sfd.FileName = "Dữ liệu điểm danh " + group.GroupName + ".xlsx";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = sfd.FileName;
+
+                Excel.Application excelApp = new Excel.Application();
+                excelApp.Application.Workbooks.Add(Type.Missing);
+                Excel.Worksheet worksheet = (Excel.Worksheet)excelApp.ActiveSheet;
+                worksheet.Cells.Font.Name = "Times New Roman";
+
+                // Title
+                worksheet.Cells[1, 1] = "Dữ liệu điểm danh " + group.GroupName;
+                Excel.Range titleRange = worksheet.Range["A1", worksheet.Cells[1, dgv.Columns.Count]];
+                titleRange.Merge();
+                titleRange.Font.Size = 16;
+                titleRange.Font.Bold = true;
+                titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                // Header
+                for (int i = 1; i <= dgv.Columns.Count; i++)
+                {
+                    worksheet.Cells[3, i] = dgv.Columns[i - 1].HeaderText;
+                }
+
+                
+                Excel.Range headerRange = worksheet.Range["A3", worksheet.Cells[3, dgv.Columns.Count]];
+                headerRange.Font.Bold = true;
+                headerRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                headerRange.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                headerRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+                // Content
+                for (int i = 0; i < dgv.Rows.Count; i++)
+                {
+                    int numAbsent = 0; 
+
+                    for (int j = 0; j < dgv.Columns.Count; j++)
+                    {
+                        var cellValue = dgv.Rows[i].Cells[j].Value?.ToString();
+                        Excel.Range cell = (Excel.Range)worksheet.Cells[i + 4, j + 1]; 
+                        cell.Value = cellValue;
+
+                        if (cellValue == "V")
+                        {
+                            cell.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                            numAbsent++;
+                        }
+
+                        cell.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                        cell.Borders.Weight = Excel.XlBorderWeight.xlThin;
+                    }
+
+                    if (numAbsent >= numMaximumAbsent)
+                    {
+                        Excel.Range rowRange = worksheet.Range[worksheet.Cells[i + 4, 1], worksheet.Cells[i + 4, dgv.Columns.Count]];
+                        rowRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                    }
+                }
+            }
+        }
+    }
+
+    private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(dataGridViewStudents, groupBLL.GetGroupById(groupId).NumMaximumAbsent);
         }
     }
 }

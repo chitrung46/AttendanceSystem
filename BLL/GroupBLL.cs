@@ -31,6 +31,10 @@ namespace BLL
             groupDAL.LinkStudentToGroup(studentId, groupId);
         }
 
+        public DTO.Group GetGroupById(int groupId)
+        {
+            return groupAccess.GetGroupById(groupId);
+        }
 
 
 

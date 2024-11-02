@@ -119,7 +119,7 @@
             this.label3.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(49, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(83, 21);
             this.label3.TabIndex = 8;
             this.label3.Text = "Mật khẩu";
             // 
@@ -129,7 +129,7 @@
             this.label2.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(49, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.Size = new System.Drawing.Size(55, 21);
             this.label2.TabIndex = 8;
             this.label2.Text = "Email";
             // 
@@ -139,10 +139,9 @@
             this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(117, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 26);
+            this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.TabIndex = 7;
             this.label1.Text = "Đăng nhập";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox4
             // 
@@ -173,6 +172,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // txtUsername
             // 
@@ -192,7 +192,7 @@
             this.txtUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtUsername.PlaceholderText = "example@gmail.com";
             this.txtUsername.ReadOnly = false;
-            this.txtUsername.Size = new System.Drawing.Size(287, 31);
+            this.txtUsername.Size = new System.Drawing.Size(287, 36);
             this.txtUsername.TabIndex = 2;
             this.txtUsername.UnderlinedStyle = false;
             // 
@@ -210,11 +210,11 @@
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
-            this.txtPassword.PasswordChar = false;
+            this.txtPassword.PasswordChar = true;
             this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPassword.PlaceholderText = "Nhập mật khẩu";
             this.txtPassword.ReadOnly = false;
-            this.txtPassword.Size = new System.Drawing.Size(287, 31);
+            this.txtPassword.Size = new System.Drawing.Size(287, 36);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UnderlinedStyle = false;
             // 
@@ -236,7 +236,7 @@
             this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.customTextBox1.PlaceholderText = "example@gmail.com";
             this.customTextBox1.ReadOnly = false;
-            this.customTextBox1.Size = new System.Drawing.Size(287, 31);
+            this.customTextBox1.Size = new System.Drawing.Size(287, 35);
             this.customTextBox1.TabIndex = 2;
             this.customTextBox1.UnderlinedStyle = false;
             // 

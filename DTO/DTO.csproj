@@ -75,6 +75,8 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Attendance.cs" />
+    <Compile Include="DynamicSessionTable.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="GroupDTO.cs" />
     <Compile Include="Faculty.cs" />
     <Compile Include="GroupInfo.cs" />

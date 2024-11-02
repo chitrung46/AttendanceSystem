@@ -19,11 +19,7 @@ namespace AttendanceSystem
         public LoginForm()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            txtPassword.PasswordChar = true;
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
@@ -49,6 +45,14 @@ namespace AttendanceSystem
             HomeForm home = new HomeForm(acc);
             home.Show();
             this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar)
+                txtPassword.PasswordChar = false;
+            else
+                txtPassword.PasswordChar = true;
         }
     }
 }

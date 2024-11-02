@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttendanceBLL.cs" />
+    <Compile Include="DynamicSessionTableBLL.cs" />
     <Compile Include="ImageBLL.cs" />
     <Compile Include="SessionBLL.cs" />
     <Compile Include="SubjectBLL.cs" />

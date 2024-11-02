@@ -124,5 +124,34 @@ namespace DAL
             conn.Close();
             return groupList;
         }
+
+        public Group GetGroupById(int groupId)
+        {
+            Group group = new Group();
+            using (SqlConnection con = SqlConnectionData.Connect())
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("proc_getGroupById", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@groupId", groupId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        group = new Group
+                        {
+                            Id = (int)reader["id"],
+                            GroupName = (string)reader["groupName"],
+                            NumMember = (int)reader["numMember"],
+                            NumMaximumAbsent = (int)reader["numMaximumAbsent"],
+                            AccountId = (int)reader["accountId"],
+                            SubjectId = (int)reader["subjectId"]
+                        };
+                    }
+                }
+                con.Close();
+            }
+            return group;
+        }
     }
 }

@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttendanceAccess.cs" />
+    <Compile Include="DynamicSessionTableAccess.cs" />
     <Compile Include="ImageAccess.cs" />
     <Compile Include="SessionAccess.cs" />
     <Compile Include="SubjectAccess.cs" />
