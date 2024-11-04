@@ -54,5 +54,10 @@ namespace AttendanceSystem
             else
                 txtPassword.PasswordChar = true;
         }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+         
+        }
     }
 }

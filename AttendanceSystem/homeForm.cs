@@ -85,5 +85,12 @@ namespace AttendanceSystem
             btnSchool.BackColor = Color.Beige;
             btnSchool.ForeColor = Color.DarkRed;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -31,11 +31,14 @@ namespace GUI
         private Session session;
         ImageBLL imageBLL = new ImageBLL();
         AttendanceBLL attendanceBLL = new AttendanceBLL();
+        private PictureBox picture;
+        private string limitTime;
 
-        public AttendanceListForm(Session session)
+        public AttendanceListForm(Session session, string limitTime)
         {
             InitializeComponent();
             this.session = session;
+            this.limitTime = limitTime;
         }
 
         private void AttendanceListForm_Load(object sender, EventArgs e)
@@ -69,7 +72,7 @@ namespace GUI
         private async void handleImportDataGridView()
         {
             IList<IList<Object>> values = await handleDataSheet();
-            MessageBox.Show("vale", values.Count.ToString());
+            MessageBox.Show("Tải hoàn tất");
             //check lenght of values
             if (!dataGridViewAttendance.Columns.Contains("image_url")
                 && !dataGridViewAttendance.Columns.Contains("location")
@@ -80,7 +83,6 @@ namespace GUI
                 && !dataGridViewAttendance.Columns.Contains("checkbox"))
             {
                 DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-                checkBoxColumn.HeaderText = "Chọn";
                 checkBoxColumn.Name = "checkBox";
                 dataGridViewAttendance.Columns.Add(checkBoxColumn);
 
@@ -98,7 +100,7 @@ namespace GUI
                 dataGridViewAttendance.Columns.Add(imgColumn);
 
                 //Change size of column 
-                //dataGridViewAttendance.Columns[0].Width = 40;
+                dataGridViewAttendance.Columns[0].Width = 30;
                 //dataGridViewAttendance.Columns[1].Width = 75;
                 //dataGridViewAttendance.Columns[6].Width = 65;
             }
@@ -110,29 +112,21 @@ namespace GUI
                 {
                     foreach (DataGridViewRow checkRow in dataGridViewAttendance.Rows)
                     {
-                        DateTime time = (DateTime)row[5];
-                        string codeQR = "ABAGFR";
-                        int mssv = 52200166;
-                        imageBLL.InsertImage(row[4].ToString());
-                        int imageId = imageBLL.GetImageByURL(row[4].ToString()).Id;
-
-                        attendanceBLL.InsertAttendance(time, "QR Code", "Có mặt", codeQR, mssv, imageId, session.Id);
                         if (checkRow.Cells[3].Value != null && checkRow.Cells[3].Value.ToString() == row[2].ToString())
                         {
                             isExist = true;
                             break;
                         }
                     }
-
                 }
                 if (isExist == false)
-                {
-                    
+                {          
                     Stream stream = DownloadImage(row[4].ToString());
                     PictureBox pictureBox = new PictureBox();
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
                     int rowIndex = dataGridViewAttendance.Rows.Count + 1;
                     dataGridViewAttendance.Rows.Add(false, rowIndex, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[5], image);
+                    dataGridViewAttendance.Rows[rowIndex-1].Tag = row[4].ToString();
                 }
             }
 
@@ -157,7 +151,7 @@ namespace GUI
 
             // Define request parameters
             string spreadsheetId = "1MzRoL9K0djJ0F_qgsiz60obSAPxvMyA5L-F5_ZSESGc";  // Add your spreadsheet ID
-            string range = "'Form Responses'!A2:E";  // Specify the range
+            string range = "'Form Responses'!A2:F";  // Specify the range
 
             // Fetch the data from the Google Sheet
             SpreadsheetsResource.ValuesResource.GetRequest request = service.Spreadsheets.Values.Get(spreadsheetId, range);
@@ -179,12 +173,14 @@ namespace GUI
 
         private void dataGridViewAttendance_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 6 && e.RowIndex >= 0)
+            if(e.ColumnIndex == 7 && e.RowIndex >= 0)
             {
                 PictureBox pictureBox = showImageByPictureBox();
-                pictureBox.Image = (System.Drawing.Image)dataGridViewAttendance.CurrentRow.Cells[6].Value;
+                pictureBox.Image = (System.Drawing.Image)dataGridViewAttendance.CurrentRow.Cells[7].Value;
                 this.Controls.Add(pictureBox);
                 pictureBox.BringToFront();
+                this.picture = pictureBox;
+                this.picture.Visible = true;
             }
         }
 
@@ -211,6 +207,68 @@ namespace GUI
         {
             handleImportDataGridView();
 
+        }
+
+        private void AttendanceListForm_Click(object sender, EventArgs e)
+        {
+            if (this.picture != null)
+            {
+                this.picture.Visible = false;
+                dataGridViewAttendance.CurrentCell = null;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAttendance.CurrentCell != null)
+            {
+                int index = dataGridViewAttendance.CurrentCell.RowIndex; 
+
+                if (index >= 0 && index < dataGridViewAttendance.Rows.Count)
+                {
+                    dataGridViewAttendance.Rows.RemoveAt(index);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một ô trong bảng trước khi xóa.");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewAttendance.Rows)
+            {
+                if (row.Cells[0].Value != null) 
+                {
+                    try
+                    {
+                        MessageBox.Show("Hello");
+                        MessageBox.Show(row.Cells[6].Value.ToString());
+                        string dateString = row.Cells[6].Value.ToString();
+                        StringBuilder sb = new StringBuilder();
+
+                        // Chuyển từng ký tự thành mã hexa và thêm vào chuỗi
+                        foreach (char c in dateString)
+                        {
+                            sb.AppendFormat("{0:X2} ", (int)c);  // Mã hexa của từng ký tự
+                        }
+
+                        MessageBox.Show(sb.ToString());
+
+                        DateTime time = DateTime.ParseExact(row.Cells[6].Value.ToString().Trim(), "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                        string codeQR = (string)row.Cells[3].Value;
+                        int mssv = int.Parse(row.Cells[2].Value.ToString());           
+                        imageBLL.InsertImage(row.Tag.ToString());
+                        int imageId = imageBLL.GetImageByURL(row.Tag.ToString()).Id;
+                        attendanceBLL.InsertAttendance(time, "QR Code", "", codeQR, mssv, imageId, session.Id, limitTime);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi tạo đối tượng Attendance từ hàng: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }

@@ -262,7 +262,9 @@ public void ExportToExcel(DataGridView dgv, int numMaximumAbsent)
                         rowRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
                     }
                 }
-            }
+                    excelApp.ActiveWorkbook.SaveCopyAs(filePath);
+                    excelApp.ActiveWorkbook.Saved = true;
+                }
         }
     }
 

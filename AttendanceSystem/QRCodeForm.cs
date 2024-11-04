@@ -16,8 +16,8 @@ namespace GUI
 {
     public partial class QRCodeForm : Form
     {
-        private TimeSpan countdownTime; // TimeSpan to hold countdown duration
-        private Timer countdownTimer; // Timer for countdown
+        private TimeSpan countdownTime; 
+        private Timer countdownTimer; 
         private bool isCountdownRunning = false;
         private string timeQRCode;
         private int groupId;
@@ -90,14 +90,10 @@ namespace GUI
 
         private void btnOpenData_Click(object sender, EventArgs e)
         {
-            Session session = new Session
-            {
-                SessionName = sessionBLL.GetNewSessionName(groupId),
-                SessionTime = DateTime.Now,
-                Code = txtCode.Text,
-                GroupId = groupId
-            };
-            AttendanceListForm attendanceListForm = new AttendanceListForm(session);
+
+            sessionBLL.InsertSession(sessionBLL.GetNewSessionName(groupId), DateTime.Now, txtCode.Text, groupId);
+            Session session = sessionBLL.FindSession(sessionBLL.GetNewSessionName(groupId), DateTime.Now, txtCode.Text, groupId);
+            AttendanceListForm attendanceListForm = new AttendanceListForm(session, timeQRCode);
             attendanceListForm.Show();
             this.Close();
         }
@@ -142,7 +138,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đẩy đủ thông tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
                 return;
             }
         }

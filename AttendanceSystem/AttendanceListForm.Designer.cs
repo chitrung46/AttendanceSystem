@@ -34,7 +34,7 @@ namespace GUI
             this.dataGridViewAttendance = new System.Windows.Forms.DataGridView();
             this.btnLoaddata = new GUI.TruniControls.CustomButton();
             this.btnDelete = new GUI.TruniControls.CustomButton();
-            this.customButton1 = new GUI.TruniControls.CustomButton();
+            this.btnSave = new GUI.TruniControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAttendance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,34 +103,36 @@ namespace GUI
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // customButton1
+            // btnSave
             // 
-            this.customButton1.BackColor = System.Drawing.Color.ForestGreen;
-            this.customButton1.BorderColor = System.Drawing.Color.Black;
-            this.customButton1.BorderRadius = 20;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton1.Location = new System.Drawing.Point(947, 565);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.customButton1.Size = new System.Drawing.Size(97, 45);
-            this.customButton1.TabIndex = 8;
-            this.customButton1.Text = "Lưu";
-            this.customButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderSize = 0;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(947, 565);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnSave.Size = new System.Drawing.Size(97, 45);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AttendanceListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 632);
-            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnLoaddata);
             this.Controls.Add(this.dataGridViewAttendance);
@@ -138,6 +140,7 @@ namespace GUI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AttendanceListForm";
             this.Load += new System.EventHandler(this.AttendanceListForm_Load);
+            this.Click += new System.EventHandler(this.AttendanceListForm_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAttendance)).EndInit();
             this.ResumeLayout(false);
 
@@ -156,6 +159,6 @@ namespace GUI
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private TruniControls.CustomButton btnDelete;
-        private TruniControls.CustomButton customButton1;
+        private TruniControls.CustomButton btnSave;
     }
 }

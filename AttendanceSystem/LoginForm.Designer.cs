@@ -217,6 +217,7 @@
             this.txtPassword.Size = new System.Drawing.Size(287, 36);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UnderlinedStyle = false;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // customTextBox1
             // 

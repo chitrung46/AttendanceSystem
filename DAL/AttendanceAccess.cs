@@ -12,7 +12,7 @@ namespace DAL
 {
     public class AttendanceAccess
     {
-        public void InsertAttendance(DateTime attendanceTime, string attendanceType, string attendanceStatus, string codeQR, int studentId, int imageId, int sessionId)
+        public void InsertAttendance(DateTime attendanceTime, string attendanceType, string attendanceStatus, string codeQR, int studentId, int imageId, int sessionId, string limitTime)
         {
             using (SqlConnection con = SqlConnectionData.Connect())
             {
@@ -26,6 +26,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@studentId", studentId);
                 cmd.Parameters.AddWithValue("@imageId", imageId);
                 cmd.Parameters.AddWithValue("@sessionId", sessionId);
+                cmd.Parameters.AddWithValue("@limit", limitTime);
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
             }

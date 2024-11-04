@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnOpenData = new GUI.TruniControls.CustomButton();
             this.customPanel1 = new GUI.TruniControls.CustomPanel();
+            this.txtCode = new GUI.TruniControls.CustomButton();
             this.btnCreate = new GUI.TruniControls.CustomButton();
             this.customPanel3 = new GUI.TruniControls.CustomPanel();
             this.mtxtTime = new System.Windows.Forms.MaskedTextBox();
@@ -49,7 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCode = new GUI.TruniControls.CustomButton();
             this.customPanel1.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel2.SuspendLayout();
@@ -163,6 +163,22 @@
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(514, 576);
             this.customPanel1.TabIndex = 4;
+            // 
+            // txtCode
+            // 
+            this.txtCode.BackColor = System.Drawing.Color.White;
+            this.txtCode.BorderColor = System.Drawing.Color.White;
+            this.txtCode.BorderRadius = 15;
+            this.txtCode.BorderSize = 0;
+            this.txtCode.FlatAppearance.BorderSize = 0;
+            this.txtCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtCode.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txtCode.Location = new System.Drawing.Point(151, 347);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(200, 35);
+            this.txtCode.TabIndex = 11;
+            this.txtCode.UseVisualStyleBackColor = false;
             // 
             // btnCreate
             // 
@@ -310,23 +326,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Quét QR Code";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtCode
-            // 
-            this.txtCode.BackColor = System.Drawing.Color.White;
-            this.txtCode.BorderColor = System.Drawing.Color.White;
-            this.txtCode.BorderRadius = 15;
-            this.txtCode.BorderSize = 0;
-            this.txtCode.FlatAppearance.BorderSize = 0;
-            this.txtCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtCode.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.ForeColor = System.Drawing.Color.OrangeRed;
-            this.txtCode.Location = new System.Drawing.Point(151, 347);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(200, 35);
-            this.txtCode.TabIndex = 11;
-            this.txtCode.Text = "A7BGH4";
-            this.txtCode.UseVisualStyleBackColor = false;
             // 
             // QRCodeForm
             // 

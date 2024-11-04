@@ -31,6 +31,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.panel7 = new System.Windows.Forms.Panel();
+            this.txtMSSV = new GUI.TruniControls.CustomTextBox();
+            this.tbxStudent = new GUI.TruniControls.CustomTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,23 +44,20 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new GUI.TruniControls.CustomButton();
+            this.btnDelete = new GUI.TruniControls.CustomButton();
+            this.btnAdd = new GUI.TruniControls.CustomButton();
+            this.customButton2 = new GUI.TruniControls.CustomButton();
+            this.customButton1 = new GUI.TruniControls.CustomButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.customTextBox3 = new GUI.TruniControls.CustomTextBox();
-            this.txtMSSV = new GUI.TruniControls.CustomTextBox();
-            this.tbxStudent = new GUI.TruniControls.CustomTextBox();
-            this.btnListData = new GUI.TruniControls.CustomButton();
-            this.btnUpdate = new GUI.TruniControls.CustomButton();
-            this.btnDelete = new GUI.TruniControls.CustomButton();
-            this.btnAdd = new GUI.TruniControls.CustomButton();
-            this.customButton2 = new GUI.TruniControls.CustomButton();
-            this.customButton1 = new GUI.TruniControls.CustomButton();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbManual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbQRCode)).BeginInit();
@@ -84,6 +83,50 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1002, 159);
             this.panel7.TabIndex = 0;
+            // 
+            // txtMSSV
+            // 
+            this.txtMSSV.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMSSV.BorderColor = System.Drawing.Color.Black;
+            this.txtMSSV.BorderFocusColor = System.Drawing.Color.DarkGreen;
+            this.txtMSSV.BorderRadius = 8;
+            this.txtMSSV.BorderSize = 1;
+            this.txtMSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMSSV.ForeColor = System.Drawing.Color.Black;
+            this.txtMSSV.Location = new System.Drawing.Point(151, 106);
+            this.txtMSSV.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtMSSV.Multiline = false;
+            this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.txtMSSV.PasswordChar = false;
+            this.txtMSSV.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtMSSV.PlaceholderText = "";
+            this.txtMSSV.ReadOnly = false;
+            this.txtMSSV.Size = new System.Drawing.Size(148, 35);
+            this.txtMSSV.TabIndex = 16;
+            this.txtMSSV.UnderlinedStyle = false;
+            // 
+            // tbxStudent
+            // 
+            this.tbxStudent.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxStudent.BorderColor = System.Drawing.Color.Black;
+            this.tbxStudent.BorderFocusColor = System.Drawing.Color.DarkGreen;
+            this.tbxStudent.BorderRadius = 8;
+            this.tbxStudent.BorderSize = 1;
+            this.tbxStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxStudent.ForeColor = System.Drawing.Color.Black;
+            this.tbxStudent.Location = new System.Drawing.Point(151, 55);
+            this.tbxStudent.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.tbxStudent.Multiline = false;
+            this.tbxStudent.Name = "tbxStudent";
+            this.tbxStudent.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.tbxStudent.PasswordChar = false;
+            this.tbxStudent.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbxStudent.PlaceholderText = "";
+            this.tbxStudent.ReadOnly = false;
+            this.tbxStudent.Size = new System.Drawing.Size(400, 35);
+            this.tbxStudent.TabIndex = 15;
+            this.tbxStudent.UnderlinedStyle = false;
             // 
             // label5
             // 
@@ -184,7 +227,6 @@
             this.panel6.Controls.Add(this.dataGridViewStudents);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.ptbManual);
-            this.panel6.Controls.Add(this.btnListData);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.ptbQRCode);
             this.panel6.Controls.Add(this.panel1);
@@ -226,178 +268,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(330, 48);
             this.panel1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 39);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nhóm TH02";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.customTextBox3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(19, 12);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1036, 52);
-            this.panel3.TabIndex = 4;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_file_500;
-            this.pictureBox2.Location = new System.Drawing.Point(990, 8);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_search_500;
-            this.pictureBox3.Location = new System.Drawing.Point(658, 12);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_download_96;
-            this.pictureBox1.Location = new System.Drawing.Point(946, 8);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(985, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 40);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(941, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // customTextBox3
-            // 
-            this.customTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox3.BorderColor = System.Drawing.Color.Transparent;
-            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.customTextBox3.BorderRadius = 8;
-            this.customTextBox3.BorderSize = 1;
-            this.customTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox3.Location = new System.Drawing.Point(646, 5);
-            this.customTextBox3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.customTextBox3.Multiline = false;
-            this.customTextBox3.Name = "customTextBox3";
-            this.customTextBox3.Padding = new System.Windows.Forms.Padding(40, 8, 10, 8);
-            this.customTextBox3.PasswordChar = false;
-            this.customTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox3.PlaceholderText = "Tìm kiếm";
-            this.customTextBox3.ReadOnly = false;
-            this.customTextBox3.Size = new System.Drawing.Size(259, 35);
-            this.customTextBox3.TabIndex = 4;
-            this.customTextBox3.UnderlinedStyle = false;
-            // 
-            // txtMSSV
-            // 
-            this.txtMSSV.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMSSV.BorderColor = System.Drawing.Color.Black;
-            this.txtMSSV.BorderFocusColor = System.Drawing.Color.DarkGreen;
-            this.txtMSSV.BorderRadius = 8;
-            this.txtMSSV.BorderSize = 1;
-            this.txtMSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMSSV.ForeColor = System.Drawing.Color.Black;
-            this.txtMSSV.Location = new System.Drawing.Point(151, 106);
-            this.txtMSSV.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.txtMSSV.Multiline = false;
-            this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
-            this.txtMSSV.PasswordChar = false;
-            this.txtMSSV.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtMSSV.PlaceholderText = "";
-            this.txtMSSV.ReadOnly = false;
-            this.txtMSSV.Size = new System.Drawing.Size(148, 35);
-            this.txtMSSV.TabIndex = 16;
-            this.txtMSSV.UnderlinedStyle = false;
-            // 
-            // tbxStudent
-            // 
-            this.tbxStudent.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxStudent.BorderColor = System.Drawing.Color.Black;
-            this.tbxStudent.BorderFocusColor = System.Drawing.Color.DarkGreen;
-            this.tbxStudent.BorderRadius = 8;
-            this.tbxStudent.BorderSize = 1;
-            this.tbxStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxStudent.ForeColor = System.Drawing.Color.Black;
-            this.tbxStudent.Location = new System.Drawing.Point(151, 55);
-            this.tbxStudent.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tbxStudent.Multiline = false;
-            this.tbxStudent.Name = "tbxStudent";
-            this.tbxStudent.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
-            this.tbxStudent.PasswordChar = false;
-            this.tbxStudent.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbxStudent.PlaceholderText = "";
-            this.tbxStudent.ReadOnly = false;
-            this.tbxStudent.Size = new System.Drawing.Size(400, 35);
-            this.tbxStudent.TabIndex = 15;
-            this.tbxStudent.UnderlinedStyle = false;
-            // 
-            // btnListData
-            // 
-            this.btnListData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnListData.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnListData.BorderColor = System.Drawing.Color.Black;
-            this.btnListData.BorderRadius = 20;
-            this.btnListData.BorderSize = 0;
-            this.btnListData.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListData.FlatAppearance.BorderSize = 0;
-            this.btnListData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListData.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListData.ForeColor = System.Drawing.Color.White;
-            this.btnListData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListData.Location = new System.Drawing.Point(462, 196);
-            this.btnListData.Margin = new System.Windows.Forms.Padding(2);
-            this.btnListData.Name = "btnListData";
-            this.btnListData.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnListData.Size = new System.Drawing.Size(124, 45);
-            this.btnListData.TabIndex = 9;
-            this.btnListData.Text = "Danh sách";
-            this.btnListData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnListData.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
@@ -508,6 +378,111 @@
             this.customButton1.TabIndex = 14;
             this.customButton1.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 39);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nhóm TH02";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.customTextBox3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(19, 12);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1036, 52);
+            this.panel3.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_file_500;
+            this.pictureBox2.Location = new System.Drawing.Point(990, 8);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_search_500;
+            this.pictureBox3.Location = new System.Drawing.Point(658, 12);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(22, 22);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_download_96;
+            this.pictureBox1.Location = new System.Drawing.Point(946, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // customTextBox3
+            // 
+            this.customTextBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.customTextBox3.BorderColor = System.Drawing.Color.Transparent;
+            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.customTextBox3.BorderRadius = 8;
+            this.customTextBox3.BorderSize = 1;
+            this.customTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customTextBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.customTextBox3.Location = new System.Drawing.Point(646, 5);
+            this.customTextBox3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.customTextBox3.Multiline = false;
+            this.customTextBox3.Name = "customTextBox3";
+            this.customTextBox3.Padding = new System.Windows.Forms.Padding(40, 8, 10, 8);
+            this.customTextBox3.PasswordChar = false;
+            this.customTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.customTextBox3.PlaceholderText = "Tìm kiếm";
+            this.customTextBox3.ReadOnly = false;
+            this.customTextBox3.Size = new System.Drawing.Size(259, 35);
+            this.customTextBox3.TabIndex = 4;
+            this.customTextBox3.UnderlinedStyle = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(985, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 40);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(941, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -565,7 +540,6 @@
         private TruniControls.CustomButton btnUpdate;
         private TruniControls.CustomButton btnDelete;
         private TruniControls.CustomButton btnAdd;
-        private TruniControls.CustomButton btnListData;
         private TruniControls.CustomTextBox tbxStudent;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
         private System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1;
