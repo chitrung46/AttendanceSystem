@@ -11,7 +11,7 @@ namespace BLL
     {
         AttendanceAccess attendanceAccess = new AttendanceAccess();
 
-        public void InsertAttendance(DateTime attendanceTime, string attendanceType, string attendanceStatus, string codeQR, int studentId, int imageId, int sessionId, string limitTime)
+        public void InsertAttendance(string attendanceTime, string attendanceType, string attendanceStatus, string codeQR, int studentId, int imageId, int sessionId, string limitTime)
         {
             attendanceAccess.InsertAttendance(attendanceTime, attendanceType, attendanceStatus, codeQR, studentId, imageId, sessionId, limitTime);
         }

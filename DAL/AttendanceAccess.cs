@@ -12,7 +12,7 @@ namespace DAL
 {
     public class AttendanceAccess
     {
-        public void InsertAttendance(DateTime attendanceTime, string attendanceType, string attendanceStatus, string codeQR, int studentId, int imageId, int sessionId, string limitTime)
+        public void InsertAttendance(string attendanceTime, string attendanceType, string attendanceStatus, string codeQR, int studentId, int imageId, int sessionId, string limitTime)
         {
             using (SqlConnection con = SqlConnectionData.Connect())
             {

@@ -22,7 +22,7 @@ namespace BLL
             return sessionAccess.InsertSession(sessionName, sessionTime, code, groupId);
         }
 
-        public Session FindSession (string sessionName, DateTime sessionTime, string code, int groupId)
+        public Session FindSession (string sessionName, string sessionTime, string code, int groupId)
         {
             return sessionAccess.FindSession(sessionName, sessionTime, code, groupId);
         }

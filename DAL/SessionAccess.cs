@@ -53,7 +53,7 @@ namespace DAL
             }
         }
 
-        public Session FindSession (string sessionName, DateTime sessionTime, string code, int groupId)
+        public Session FindSession (string sessionName, string sessionTime, string code, int groupId)
         {
             using (SqlConnection con = SqlConnectionData.Connect())
             {

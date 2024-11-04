@@ -18,7 +18,7 @@ namespace DAL
                 con.Open();
                 SqlCommand cmd = new SqlCommand("proc_insertImage", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@iamgeURL", imageURL);
+                cmd.Parameters.AddWithValue("@imageURL", imageURL);
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
             }
@@ -31,10 +31,12 @@ namespace DAL
             {
                 
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("proc_getFacultyList", con))
+                using (SqlCommand cmd = new SqlCommand("proc_getImageByURL", con))
                 {
-                    
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@imageURL", imageURL);
                     SqlDataReader reader = cmd.ExecuteReader();
+
                     while (reader.Read())
                     {
                         image = new Image

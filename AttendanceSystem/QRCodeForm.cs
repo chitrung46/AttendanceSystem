@@ -92,7 +92,7 @@ namespace GUI
         {
 
             sessionBLL.InsertSession(sessionBLL.GetNewSessionName(groupId), DateTime.Now, txtCode.Text, groupId);
-            Session session = sessionBLL.FindSession(sessionBLL.GetNewSessionName(groupId), DateTime.Now, txtCode.Text, groupId);
+            Session session = sessionBLL.FindSession(sessionBLL.GetNewSessionName(groupId), DateTime.Now.ToString(), txtCode.Text, groupId);
             AttendanceListForm attendanceListForm = new AttendanceListForm(session, timeQRCode);
             attendanceListForm.Show();
             this.Close();

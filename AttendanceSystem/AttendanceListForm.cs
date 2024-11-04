@@ -125,10 +125,11 @@ namespace GUI
                     PictureBox pictureBox = new PictureBox();
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
                     int rowIndex = dataGridViewAttendance.Rows.Count + 1;
-                    dataGridViewAttendance.Rows.Add(false, rowIndex, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[5], image);
+                    dataGridViewAttendance.Rows.Add(false, rowIndex, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[5], image);        
                     dataGridViewAttendance.Rows[rowIndex-1].Tag = row[4].ToString();
                 }
             }
+            
 
         }
 
@@ -243,25 +244,12 @@ namespace GUI
                 {
                     try
                     {
-                        MessageBox.Show("Hello");
-                        MessageBox.Show(row.Cells[6].Value.ToString());
-                        string dateString = row.Cells[6].Value.ToString();
-                        StringBuilder sb = new StringBuilder();
-
-                        // Chuyển từng ký tự thành mã hexa và thêm vào chuỗi
-                        foreach (char c in dateString)
-                        {
-                            sb.AppendFormat("{0:X2} ", (int)c);  // Mã hexa của từng ký tự
-                        }
-
-                        MessageBox.Show(sb.ToString());
-
-                        DateTime time = DateTime.ParseExact(row.Cells[6].Value.ToString().Trim(), "dd/MM/yyyy HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
-                        string codeQR = (string)row.Cells[3].Value;
-                        int mssv = int.Parse(row.Cells[2].Value.ToString());           
+                        string codeQR = (string)row.Cells[4].Value;
+                        int mssv = int.Parse(row.Cells[3].Value.ToString());
                         imageBLL.InsertImage(row.Tag.ToString());
                         int imageId = imageBLL.GetImageByURL(row.Tag.ToString()).Id;
-                        attendanceBLL.InsertAttendance(time, "QR Code", "", codeQR, mssv, imageId, session.Id, limitTime);
+                        attendanceBLL.InsertAttendance(row.Cells[6].Value.ToString().Trim(), "QR Code", "", codeQR, mssv, imageId, session.Id, limitTime);
+                        MessageBox.Show("after");
                     }
                     catch (Exception ex)
                     {
